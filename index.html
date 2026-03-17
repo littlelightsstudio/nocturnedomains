@@ -117,46 +117,59 @@ nav.scrolled{background:rgba(8,6,15,0.97);border-bottom:1px solid rgba(45,212,19
 #storyworld::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(45,212,191,0.3),transparent)}
 .storyworld-intro{text-align:center;max-width:640px;margin:0 auto 4rem}
 .storyworld-intro p{font-size:1.05rem;line-height:1.8;color:var(--stone);font-weight:300;margin-top:1.5rem;font-style:italic}
-.wiki-filters{display:flex;justify-content:center;gap:0.5rem;margin-bottom:3rem;flex-wrap:wrap}
-.wiki-filter{font-family:var(--font-label);font-size:0.58rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted-text);background:transparent;border:1px solid rgba(255,255,255,0.08);padding:0.55rem 1.2rem;cursor:pointer;transition:all var(--transition)}
-.wiki-filter:hover{color:var(--teal);border-color:rgba(45,212,191,0.3)}
+.wiki-filters{display:flex;justify-content:center;gap:0.4rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.wiki-filter{font-family:var(--font-label);font-size:0.58rem;font-weight:300;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted-text);background:transparent;border:1px solid rgba(255,255,255,0.07);padding:0.5rem 1.1rem;cursor:pointer;transition:all var(--transition)}
+.wiki-filter:hover{color:var(--teal);border-color:rgba(45,212,191,0.25)}
 .wiki-filter.active{color:var(--void);background:var(--teal);border-color:var(--teal)}
-.wiki-grid{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.04)}
-.wiki-card{background:var(--deep);padding:1.75rem 1.5rem;cursor:pointer;transition:all var(--transition);position:relative;overflow:hidden;border-top:2px solid transparent}
-.wiki-card:hover{background:var(--surface);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.3)}
-.wiki-card[data-category="creature"]{border-top-color:var(--green)}
-.wiki-card[data-category="flora"]{border-top-color:#a78bfa}
-.wiki-card[data-category="location"]{border-top-color:var(--gold)}
-.wiki-card[data-category="technology"]{border-top-color:var(--teal)}
-.wiki-card[data-category="lore"]{border-top-color:var(--purple-light)}
-.wiki-card[data-category="shop"]{border-top-color:#fb923c}
-.wiki-tag{font-family:var(--font-label);font-size:0.53rem;font-weight:300;letter-spacing:0.25em;text-transform:uppercase;margin-bottom:0.6rem;display:block}
+
+/* List layout */
+.wiki-grid{max-width:900px;margin:0 auto;display:flex;flex-direction:column}
+.wiki-card{display:flex;align-items:center;gap:2rem;padding:1rem 1rem 1rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.05);cursor:pointer;transition:all var(--transition);position:relative}
+.wiki-card:first-child{border-top:1px solid rgba(255,255,255,0.05)}
+.wiki-card::before{content:'';width:2px;height:calc(100% - 1.5rem);position:absolute;left:0;top:50%;transform:translateY(-50%);opacity:0;transition:opacity var(--transition)}
+.wiki-card[data-category="creature"]::before{background:var(--green)}
+.wiki-card[data-category="flora"]::before{background:#a78bfa}
+.wiki-card[data-category="location"]::before{background:var(--gold)}
+.wiki-card[data-category="technology"]::before{background:var(--teal)}
+.wiki-card[data-category="lore"]::before{background:var(--purple-light)}
+.wiki-card[data-category="shop"]::before{background:#fb923c}
+.wiki-card:hover{background:rgba(255,255,255,0.025)}
+.wiki-card:hover::before{opacity:1}
+.wiki-card-meta{flex:0 0 120px;min-width:0}
+.wiki-tag{font-family:var(--font-label);font-size:0.5rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;display:block}
 .wiki-card[data-category="creature"] .wiki-tag{color:var(--green)}
 .wiki-card[data-category="flora"] .wiki-tag{color:#a78bfa}
 .wiki-card[data-category="location"] .wiki-tag{color:var(--gold)}
 .wiki-card[data-category="technology"] .wiki-tag{color:var(--teal-bright)}
 .wiki-card[data-category="lore"] .wiki-tag{color:var(--purple-light)}
 .wiki-card[data-category="shop"] .wiki-tag{color:#fb923c}
-.wiki-name{font-family:var(--font-display);font-size:0.92rem;font-weight:400;color:var(--cream);line-height:1.3;margin-bottom:0.3rem}
-.wiki-latin{font-family:var(--font-body);font-size:0.78rem;font-style:italic;color:var(--muted-text);margin-bottom:0.85rem}
-.wiki-desc{font-size:0.85rem;line-height:1.6;color:rgba(213,205,196,0.65);font-weight:300}
-.wiki-more{font-family:var(--font-label);font-size:0.52rem;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted-text);margin-top:1rem;display:inline-flex;align-items:center;gap:0.4rem;transition:color var(--transition)}
-.wiki-card:hover .wiki-more{color:var(--teal)}
+.wiki-card-body{flex:0 0 220px;min-width:0}
+.wiki-name{font-family:var(--font-display);font-size:0.88rem;font-weight:400;color:var(--cream);line-height:1.3}
+.wiki-latin{font-family:var(--font-body);font-size:0.75rem;font-style:italic;color:var(--muted-text);margin-top:0.15rem}
+.wiki-desc{flex:1;font-size:0.88rem;line-height:1.55;color:rgba(213,205,196,0.5);font-weight:300;min-width:0}
+.wiki-more{flex:0 0 auto;font-family:var(--font-label);font-size:0.5rem;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted-text);white-space:nowrap;opacity:0;transition:opacity var(--transition)}
+.wiki-card:hover .wiki-more{opacity:1;color:var(--teal)}
 
 /* MODAL */
 .wiki-modal-overlay{position:fixed;inset:0;background:rgba(8,6,15,0.88);z-index:200;display:flex;align-items:center;justify-content:center;padding:2rem;opacity:0;pointer-events:none;transition:opacity 0.3s ease;backdrop-filter:blur(12px)}
 .wiki-modal-overlay.open{opacity:1;pointer-events:all}
-.wiki-modal{background:var(--mid);border:1px solid rgba(255,255,255,0.07);max-width:680px;width:100%;position:relative;max-height:88vh;overflow-y:auto;transform:translateY(20px) scale(0.98);transition:transform 0.3s ease,opacity 0.3s ease;opacity:0}
+.wiki-modal{background:var(--mid);border:1px solid rgba(255,255,255,0.07);max-width:640px;width:100%;position:relative;max-height:88vh;overflow-y:auto;transform:translateY(20px) scale(0.98);transition:transform 0.3s ease,opacity 0.3s ease;opacity:0}
 .wiki-modal-overlay.open .wiki-modal{transform:translateY(0) scale(1);opacity:1}
-.modal-header{padding:2.5rem 2.5rem 0}
-.modal-body-content{padding:1.75rem 2.5rem 2.5rem}
-.wiki-modal-close{position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:var(--muted-text);font-size:1.2rem;cursor:pointer;line-height:1;transition:color var(--transition);width:32px;height:32px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.07)}
-.wiki-modal-close:hover{color:var(--cream);border-color:rgba(255,255,255,0.2)}
-#modal-tag{font-family:var(--font-label);font-size:0.58rem;font-weight:300;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:0.85rem;display:block}
-#modal-name{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,1.9rem);font-weight:400;color:var(--cream);margin-bottom:0.4rem;line-height:1.2}
-#modal-latin{font-family:var(--font-body);font-size:0.95rem;font-style:italic;color:var(--muted-text);margin-bottom:0;display:block}
-.modal-divider{height:1px;background:rgba(255,255,255,0.07);margin:1.5rem 0}
-#modal-body{font-size:1.02rem;line-height:1.82;color:var(--stone);font-weight:300}
+.modal-header{padding:2rem 2.5rem;position:relative}
+.modal-header-creature{background:linear-gradient(135deg,rgba(134,239,172,0.12) 0%,rgba(134,239,172,0.03) 100%);border-bottom:1px solid rgba(134,239,172,0.15)}
+.modal-header-flora{background:linear-gradient(135deg,rgba(167,139,250,0.12) 0%,rgba(167,139,250,0.03) 100%);border-bottom:1px solid rgba(167,139,250,0.15)}
+.modal-header-location{background:linear-gradient(135deg,rgba(212,168,71,0.12) 0%,rgba(212,168,71,0.03) 100%);border-bottom:1px solid rgba(212,168,71,0.15)}
+.modal-header-technology{background:linear-gradient(135deg,rgba(45,212,191,0.12) 0%,rgba(45,212,191,0.03) 100%);border-bottom:1px solid rgba(45,212,191,0.15)}
+.modal-header-lore{background:linear-gradient(135deg,rgba(192,132,252,0.12) 0%,rgba(192,132,252,0.03) 100%);border-bottom:1px solid rgba(192,132,252,0.15)}
+.modal-header-shop{background:linear-gradient(135deg,rgba(251,146,60,0.12) 0%,rgba(251,146,60,0.03) 100%);border-bottom:1px solid rgba(251,146,60,0.15)}
+.modal-body-content{padding:2rem 2.5rem 2.5rem}
+.wiki-modal-close{position:absolute;top:1.25rem;right:1.25rem;background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.1);color:var(--stone);font-size:0.9rem;cursor:pointer;line-height:1;transition:all var(--transition);width:28px;height:28px;display:flex;align-items:center;justify-content:center;z-index:10}
+.wiki-modal-close:hover{color:var(--cream);background:rgba(255,255,255,0.12)}
+#modal-tag{font-family:var(--font-label);font-size:0.55rem;font-weight:300;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:0.85rem;display:block}
+#modal-name{font-family:var(--font-display);font-size:clamp(1.3rem,3vw,1.75rem);font-weight:400;color:var(--cream);margin-bottom:0.35rem;line-height:1.2}
+#modal-latin{font-family:var(--font-body);font-size:0.9rem;font-style:italic;color:var(--muted-text);display:block}
+.modal-divider{height:1px;background:rgba(255,255,255,0.07);margin-bottom:0}
+#modal-body{font-size:1rem;line-height:1.82;color:var(--stone);font-weight:300}
 #modal-body strong{color:var(--cream);font-weight:600}
 #modal-body p+p{margin-top:1rem}
 
@@ -208,9 +221,8 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
 .reveal-delay-3{transition-delay:0.3s}
 
 /* RESPONSIVE */
-@media(max-width:1100px){.wiki-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:900px){.world-intro-grid{grid-template-columns:1fr;gap:3rem}.books-grid{grid-template-columns:1fr}.wiki-grid{grid-template-columns:repeat(2,1fr)}.dreams-grid{grid-template-columns:repeat(2,1fr)}.about-inner{grid-template-columns:1fr;gap:3rem}.about-sidebar{position:static}.nav-links{gap:1.5rem}}
-@media(max-width:600px){.wiki-grid{grid-template-columns:1fr}.dreams-grid{grid-template-columns:1fr 1fr}.nav-links{display:none}.world-facts{grid-template-columns:1fr}.footer-inner{flex-direction:column;gap:1.5rem;text-align:center}.footer-meta{text-align:center}.dream-type:nth-child(2n){border-right:none}}
+@media(max-width:900px){.world-intro-grid{grid-template-columns:1fr;gap:3rem}.books-grid{grid-template-columns:1fr}.wiki-card-body{flex:0 0 180px}.dreams-grid{grid-template-columns:repeat(2,1fr)}.about-inner{grid-template-columns:1fr;gap:3rem}.about-sidebar{position:static}.nav-links{gap:1.5rem}}
+@media(max-width:600px){.wiki-card-meta{display:none}.wiki-card-body{flex:0 0 140px}.wiki-desc{display:none}.dreams-grid{grid-template-columns:1fr 1fr}.nav-links{display:none}.world-facts{grid-template-columns:1fr}.footer-inner{flex-direction:column;gap:1.5rem;text-align:center}.footer-meta{text-align:center}.dream-type:nth-child(2n){border-right:none}}
 </style>
 </head>
 <body>
@@ -344,255 +356,379 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
 
     <!-- FAUNA -->
     <div class="wiki-card reveal" data-category="creature" data-name="Dusk Fawn" data-latin="Capreolus Umbravorus" data-tag="Fauna — Kornelius Flinn's Journal" data-full="A small, elusive creature with the body of a goat and the facial features of a cat, topped with tiny elk antlers. Their vanta-black coloration allows them to vanish completely in the dark, where they uniquely feed by nibbling on shadows, leaving whimsical bite marks behind. Dusk Fawns are intelligent and aware, showing a remarkable capacity to understand and react to human speech. Despite their unusual diet, they are entirely harmless — affectionate, even, with those they choose to trust. Helena's companion Noxy is a Dusk Fawn who has made his own decision about the question of domestication.">
-      <span class="wiki-tag">Fauna</span>
-      <h3 class="wiki-name">Dusk Fawn</h3>
-      <p class="wiki-latin">Capreolus Umbravorus — "Shadow-Eating Little Deer"</p>
-      <p class="wiki-desc">Cat-faced, goat-bodied, vanta-black. Devours shadows and leaves whimsical bite marks in the dark.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Fauna</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Dusk Fawn</div>
+        <div class="wiki-latin">Capreolus Umbravorus — "Shadow-Eating Little Deer"</div>
+      </div>
+      <div class="wiki-desc">Cat-faced, goat-bodied, vanta-black. Devours shadows and leaves whimsical bite marks in the dark.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal reveal-delay-1" data-category="creature" data-name="Emberling & Emberwing" data-latin="Igniptera Luminaris" data-tag="Fauna — Kornelius Flinn's Journal" data-full="The Emberling is a tiny, winged creature resembling a miniature koala with soft, ember-glowing fur and oversized bioluminescent ears. It flits soundlessly through the night air, its flickering glow attracting small insects. Alone, an Emberling is merely a spark. In numbers, something remarkable happens. When enough gather, they form a Flitter: a hive-mind in which their intelligence amplifies exponentially. Synchronized pulses of bioluminescence allow complex communication and eerie coordination. If a Flitter grows large enough, it undergoes a further transformation, merging into a single majestic form — the Emberwing. This silent, luminous glider navigates the nocturnal world with almost supernatural awareness. In different biomes, Emberlings take on different hues: green in the Gloomshade Canopy, purple in the Violet Expanse, blue with crystal scales in the Prism Barrens. Some believe Emberwings are keepers of ancient wisdom — their appearance an omen of fate and fortune.">
-      <span class="wiki-tag">Fauna</span>
-      <h3 class="wiki-name">Emberling & Emberwing</h3>
-      <p class="wiki-latin">Igniptera Luminaris — "Luminous Fire Wing"</p>
-      <p class="wiki-desc">Tiny glowing mammals that form hive-minded clusters — and merge into the majestic, radiant Emberwing.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Fauna</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Emberling & Emberwing</div>
+        <div class="wiki-latin">Igniptera Luminaris — "Luminous Fire Wing"</div>
+      </div>
+      <div class="wiki-desc">Tiny glowing mammals that form hive-minded clusters — and merge into the majestic, radiant Emberwing.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal reveal-delay-2" data-category="creature" data-name="Phaseling" data-latin="Lepus Spectralis" data-tag="Fauna — Kornelius Flinn's Journal" data-full="A creature resembling a large rabbit with curved, ram-like ears and eyes that pulsate in shifting colors, reflecting its mood and energy levels. At rest, a Phaseling hops normally. When threatened, it becomes something else entirely: it moves so fast that the human eye cannot distinguish movement from sudden appearance in a new location. It does not so much run as phase from one point to another, warping the air around it as it goes. The name is apt. Phaselings are among the most difficult creatures in the nocturnal world to track, and essentially impossible to catch without specialized equipment.">
-      <span class="wiki-tag">Fauna</span>
-      <h3 class="wiki-name">Phaseling</h3>
-      <p class="wiki-latin">Lepus Spectralis — "Spectral Rabbit"</p>
-      <p class="wiki-desc">Rabbit-like, ram-eared, with colour-shifting eyes. Moves so fast it seems to phase from one location to another.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Fauna</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Phaseling</div>
+        <div class="wiki-latin">Lepus Spectralis — "Spectral Rabbit"</div>
+      </div>
+      <div class="wiki-desc">Rabbit-like, ram-eared, with colour-shifting eyes. Moves so fast it seems to phase from one location to another.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal" data-category="creature" data-name="Goliath Pebbler / Panx" data-latin="Magnus Lapidarius" data-tag="Fauna — Kornelius Flinn's Journal" data-full="Colossal pangolin-like beasts the size of elephants or larger, clad in rock-textured scales that allow them to hibernate or hide in plain sight as enormous boulders. Goliath Pebblers are slow-moving herbivores, entirely harmless unless provoked. Their ability to morph into rock-like forms provides effective protection from predators and the harsh elements of the nocturnal wilderness. They are known colloquially as Panx in several regions. Their presence in an area is considered a reliable sign of ecological health — they do not settle in places where the balance has been disturbed.">
-      <span class="wiki-tag">Fauna</span>
-      <h3 class="wiki-name">Goliath Pebbler / Panx</h3>
-      <p class="wiki-latin">Magnus Lapidarius — "Great Stone Creature"</p>
-      <p class="wiki-desc">Elephant-sized, pangolin-like herbivores that disguise themselves as boulders when resting.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Fauna</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Goliath Pebbler / Panx</div>
+        <div class="wiki-latin">Magnus Lapidarius — "Great Stone Creature"</div>
+      </div>
+      <div class="wiki-desc">Elephant-sized, pangolin-like herbivores that disguise themselves as boulders when resting.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal reveal-delay-1" data-category="creature" data-name="Nightstrider Stag" data-latin="Noctivagus Cornutus" data-tag="Fauna — Kornelius Flinn's Journal" data-full="A majestic and elusive creature that prowls the dense bioluminescent forests of the nocturnal world. With the sleek, muscular body of a great feline and the proud antlers of a stag, it moves with both predatory grace and regal poise. Its large, expressive eyes shimmer in the dark, adapting effortlessly to the dim glow of moonshade flora. The Nightstrider is known for its near-silent movements, aided by thick padded paws, and its uncanny ability to vanish into the mist with a single bound. Despite its imposing presence, it is a creature of balance — both predator and guardian of the deep woods, feared by some but revered by those who understand its role in maintaining the harmony of the nocturnal wilderness. Native to the Gloomshade Canopy of the Triome.">
-      <span class="wiki-tag">Fauna</span>
-      <h3 class="wiki-name">Nightstrider Stag</h3>
-      <p class="wiki-latin">Noctivagus Cornutus — "Night-Wandering Horned One"</p>
-      <p class="wiki-desc">The body of a great feline, the antlers of a stag. Predator and guardian of the deep nocturnal forests.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Fauna</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Nightstrider Stag</div>
+        <div class="wiki-latin">Noctivagus Cornutus — "Night-Wandering Horned One"</div>
+      </div>
+      <div class="wiki-desc">The body of a great feline, the antlers of a stag. Predator and guardian of the deep nocturnal forests.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal reveal-delay-2" data-category="creature" data-name="Nightmare Leech" data-latin="Nocturnalis Hirudo" data-tag="Fauna — Hostile" data-full="Shifting shadow-creatures that divide into multiple forms and grow stronger with every nightmare they consume. Nightmare Leeches — also called Shadow Splitters — are parasitic entities that feed on dark Nocturnal Energy. Each nightmare they absorb increases their mass and their capacity for division. A single Nightmare Leech, left unchecked, can split into dozens of instances within hours. They do not experience pain, do not negotiate, and do not stop. They have been imprisoned in the past — caged through means that are not fully understood and buried in hidden locations. They are considered the most dangerous hostile entity documented in the nocturnal world.">
-      <span class="wiki-tag">Fauna — Hostile</span>
-      <h3 class="wiki-name">Nightmare Leech</h3>
-      <p class="wiki-latin">Nocturnalis Hirudo — "Shadow Splitter"</p>
-      <p class="wiki-desc">Shadow-creatures that feed on nightmares, divide into multiple forms, and grow stronger. They do not stop.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Fauna — Hostile</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Nightmare Leech</div>
+        <div class="wiki-latin">Nocturnalis Hirudo — "Shadow Splitter"</div>
+      </div>
+      <div class="wiki-desc">Shadow-creatures that feed on nightmares, divide into multiple forms, and grow stronger. They do not stop.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <!-- FLORA -->
     <div class="wiki-card reveal" data-category="flora" data-name="Trispire Prismbloom" data-latin="Luminodendron Triformis" data-tag="Flora — Kornelius Flinn's Journal" data-full="An ancient and mysterious tree that serves as the heart of the Triomes, shaping and sustaining their three vastly different biomes. Towering over the landscape, this colossal tree possesses three distinct sections, each influencing the climate, flora, and fauna of the biome it borders. Instead of leaves, crystals grow from its sprawling branches, pulsating with an ethereal glow that reflects the energy of the surrounding lands. No one has ever witnessed a sapling of the Trispire Prismbloom, leading to theories that these trees do not grow in a conventional way but instead emerge through unknown or ancient forces. What is known is that the tree's death brings catastrophe, causing the Triomes it sustains to collapse, leading to widespread ecological destruction. Legends speak of past civilizations that thrived around these trees — including an ancient Triome that existed in Egypt during the time of the pyramids, until it mysteriously vanished. To the inhabitants of the nocturnal world, the Trispire Prismbloom is more than just a tree. It is a living force, a beacon of balance, and a symbol of both life and loss.">
-      <span class="wiki-tag">Flora</span>
-      <h3 class="wiki-name">Trispire Prismbloom</h3>
-      <p class="wiki-latin">Luminodendron Triformis — "Three-Formed Luminous Tree"</p>
-      <p class="wiki-desc">An ancient crystalline tree that sustains three biomes at once. No one has ever seen a sapling. If it dies, civilizations fall.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Flora</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Trispire Prismbloom</div>
+        <div class="wiki-latin">Luminodendron Triformis — "Three-Formed Luminous Tree"</div>
+      </div>
+      <div class="wiki-desc">An ancient crystalline tree that sustains three biomes at once. No one has ever seen a sapling. If it dies, civilizations fall.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <!-- LOCATIONS -->
     <div class="wiki-card reveal reveal-delay-1" data-category="location" data-name="Vinaborg" data-latin="" data-tag="Location — Goblin City" data-full="The goblin city beneath Vienna — one of the oldest Dreamcraft Factories in the world. Vinaborg is a full subterranean metropolis: residential structures that grow downward rather than upward, a network of underground transit connecting to the global goblin railway, and a factory that has been running continuously since before Vienna became Vienna. Key districts include Fountainheart Plaza, the city's grand central square with its steam-and-water fountain and main event space; Shadowlight Promenade, an older district of vintage shops and leisure; Steamward Heights, the office district; Everwonder Garden, a sprawling underground park; Brasshand Bend, the handcraft and tinkerer district; and Brightspire Arcadia, the education district with its grand central library. The Dreamcraft Factory is the city's heart — steamy, clockwork-precise, run by Keenaacs Bustlespirit with the kind of efficiency that makes visiting goblins jealous.">
-      <span class="wiki-tag">Location — Goblin City</span>
-      <h3 class="wiki-name">Vinaborg</h3>
-      <p class="wiki-latin"></p>
-      <p class="wiki-desc">The goblin city beneath Vienna. One of the oldest dream factories in the world. Older than the city above it.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Location — Goblin City</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Vinaborg</div>
+        
+      </div>
+      <div class="wiki-desc">The goblin city beneath Vienna. One of the oldest dream factories in the world. Older than the city above it.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal reveal-delay-2" data-category="location" data-name="The Triome" data-latin="" data-tag="Location — Nocturnal Wilderness" data-full="One of the most mysterious and biologically diverse locations in the nocturnal world: an extraordinary region where three vastly different biomes exist side by side, their borders sharply defined yet interconnected by a singular ancient force. Unlike natural ecosystem transitions, the Triomes defy conventional geography — the moment one biome ends, another begins, complete with its own distinct climate, terrain, and ecology. No one has ever seen how a Triome forms. The three biomes are the Gloomshade Canopy, a bioluminescent rainforest of towering flora and elegant predators; the Violet Expanse, vast rolling plains of purple grasses with glowing orange rivers; and the Prism Barrens, a treacherous crystal desert of razor-sharp formations and formidable creatures. At the heart of each Triome stands the Trispire Prismbloom, the ancient tree that sustains all three biomes simultaneously. The Triome is a cradle of biodiversity, home to creatures and flora found nowhere else in the nocturnal world.">
-      <span class="wiki-tag">Location — Nocturnal Wilderness</span>
-      <h3 class="wiki-name">The Triome</h3>
-      <p class="wiki-latin"></p>
-      <p class="wiki-desc">Three utterly different biomes existing side by side, sustained by a single ancient tree. Geography has no explanation for them.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Location — Nocturnal Wilderness</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">The Triome</div>
+        
+      </div>
+      <div class="wiki-desc">Three utterly different biomes existing side by side, sustained by a single ancient tree. Geography has no explanation for them.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal" data-category="location" data-name="Gloomshade Canopy" data-latin="" data-tag="Location — Triome Biome" data-full="The first of the Triome's three biomes: a lush nocturnal rainforest perpetually bathed in dim, atmospheric light filtered through thick, intertwining branches. Instead of sunlight, glowing flora and luminescent fungi provide a mystical glow, casting soft, shifting colors across the jungle floor. Strange waterfall plants draw moisture from the air and release shimmering cascades, creating a constant symphony of trickling water in the deep jungle. The wildlife here is as elegant as it is elusive — home to the Nightstrider Stag, a feline-antlered predator of regal grace, and the Whisperwing. The local Emberling glows in shades of deep green, blending perfectly with the dense foliage, and its Emberwing form is a green forest glider. Despite its beauty, the Gloomshade Canopy can be treacherous: dense fogs, hidden predators, and twisting vines make it a challenging place for travelers who do not know its secrets.">
-      <span class="wiki-tag">Location — Triome Biome</span>
-      <h3 class="wiki-name">Gloomshade Canopy</h3>
-      <p class="wiki-latin"></p>
-      <p class="wiki-desc">A lush nocturnal rainforest teeming with bioluminescent flora and elusive fauna. Beautiful and treacherous in equal measure.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Location — Triome Biome</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Gloomshade Canopy</div>
+        
+      </div>
+      <div class="wiki-desc">A lush nocturnal rainforest teeming with bioluminescent flora and elusive fauna. Beautiful and treacherous in equal measure.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal reveal-delay-1" data-category="location" data-name="Violet Expanse" data-latin="" data-tag="Location — Triome Biome" data-full="The second of the Triome's three biomes: a breathtaking landscape of endless rolling plains where hundreds of species of purple-hued grasses sway in tranquil, rhythmic motion. Hills break the horizon, while creeks and rivers of glowing orange water carve peaceful paths through the landscape. The sky is filled with floating plants and nocturnal birds whose calls echo in the calm open air. Among the most famous inhabitants is the Brambletail Mudscribe, a massive yet peaceful beaver-bear hybrid with a strong flat tail and the extraordinary ability to draw crude sketches in the earth to communicate. Panxes are also native here, and the local Emberling shimmers in purple. Despite its beauty, the Violet Expanse is known for sudden storms, hidden sinkholes, and massive underground burrowing creatures that make navigation unpredictable.">
-      <span class="wiki-tag">Location — Triome Biome</span>
-      <h3 class="wiki-name">Violet Expanse</h3>
-      <p class="wiki-latin"></p>
-      <p class="wiki-desc">Vast rolling plains of purple grasses, glowing orange rivers, and a sky full of nocturnal birds. Tranquil until it isn't.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Location — Triome Biome</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Violet Expanse</div>
+        
+      </div>
+      <div class="wiki-desc">Vast rolling plains of purple grasses, glowing orange rivers, and a sky full of nocturnal birds. Tranquil until it isn't.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal reveal-delay-2" data-category="location" data-name="Prism Barrens" data-latin="" data-tag="Location — Triome Biome" data-full="The third and most dangerous of the Triome's three biomes: a stunning yet treacherous desert of razor-sharp crystals that pulse in shades of turquoise, sapphire, and icy blues. Scattered across the horizon are towering crystalline rock formations, some naturally sculpted by the elements, others jagged and chaotic. The terrain is broken by deep crevices, hidden sinkholes, and shifting dunes of fine crystal dust, making navigation near-impossible. The most dangerous predator here is the Shardclaw — a territorial raptor-kangaroo hybrid covered in crystal scales that absorbs the properties of whatever crystal it consumes, making it unpredictable in the extreme. Gigantic Shardgliders, crystalline birds roughly the size of ostriches, drift silently overhead on translucent wings. The local Emberling glows deep blue and is covered in tiny crystal scales. Despite its dangers, the Prism Barrens hold rare and valuable resources, including high-energy crystals carefully harvested by goblins.">
-      <span class="wiki-tag">Location — Triome Biome</span>
-      <h3 class="wiki-name">Prism Barrens</h3>
-      <p class="wiki-latin"></p>
-      <p class="wiki-desc">A crystal desert of haunting beauty and serious danger. Razor-sharp formations, hidden crevices, and territorial predators.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Location — Triome Biome</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Prism Barrens</div>
+        
+      </div>
+      <div class="wiki-desc">A crystal desert of haunting beauty and serious danger. Razor-sharp formations, hidden crevices, and territorial predators.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal" data-category="location" data-name="The Institute for Juvenile Sleeping Disorders" data-latin="" data-tag="Location — Human World" data-full="Founded in 2008 in New York by Malcolm McHurst — a figure with deeper connections to the goblin Bureau than most of his patients ever learn. The Vienna chapter is where Helena's story begins: a sleep therapy practice that feels more like a lofty living room than a clinic, with a small kitchenette in the back and a large window overlooking the building's courtyard. The therapy group Helena joins here — unofficially known as the Nightmare Squad — becomes her first real found family. The Institute's methods, including the Mastery Dream technique, were developed in close collaboration with the goblin world, though this is not mentioned in the brochure.">
-      <span class="wiki-tag">Location — Human World</span>
-      <h3 class="wiki-name">The Institute</h3>
-      <p class="wiki-latin">Institute for Juvenile Sleeping Disorders — Vienna</p>
-      <p class="wiki-desc">Vienna's sleep therapy clinic for children. Where Helena finds the Nightmare Squad — and where everything begins.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Location — Human World</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">The Institute</div>
+        <div class="wiki-latin">Institute for Juvenile Sleeping Disorders — Vienna</div>
+      </div>
+      <div class="wiki-desc">Vienna's sleep therapy clinic for children. Where Helena finds the Nightmare Squad — and where everything begins.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <!-- VINABORG SHOPS -->
     <div class="wiki-card reveal reveal-delay-1" data-category="shop" data-name="Sprocket & Spindle Emporium" data-latin="" data-tag="Shop — Shadowlight Promenade, Vinaborg" data-full="The largest engineering and tinkering supply shop on Shadowlight Promenade, and arguably the most famous in Vinaborg. Sprocket & Spindle stocks everything a goblin engineer could need, from precision spanners and flux-stable pliers to low-grade glowflux cores, resonance coils, and snap-fuse casings. Their signature product, the Sprocket & Spindle Tinkering Chest (Glowflux Edition), is the definitive starter set for aspiring young engineers. Hand-assembled by master tinkerers, the chest includes a full brass-loop toolset, an assortment of building components, and a scroll roll of Glowflux Blueprint Sheets with step-by-step instructions for four foundational builds: the Glowgauge (a basic NE detector), the Wispwhirler (a dream-dust dispersal fan), the Buzzbug (a tiny insect automaton), and the Nodstone Pendulum (a dream residue detector). The most advanced blueprint, the Prismant Compass, is a hand-held directional emotional resonance analyzer that breaks down dream signatures into seven core emotions. The chest also includes the Dreamscript Harmonizer attachment, a device that decodes the symbolic script Helena's journal produces during dreamscrying.">
-      <span class="wiki-tag">Shop — Shadowlight Promenade</span>
-      <h3 class="wiki-name">Sprocket & Spindle</h3>
-      <p class="wiki-latin">Engineering Emporium</p>
-      <p class="wiki-desc">The definitive tinkering supply shop. If you need a part, a tool, or a blueprint, Sprocket & Spindle has it.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Shop — Shadowlight Promenade</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Sprocket & Spindle</div>
+        <div class="wiki-latin">Engineering Emporium</div>
+      </div>
+      <div class="wiki-desc">The definitive tinkering supply shop. If you need a part, a tool, or a blueprint, Sprocket & Spindle has it.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal reveal-delay-2" data-category="shop" data-name="The Nixie Vault" data-latin="" data-tag="Shop — Shadowlight Promenade, Vinaborg" data-full="A fancy gadget shop with a carefully curated selection of finished devices — less parts and blueprints, more complete, polished instruments ready for use. The Nixie Vault is known among Vinaborg residents for the quality of its stock and the impeccable presentation of its shop window, which has featured at various times a particularly coveted field harness and a rotating selection of rare instruments. If Sprocket & Spindle is where engineers go to build, the Nixie Vault is where they go to acquire something they couldn't build themselves.">
-      <span class="wiki-tag">Shop — Shadowlight Promenade</span>
-      <h3 class="wiki-name">The Nixie Vault</h3>
-      <p class="wiki-latin">Specialist Gadget Shop</p>
-      <p class="wiki-desc">A curated gadget shop with a great selection. Known for its shop window, which always has something worth stopping for.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Shop — Shadowlight Promenade</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">The Nixie Vault</div>
+        <div class="wiki-latin">Specialist Gadget Shop</div>
+      </div>
+      <div class="wiki-desc">A curated gadget shop with a great selection. Known for its shop window, which always has something worth stopping for.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal" data-category="shop" data-name="Twilight Threads" data-latin="" data-tag="Shop — Shadowlight Promenade, Vinaborg" data-full="A clothing shop on Shadowlight Promenade carrying a wide range of styles from across the nocturnal world. Twilight Threads is particularly well-regarded for its field attire — the harnesses, belted coats, and layered travel gear that goblin field units wear on assignment — as well as its more formal selections for official occasions. Drizzle's wardrobe is rumored to source from here exclusively, though he has not confirmed this. The shop also stocks accessories and specialty fabrics not easily found elsewhere in Vinaborg.">
-      <span class="wiki-tag">Shop — Shadowlight Promenade</span>
-      <h3 class="wiki-name">Twilight Threads</h3>
-      <p class="wiki-latin">Clothing & Attire</p>
-      <p class="wiki-desc">Clothing for every occasion, from field missions to formal events. The best-dressed goblins in Vinaborg shop here.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Shop — Shadowlight Promenade</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Twilight Threads</div>
+        <div class="wiki-latin">Clothing & Attire</div>
+      </div>
+      <div class="wiki-desc">Clothing for every occasion, from field missions to formal events. The best-dressed goblins in Vinaborg shop here.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal reveal-delay-1" data-category="shop" data-name="Flickerflask Alchemy" data-latin="" data-tag="Shop — Shadowlight Promenade, Vinaborg" data-full="Vinaborg's foremost alchemist and apothecary, located on Shadowlight Promenade. Flickerflask Alchemy stocks a full range of goblin compounds, from standard dream-mixing powders and serums to rarer alchemical preparations used in specialized engineering and nocturnal field work. The shop is best known for its dream-related compounds — including the Blowpuff Powder used in dream counseling sessions and the Lumenroot Serum applied for clarity and focus in high-sensitivity dreamwork. The proprietor is known to be particular about who they serve and what information they share about certain preparations.">
-      <span class="wiki-tag">Shop — Shadowlight Promenade</span>
-      <h3 class="wiki-name">Flickerflask Alchemy</h3>
-      <p class="wiki-latin">Alchemist & Apothecary</p>
-      <p class="wiki-desc">Vinaborg's alchemist. Dream compounds, nocturnal serums, and preparations you won't find anywhere else.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Shop — Shadowlight Promenade</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Flickerflask Alchemy</div>
+        <div class="wiki-latin">Alchemist & Apothecary</div>
+      </div>
+      <div class="wiki-desc">Vinaborg's alchemist. Dream compounds, nocturnal serums, and preparations you won't find anywhere else.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal reveal-delay-2" data-category="shop" data-name="The Drowsy Fawn" data-latin="" data-tag="Shop — Shadowlight Promenade, Vinaborg" data-full="A small, warm café on Shadowlight Promenade, named after the nocturnal creature. The Drowsy Fawn is the kind of place that feels exactly right the moment you sit down — dim amber lighting, the smell of nocturnal spices, and a menu that includes the Nocturnug Nog: a rich, almost chocolatey drink made from nocturnal ingredients that leaves a warm sensation in the mouth long after the last sip. Drizzle brings Helena here before a particularly significant event in Book 2. The café is a beloved institution on the Promenade, and the kind of place where important conversations tend to happen without anyone planning them.">
-      <span class="wiki-tag">Shop — Shadowlight Promenade</span>
-      <h3 class="wiki-name">The Drowsy Fawn</h3>
-      <p class="wiki-latin">Café</p>
-      <p class="wiki-desc">A warm, dim café on the Promenade. The Nocturnug Nog alone is worth the visit. Important conversations happen here.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Shop — Shadowlight Promenade</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">The Drowsy Fawn</div>
+        <div class="wiki-latin">Café</div>
+      </div>
+      <div class="wiki-desc">A warm, dim café on the Promenade. The Nocturnug Nog alone is worth the visit. Important conversations happen here.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <!-- TECHNOLOGY -->
     <div class="wiki-card reveal" data-category="technology" data-name="True Night Navigator" data-latin="Nocturnal Chrono-Positioner (NCP)" data-tag="Technology — Shilwani Field Guide" data-full="A device combining elements of a compass, planetary model, and timepiece to display the moment of True Night — the period of peak Nocturnal Energy. At its centre sits a golden sphere representing the sun. A small blue sphere on an elliptical track rotates around it, simulating Earth's position. A triangular bronze disk on top features a color gradient from light bronze to deep black, indicating the progression toward and away from True Night. The darkest point of the triangle marks the peak. Activated by Nocturnal Energy, the device is more than a clock. It can illuminate even the darkest places when overloaded with NE, and can interface with goblin machinery — including calling and directing transit wagons on the goblin underground network. Helena found it during a sleepwalk shortly after her family returned to Vienna. It had been in the possession of her grandfather, and Drizzle ensured it found its way back to her. As her control over her energy grows, the Navigator's capabilities grow with her.">
-      <span class="wiki-tag">Technology — Shilwani Field Guide</span>
-      <h3 class="wiki-name">True Night Navigator</h3>
-      <p class="wiki-latin">Nocturnal Chrono-Positioner (NCP)</p>
-      <p class="wiki-desc">Compass, timepiece, and planetary model in one. Tracks True Night, illuminates the dark, and interfaces with goblin machinery.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Technology — Shilwani Field Guide</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">True Night Navigator</div>
+        <div class="wiki-latin">Nocturnal Chrono-Positioner (NCP)</div>
+      </div>
+      <div class="wiki-desc">Compass, timepiece, and planetary model in one. Tracks True Night, illuminates the dark, and interfaces with goblin machinery.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal reveal-delay-1" data-category="technology" data-name="Goblin Specs" data-latin="Multifunctional Goblin Goggles" data-tag="Technology — Shilwani Field Guide" data-full="Multifunctional goggles that act simultaneously as sunglasses, night-vision lenses, and zoom scopes. They can also highlight active sources of Nocturnal Energy in the field, making them essential equipment for any goblin working above ground. Standard issue for all field units. The energy-highlight function responds unusually strongly in Helena's case — more so than in any goblin who has used them. Drizzle's pair are custom-modified with additional calibration dials. Without goblin specs, humans cannot perceive nocturnal creatures at all.">
-      <span class="wiki-tag">Technology — Shilwani Field Guide</span>
-      <h3 class="wiki-name">Goblin Specs</h3>
-      <p class="wiki-latin">Multifunctional Goblin Goggles</p>
-      <p class="wiki-desc">Sunglasses, night vision, zoom scope, and NE detector in one. Without them, humans see nothing. Standard field issue.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Technology — Shilwani Field Guide</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Goblin Specs</div>
+        <div class="wiki-latin">Multifunctional Goblin Goggles</div>
+      </div>
+      <div class="wiki-desc">Sunglasses, night vision, zoom scope, and NE detector in one. Without them, humans see nothing. Standard field issue.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal reveal-delay-2" data-category="technology" data-name="Dream Deck" data-latin="Dream Resonance Valve Board" data-tag="Technology — Shilwani Field Guide" data-full="A large valve-filled board for brewing dream mixtures with powders and liquids. The Dream Deck is the central workstation of any goblin dream engineer: a chemical programming interface through which pre-built dream routines are mixed with input variables — the dreamer's favourite people, places, fears, and memories — to produce a specific, personalised dream. Standard routines include Birthday Party, Adventure, and the more technically demanding Reconciliation. The dream mixing process has been compared, by Jilx Fluxspark, to cooking. Drizzle finds this analogy insulting. Every dream delivered to every sleeping human on Earth begins on a board like this.">
-      <span class="wiki-tag">Technology — Shilwani Field Guide</span>
-      <h3 class="wiki-name">Dream Deck</h3>
-      <p class="wiki-latin">Dream Resonance Valve Board</p>
-      <p class="wiki-desc">The goblin engineer's central workstation. Mixes dream routines with personal variables to produce a unique nightly dream.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Technology — Shilwani Field Guide</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Dream Deck</div>
+        <div class="wiki-latin">Dream Resonance Valve Board</div>
+      </div>
+      <div class="wiki-desc">The goblin engineer's central workstation. Mixes dream routines with personal variables to produce a unique nightly dream.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal" data-category="technology" data-name="Nightspark Gauge" data-latin="Nocturnal Radiance Indicator (NRI)" data-tag="Technology — Shilwani Field Guide" data-full="A pocket-watch device that measures and displays current Nocturnal Energy levels in real time. The gauge glows brighter as energy intensity increases, ranging from a faint pulse at baseline ambient levels to an almost blinding brilliance at peak True Night. The Nightspark Gauge is standard equipment for NE researchers, field engineers, and anyone working in environments where energy levels need monitoring. It is often worn alongside the True Night Navigator by serious field operatives.">
-      <span class="wiki-tag">Technology — Shilwani Field Guide</span>
-      <h3 class="wiki-name">Nightspark Gauge</h3>
-      <p class="wiki-latin">Nocturnal Radiance Indicator (NRI)</p>
-      <p class="wiki-desc">A pocket-watch device that measures Nocturnal Energy levels. Glows brighter as NE intensity increases.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Technology — Shilwani Field Guide</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Nightspark Gauge</div>
+        <div class="wiki-latin">Nocturnal Radiance Indicator (NRI)</div>
+      </div>
+      <div class="wiki-desc">A pocket-watch device that measures Nocturnal Energy levels. Glows brighter as NE intensity increases.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal reveal-delay-1" data-category="technology" data-name="Nightpetal" data-latin="Nocturnal Agile Biomechanical Airship" data-tag="Technology — Shilwani Field Guide" data-full="A silent goblin airship powered by biofuel and umbral crystals. The Nightpetal glides unseen through night skies for stealthy missions, making virtually no sound in operation. It is used for long-range field operations, extraction, supply runs, and any mission that requires aerial movement without detection. The Nightpetal is not standard equipment for most field units — it requires specialist piloting and is allocated only for operations that justify its use.">
-      <span class="wiki-tag">Technology — Shilwani Field Guide</span>
-      <h3 class="wiki-name">Nightpetal</h3>
-      <p class="wiki-latin">Nocturnal Agile Biomechanical Airship</p>
-      <p class="wiki-desc">A silent goblin airship powered by biofuel and umbral crystals. Glides unseen through night skies for stealthy operations.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Technology — Shilwani Field Guide</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Nightpetal</div>
+        <div class="wiki-latin">Nocturnal Agile Biomechanical Airship</div>
+      </div>
+      <div class="wiki-desc">A silent goblin airship powered by biofuel and umbral crystals. Glides unseen through night skies for stealthy operations.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal reveal-delay-2" data-category="technology" data-name="Glink" data-latin="Goblin Uplink Device" data-tag="Technology — Shilwani Field Guide" data-full="A bronzed handheld uplink device for goblin communications and data sharing. The Glink connects to the goblin communications network, allowing field operatives to send and receive information, access shared databases, and coordinate with other units in real time. It functions as the goblin equivalent of a smartphone, though considerably more robust and with a significantly longer battery life. Most active goblins carry one.">
-      <span class="wiki-tag">Technology — Shilwani Field Guide</span>
-      <h3 class="wiki-name">Glink</h3>
-      <p class="wiki-latin">Goblin Uplink Device</p>
-      <p class="wiki-desc">A bronzed handheld communications and data-sharing device. The goblin equivalent of a smartphone, and considerably sturdier.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Technology — Shilwani Field Guide</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Glink</div>
+        <div class="wiki-latin">Goblin Uplink Device</div>
+      </div>
+      <div class="wiki-desc">A bronzed handheld communications and data-sharing device. The goblin equivalent of a smartphone, and considerably sturdier.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal" data-category="technology" data-name="Vaporatrix Oneirum" data-latin="Dream Particle Filter" data-tag="Technology — Shilwani Field Guide" data-full="A bronzed cube that filters stray dream particles from the surrounding air. The Vaporatrix glows faintly in response to the emotions present in absorbed dreams — its light shifting in intensity and color based on what it is processing. It is primarily a research and monitoring instrument, used to track ambient dream residue in an area, detect the presence of recent dream activity, or analyse the emotional content of a space's dream history. In the hands of a sensitive operator, it can be surprisingly precise.">
-      <span class="wiki-tag">Technology — Shilwani Field Guide</span>
-      <h3 class="wiki-name">Vaporatrix Oneirum</h3>
-      <p class="wiki-latin">Dream Particle Filter</p>
-      <p class="wiki-desc">A bronzed cube that filters stray dream particles from the air. Glows in response to the emotions of absorbed dreams.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Technology — Shilwani Field Guide</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Vaporatrix Oneirum</div>
+        <div class="wiki-latin">Dream Particle Filter</div>
+      </div>
+      <div class="wiki-desc">A bronzed cube that filters stray dream particles from the air. Glows in response to the emotions of absorbed dreams.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal reveal-delay-1" data-category="technology" data-name="Rift Wristlet" data-latin="Quantum Destabilizer Bracelet" data-tag="Technology — Shilwani Field Guide" data-full="A wrist-worn device that emits a quantum beam capable of destabilizing surfaces at the molecular level. Creates temporary portals for quick passage through walls, floors, or other solid surfaces. The rift created by the device is stable for approximately thirty seconds before closing. Not recommended for use by anyone unfamiliar with the physics involved — or anyone who is not entirely certain what is on the other side.">
-      <span class="wiki-tag">Technology — Shilwani Field Guide</span>
-      <h3 class="wiki-name">Rift Wristlet</h3>
-      <p class="wiki-latin">Quantum Destabilizer Bracelet (QDB)</p>
-      <p class="wiki-desc">A wrist device that destabilizes surfaces and creates temporary portals. Lasts thirty seconds. Read the instructions first.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Technology — Shilwani Field Guide</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Rift Wristlet</div>
+        <div class="wiki-latin">Quantum Destabilizer Bracelet (QDB)</div>
+      </div>
+      <div class="wiki-desc">A wrist device that destabilizes surfaces and creates temporary portals. Lasts thirty seconds. Read the instructions first.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <!-- LORE -->
     <div class="wiki-card reveal reveal-delay-2" data-category="lore" data-name="Nocturnal Energy" data-latin="Energia Nocturna (NE)" data-tag="Rules & Lore" data-full="Nocturnal Energy is the natural force that powers the hidden world — the medium through which dreams are created, nocturnal creatures live, and goblin technology operates. It arises from the interaction between dreaming consciousness and the biological systems of nocturnal life, and serves as the substrate of the entire hidden world. NE is not passive. It responds to intention, emotional state, and cognitive coherence, which is why goblins — who lack any innate connection to it — compensate with engineering: brute-force energy input through gadgets and machinery. Helena is exceptional because she can sense, generate, and direct Nocturnal Energy through intention alone. This is essentially unheard of in a human. Dreams generate NE as a byproduct. Positive dreams create good energy; nightmares generate dark energy, which is stronger and attracts shadows. The Trispire Prismbloom and the Triome are among the most significant NE sources in the world.">
-      <span class="wiki-tag">Rules & Lore</span>
-      <h3 class="wiki-name">Nocturnal Energy</h3>
-      <p class="wiki-latin">Energia Nocturna (NE)</p>
-      <p class="wiki-desc">The force that powers the hidden world. Dreams generate it. Goblins engineer it. Helena is the only human who can direct it.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Rules & Lore</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Nocturnal Energy</div>
+        <div class="wiki-latin">Energia Nocturna (NE)</div>
+      </div>
+      <div class="wiki-desc">The force that powers the hidden world. Dreams generate it. Goblins engineer it. Helena is the only human who can direct it.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal" data-category="lore" data-name="True Night" data-latin="" data-tag="Rules & Lore" data-full="True Night is the moment when the sun is positioned at the exact opposite side of the Earth from the observer — the deepest, darkest point of the night. It is not a fixed time. In winter, when nights are longer, True Night falls roughly seven and a half hours after sunset. In summer, with shorter nights, it arrives around four and a half hours after sunset. At True Night, Nocturnal Energy flows at its highest intensity. Nocturnal creatures are more active and, if they have any sensitivity to NE, markedly more powerful. Dreams generated during True Night tend to be more vivid and intense. The True Night Navigator is the standard instrument for calculating the precise moment. The window of peak intensity lasts roughly one and a half to two hours, with the sharpest peak at the exact midpoint.">
-      <span class="wiki-tag">Rules & Lore</span>
-      <h3 class="wiki-name">True Night</h3>
-      <p class="wiki-latin"></p>
-      <p class="wiki-desc">The darkest moment of the night — when the sun is on the exact opposite side of the Earth. NE flows at peak intensity.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Rules & Lore</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">True Night</div>
+        
+      </div>
+      <div class="wiki-desc">The darkest moment of the night — when the sun is on the exact opposite side of the Earth. NE flows at peak intensity.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal reveal-delay-1" data-category="lore" data-name="Dreamscrying" data-latin="formerly Augury Dreaming" data-tag="Rules & Lore" data-full="Dreamscrying occurs when a dreamer has an exceptionally high sensitivity to Nocturnal Energy and enters a dream state that connects with a high concentration of NE in the world. In this state, the dreamer does not experience a manufactured or subconscious dream. Instead, they see what is actually happening — real events, played out through the medium of the dream. The dreamer is a passive observer, receptive to the energy rather than controlling it. Helena is the strongest known dreamscyer ever documented. In later stages of her training, she begins to develop the ability to direct her dreamscrying rather than simply receive it — a capacity that goes beyond anything in the existing records.">
-      <span class="wiki-tag">Rules & Lore</span>
-      <h3 class="wiki-name">Dreamscrying</h3>
-      <p class="wiki-latin">formerly Augury Dreaming</p>
-      <p class="wiki-desc">When a highly NE-sensitive dreamer enters a state that shows real events. Not a dream. Something much rarer.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Rules & Lore</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Dreamscrying</div>
+        <div class="wiki-latin">formerly Augury Dreaming</div>
+      </div>
+      <div class="wiki-desc">When a highly NE-sensitive dreamer enters a state that shows real events. Not a dream. Something much rarer.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal reveal-delay-2" data-category="lore" data-name="Dreamchase" data-latin="Vinaborg Dreamchase Circuit" data-tag="Rules & Lore — Goblin Sport" data-full="A competitive aerial sport originating in goblin societies, where participants simulate the nocturnal art of dream distribution. Equipped with steampunk-inspired wings, harnesses, and dream blasters, teams of three navigate elaborate obstacle courses designed to mimic real-life dream delivery challenges. The sport requires precision, speed, and strategy: fire dream globes into targets while evading dynamic obstacles, activating cloaking gadgets, and performing gliding parkour maneuvers. Each team has three specialized roles: the Wingflare (the main dreamcaster, responsible for shooting), the Globewright (the tinkerer, handling dream globe supply and obstacle management), and the Fogseer (the scout, equipped with enhanced Goblin Specs to evaluate terrain and manage stealth systems). Major events are held in Fountainheart Plaza. The two most famous teams in Vinaborg are the Ashbound Vanguard — experienced, established, reliable — and the Aether Sparks, who are younger, faster, and have a tendency toward spectacular risk.">
-      <span class="wiki-tag">Rules & Lore — Goblin Sport</span>
-      <h3 class="wiki-name">Dreamchase</h3>
-      <p class="wiki-latin">Vinaborg Dreamchase Circuit</p>
-      <p class="wiki-desc">Goblin aerial sport: steampunk wings, dream blasters, obstacle courses. Part sport, part spectacle. Vinaborg's favourite event.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Rules & Lore — Goblin Sport</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Dreamchase</div>
+        <div class="wiki-latin">Vinaborg Dreamchase Circuit</div>
+      </div>
+      <div class="wiki-desc">Goblin aerial sport: steampunk wings, dream blasters, obstacle courses. Part sport, part spectacle. Vinaborg's favourite event.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
     <div class="wiki-card reveal" data-category="lore" data-name="Oneirium" data-latin="" data-tag="Rules & Lore — Goblin Card Game" data-full="A goblin strategy card game played between two dreamshaper players. Each player builds a dream — assembling characters, emotions, situations, and settings — while attempting to disrupt their opponent's narrative. The goal is coherence: a well-constructed dream scores high, while internal contradictions and unresolved disturbances cause it to collapse. The game reflects the goblin world's deep understanding of dream architecture and emotional logic. Introduced in Book 2 and set to play a more significant role in Book 3. The card artwork, produced in Vinaborg, is widely collected.">
-      <span class="wiki-tag">Rules & Lore — Goblin Card Game</span>
-      <h3 class="wiki-name">Oneirium</h3>
-      <p class="wiki-latin"></p>
-      <p class="wiki-desc">The goblin strategy card game. Two dreamshaper players build and disrupt each other's dreams. Coherence wins. Collapse loses.</p>
+      <div class="wiki-card-meta">
+        <span class="wiki-tag">Rules & Lore — Goblin Card Game</span>
+      </div>
+      <div class="wiki-card-body">
+        <div class="wiki-name">Oneirium</div>
+        
+      </div>
+      <div class="wiki-desc">The goblin strategy card game. Two dreamshaper players build and disrupt each other's dreams. Coherence wins. Collapse loses.</div>
       <span class="wiki-more">Read more →</span>
     </div>
 
@@ -615,7 +751,7 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
     <div class="dream-type reveal"><h4 class="dream-name">Daydream</h4><p class="dream-desc">Possibly an unfinished engineered dream spilling into waking hours. Helena is a vivid daydreamer. Whether this is a cause or a symptom remains under investigation.</p><div class="dream-rarity"><div class="rarity-dot filled"></div><div class="rarity-dot"></div><div class="rarity-dot"></div><div class="rarity-dot"></div></div></div>
     <div class="dream-type reveal reveal-delay-1"><h4 class="dream-name">Lucid Dream</h4><p class="dream-desc">Consciously controlled by the dreamer. Rare. Trainable, to a degree. A building block for something far more significant.</p><div class="dream-rarity"><div class="rarity-dot filled"></div><div class="rarity-dot filled"></div><div class="rarity-dot filled"></div><div class="rarity-dot"></div></div></div>
     <div class="dream-type reveal reveal-delay-2" style="opacity:0.6"><h4 class="dream-name" style="color:var(--muted-text)">???</h4><p class="dream-desc" style="color:var(--muted-text)">The Vinaborg Dreamcraft Manual lists a seventh type. The entry is sealed. Access restricted to senior bureau members only.</p><div class="dream-rarity"><div class="rarity-dot" style="background:rgba(124,117,145,0.3)"></div><div class="rarity-dot" style="background:rgba(124,117,145,0.3)"></div><div class="rarity-dot" style="background:rgba(124,117,145,0.3)"></div><div class="rarity-dot" style="background:rgba(124,117,145,0.3)"></div></div></div>
-    <div class="dream-type reveal reveal-delay-3" style="opacity:0.6"><h4 class="dream-name" style="color:var(--muted-text)">???</h4><p class="dream-desc" style="color:var(--muted-text)">There are those who claim to have experienced something that fits none of the known categories. The bureau does not comment on this.</p><div class="dream-rarity"><div class="rarity-dot" style="background:rgba(124,117,145,0.3)"></div><div class="rarity-dot" style="background:rgba(124,117,145,0.3)"></div><div class="rarity-dot" style="background:rgba(124,117,145,0.3)"></div><div class="rarity-dot" style="background:rgba(124,117,145,0.3)"></div></div></div>
+
   </div>
 </section>
 
@@ -658,13 +794,13 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
 <!-- MODAL -->
 <div class="wiki-modal-overlay" id="wiki-modal-overlay">
   <div class="wiki-modal" id="wiki-modal">
-    <button class="wiki-modal-close" id="modal-close">✕</button>
-    <div class="modal-header">
+    <div class="modal-header" id="modal-header">
       <span id="modal-tag"></span>
       <h2 id="modal-name"></h2>
       <span id="modal-latin"></span>
+      <button class="wiki-modal-close" id="modal-close">✕</button>
     </div>
-    <div class="modal-divider" style="margin:1.5rem 2.5rem 0"></div>
+    <div class="modal-divider"></div>
     <div class="modal-body-content">
       <div id="modal-body"></div>
     </div>
@@ -713,12 +849,14 @@ const modalName=document.getElementById('modal-name');
 const modalLatin=document.getElementById('modal-latin');
 const modalBody=document.getElementById('modal-body');
 const modalClose=document.getElementById('modal-close');
+const modalHeader=document.getElementById('modal-header');
 
 const tagColors={creature:'#86efac',flora:'#a78bfa',location:'#d4a847',technology:'#2dd4bf',lore:'#c084fc',shop:'#fb923c'};
 
 cards.forEach(card=>{
   card.addEventListener('click',()=>{
     const cat=card.dataset.category;
+    modalHeader.className='modal-header modal-header-'+cat;
     modalTag.textContent=card.dataset.tag;
     modalTag.style.color=tagColors[cat]||'#2dd4bf';
     modalName.textContent=card.dataset.name;
@@ -728,7 +866,6 @@ cards.forEach(card=>{
     } else {
       modalLatin.style.display='none';
     }
-    // Format text into paragraphs
     const paras=card.dataset.full.split(/\n\n+/);
     modalBody.innerHTML=paras.map(p=>`<p>${p.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')}</p>`).join('');
     overlay.classList.add('open');
@@ -739,6 +876,7 @@ cards.forEach(card=>{
 function closeModal(){overlay.classList.remove('open');document.body.style.overflow=''}
 modalClose.addEventListener('click',closeModal);
 overlay.addEventListener('click',e=>{if(e.target===overlay)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 </script>
 </body>
