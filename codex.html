@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Nocturne Codex — Field Archive | The Helena Flinn Chronicles</title>
+<meta name="description" content="The Nocturne Codex: a classified field archive of creatures, flora, locations, technology, lore, and dream essences from the goblin world beneath Vienna.">
+<meta name="keywords" content="Nocturne Codex, Helena Flinn storyworld, goblin encyclopedia, dream essences, nocturnal creatures, Vinaborg, middle grade fantasy world">
+<meta name="author" content="Michael Sokolar">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://helenaflinn.com/codex">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Helena Flinn Chronicles">
+<meta property="og:url" content="https://helenaflinn.com/codex">
+<meta property="og:title" content="The Nocturne Codex — Field Archive">
+<meta property="og:description" content="A classified field archive of creatures, flora, locations, technology, lore, and dream essences from the goblin world beneath Vienna.">
+<meta property="og:image" content="https://raw.githubusercontent.com/littlelightsstudio/helenaflinn/main/images/books/hf1/hf1-ebook-cover.jpg">
+<meta property="og:locale" content="en_GB">
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z90VYGK9MP"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-Z90VYGK9MP');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --void: #08060f; --deep: #110d1f; --mid: #1c1430; --surface: #251b3d; --lift: #2f2450;
+  --teal: #2dd4bf; --teal-bright: #5eead4; --teal-dim: #0f766e;
+  --green: #86efac; --purple-light: #c084fc; --gold: #d4a847;
+  --cream: #f5f0e8; --warm: #e8e0d0; --pale: #f9f7f3; --stone: #d4cfc4; --muted-text: #7c7591;
+  --font-display: 'Cinzel', serif; --font-body: 'Crimson Pro', serif; --font-label: 'Josefin Sans', sans-serif;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+  --cat-creature: #86efac; --cat-flora: #c084fc; --cat-location: #d4a847;
+  --cat-technology: #2dd4bf; --cat-lore: #a78bfa; --cat-shop: #fb923c; --cat-essence: #fcd34d;
+  --cat-classified: #7c7591;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);background:var(--void);color:var(--cream);overflow-x:hidden}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--deep)}
+::-webkit-scrollbar-thumb{background:var(--teal-dim);border-radius:3px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 5vw;display:flex;align-items:center;justify-content:space-between;background:rgba(8,6,15,0.97);border-bottom:1px solid rgba(45,212,191,0.08)}
+.nav-logo{font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.25em;color:var(--teal);text-decoration:none;text-transform:uppercase}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-family:var(--font-label);font-size:0.65rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone);text-decoration:none;transition:color var(--transition)}
+.nav-links a:hover{color:var(--teal-bright)}
+
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse 70% 50% at 50% 20%,rgba(45,212,191,0.04) 0%,transparent 60%),
+  radial-gradient(ellipse 50% 70% at 15% 80%,rgba(192,132,252,0.05) 0%,transparent 50%),
+  radial-gradient(ellipse 40% 50% at 85% 60%,rgba(134,239,172,0.03) 0%,transparent 50%)}
+
+.particle{position:absolute;border-radius:50%;pointer-events:none;animation:floatUp linear infinite}
+@keyframes floatUp{0%{transform:translateY(100vh) rotate(0deg);opacity:0}10%{opacity:1}90%{opacity:0.5}100%{transform:translateY(-10vh) rotate(720deg);opacity:0}}
+
+/* HEADER */
+.codex-header{padding:9rem 5vw 2rem;position:relative;overflow:hidden}
+.codex-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 30%,rgba(45,212,191,0.06) 0%,transparent 60%),radial-gradient(ellipse 40% 60% at 20% 70%,rgba(192,132,252,0.05) 0%,transparent 50%),linear-gradient(180deg,var(--void) 0%,var(--deep) 100%)}
+#hero-particles{position:absolute;inset:0;overflow:hidden;z-index:0}
+.header-inner{position:relative;z-index:1;max-width:800px;margin:0 auto}
+
+/* TERMINAL */
+.terminal{background:rgba(8,6,15,0.8);border:1px solid rgba(45,212,191,0.2);border-radius:12px;overflow:hidden;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.terminal-bar{display:flex;align-items:center;gap:6px;padding:0.6rem 1rem;background:rgba(45,212,191,0.06);border-bottom:1px solid rgba(45,212,191,0.12)}
+.terminal-dot{width:8px;height:8px;border-radius:50%}
+.terminal-dot.r{background:rgba(220,60,60,0.5)}.terminal-dot.y{background:rgba(220,180,60,0.5)}.terminal-dot.g{background:rgba(60,200,120,0.5)}
+.terminal-title{font-family:'Courier New',monospace;font-size:0.5rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted-text);margin-left:0.75rem}
+.terminal-body{padding:1.25rem 1.5rem;font-family:'Courier New',monospace;font-size:0.8rem;line-height:1.9;color:var(--teal);min-height:180px}
+.terminal-line{opacity:0;transform:translateY(4px);transition:opacity 0.3s,transform 0.3s}
+.terminal-line.typed{opacity:1;transform:translateY(0)}
+.terminal-line .dim{color:var(--teal-dim)}
+.terminal-line .bright{color:var(--teal-bright)}
+.terminal-line .warn{color:var(--gold)}
+.terminal-line .muted{color:var(--muted-text)}
+.terminal-line .purple{color:var(--purple-light)}
+.terminal-prompt{display:flex;align-items:center;margin-top:0.4rem}
+.terminal-prompt .chevron{color:var(--teal-bright);margin-right:0.5rem;flex-shrink:0}
+.terminal-input{background:none;border:none;outline:none;font-family:'Courier New',monospace;font-size:0.8rem;color:var(--cream);flex:1;caret-color:var(--teal-bright)}
+.terminal-input::placeholder{color:rgba(45,212,191,0.25)}
+.terminal-result{margin-top:0.3rem;font-family:'Courier New',monospace;font-size:0.72rem;color:var(--muted-text);min-height:1.2em}
+
+/* CONTROLS */
+.controls{max-width:1100px;margin:0 auto;padding:1.5rem 5vw 2rem;position:relative;z-index:1}
+.filter-row{display:flex;flex-wrap:wrap;gap:0.5rem}
+.filter-btn{font-family:var(--font-label);font-size:0.48rem;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;
+  padding:0.4rem 0.9rem;border-radius:20px;border:1px solid rgba(45,212,191,0.15);
+  background:transparent;color:var(--stone);cursor:pointer;transition:all var(--transition)}
+.filter-btn:hover{border-color:rgba(45,212,191,0.35);color:var(--cream)}
+.filter-btn.active{border-color:var(--teal);background:rgba(45,212,191,0.1);color:var(--teal-bright)}
+.filter-count{opacity:0.5;margin-left:2px}
+
+/* GRID */
+.codex-grid{max-width:1100px;margin:0 auto;padding:0 5vw 4rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.25rem;position:relative;z-index:1}
+
+/* ENTRY CARD */
+.entry{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:1.5rem;position:relative;overflow:hidden;transition:border-color var(--transition),transform var(--transition),box-shadow var(--transition)}
+.entry:hover{border-color:var(--entry-color,rgba(45,212,191,0.3));transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,0.2),0 0 15px color-mix(in srgb,var(--entry-color,var(--teal)) 15%,transparent)}
+.entry::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--entry-color,var(--teal));opacity:0.6}
+.entry::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:var(--entry-color,var(--teal));filter:blur(6px);opacity:0.4;transition:opacity var(--transition)}
+.entry:hover::after{opacity:0.7}
+.entry-tag{font-family:var(--font-label);font-size:0.45rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--entry-color,var(--teal));margin-bottom:0.6rem;display:block}
+.entry-name{font-family:var(--font-display);font-size:0.85rem;font-weight:600;color:var(--cream);margin-bottom:0.2rem}
+.entry-latin{font-size:0.75rem;font-style:italic;color:var(--muted-text);margin-bottom:0.75rem}
+.entry-desc{font-size:0.9rem;line-height:1.7;color:var(--stone);font-weight:300}
+.entry-full{font-size:0.88rem;line-height:1.75;color:var(--warm);padding-top:0.75rem;border-top:1px solid rgba(255,255,255,0.06);
+  max-height:0;overflow:hidden;opacity:0;margin-top:0;transition:max-height 0.5s cubic-bezier(0.4,0,0.2,1),opacity 0.4s ease 0.1s,margin-top 0.3s}
+.entry.expanded .entry-full{max-height:600px;opacity:1;margin-top:0.75rem}
+.entry-toggle{font-family:var(--font-label);font-size:0.45rem;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal);cursor:pointer;margin-top:0.75rem;display:inline-block;transition:color var(--transition)}
+.entry-toggle:hover{color:var(--teal-bright)}
+
+/* CLASSIFIED */
+.entry.classified{opacity:0.5;cursor:default}
+.entry.classified::before{background:var(--cat-classified)}
+.entry.classified::after{display:none}
+.entry.classified:hover{transform:none;border-color:rgba(255,255,255,0.06);box-shadow:none}
+.entry-redacted{font-family:'Courier New',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--cat-classified);margin-top:0.5rem;padding:0.4rem 0.6rem;background:rgba(124,117,145,0.1);border:1px solid rgba(124,117,145,0.2);border-radius:4px;display:inline-block;animation:sealed-pulse 3s ease-in-out infinite}
+@keyframes sealed-pulse{0%,100%{opacity:0.5;border-color:rgba(124,117,145,0.2)}50%{opacity:0.8;border-color:rgba(124,117,145,0.4)}}
+.redact-bar{display:inline-block;background:var(--cat-classified);height:0.7em;border-radius:2px;vertical-align:middle;opacity:0.35;margin:0 2px}
+
+/* NO RESULTS */
+.no-results{grid-column:1/-1;text-align:center;padding:3rem;font-style:italic;color:var(--muted-text);font-size:1rem;display:none}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* BACK TO TOP */
+.back-top{position:fixed;bottom:2rem;right:2rem;width:36px;height:36px;border-radius:50%;
+  border:1px solid rgba(45,212,191,0.25);background:rgba(8,6,15,0.85);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--teal);font-size:0.8rem;text-decoration:none;
+  opacity:0;pointer-events:none;transition:all var(--transition);z-index:90;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.back-top.visible{opacity:1;pointer-events:auto}
+.back-top:hover{background:rgba(45,212,191,0.1);border-color:var(--teal);transform:translateY(-2px)}
+
+footer{text-align:center;padding:3rem 5vw;border-top:1px solid rgba(255,255,255,0.04)}
+footer a{font-family:var(--font-label);font-size:0.55rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted-text);text-decoration:none;transition:color var(--transition)}
+footer a:hover{color:var(--teal)}
+.footer-copy{font-family:var(--font-label);font-size:0.48rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.15);margin-top:1.5rem}
+
+@media(max-width:700px){
+  .codex-grid{grid-template-columns:1fr}
+  .nav-links{gap:1.5rem}
+  .stat-row{gap:1rem}
+}
+</style>
+</head>
+<body>
+<div id="top"></div>
+<div class="bg-glow"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Helena Flinn Chronicles</a>
+  <ul class="nav-links">
+    <li><a href="index.html#books">The Books</a></li>
+    <li><a href="codex.html" style="color:var(--teal-bright)">The Codex</a></li>
+    <li><a href="index.html#world-intro">The World</a></li>
+    <li><a href="index.html#about">The Author</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HEADER -->
+<header class="codex-header">
+  <div id="hero-particles"></div>
+  <div class="header-inner">
+    <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">The Nocturne Codex — Field Archive of the Helena Flinn Chronicles</h1>
+    <div class="terminal">
+      <div class="terminal-bar">
+        <div class="terminal-dot r"></div>
+        <div class="terminal-dot y"></div>
+        <div class="terminal-dot g"></div>
+        <span class="terminal-title">IBMDN — Bureau Archive Terminal</span>
+      </div>
+      <div class="terminal-body" id="terminal-body">
+        <div class="terminal-line" id="t0"><span class="dim">&gt;</span> IBMDN ARCHIVE SYSTEM <span class="muted">v4.7.2</span></div>
+        <div class="terminal-line" id="t1"><span class="dim">&gt;</span> Connecting to Vinaborg Central Records<span class="dim">...</span></div>
+        <div class="terminal-line" id="t2"><span class="dim">&gt;</span> <span class="bright">Connection established.</span></div>
+        <div class="terminal-line" id="t3"><span class="dim">&gt;</span> <span id="total-count">0</span> entries loaded. <span class="warn" id="classified-count">0</span> <span class="warn">sealed by senior council.</span></div>
+        <div class="terminal-line" id="t4"><span class="dim">&gt;</span> <span class="purple">The Nocturne Codex is a classified field archive maintained by the International Bureau for Matters of Day and Night. Compiled from expedition reports, laboratory records, and field journals.</span></div>
+        <div class="terminal-line" id="t5"><span class="dim">&gt;</span> Ready. Type to search the archive.</div>
+        <div class="terminal-prompt" id="t6">
+          <span class="chevron">&gt;</span>
+          <input class="terminal-input" id="search" type="text" placeholder="search..." autocomplete="off" autofocus>
+        </div>
+        <div class="terminal-result" id="terminal-result"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- CONTROLS -->
+<div class="controls">
+  <div class="filter-row" id="filters"></div>
+</div>
+
+<!-- GRID -->
+<div class="codex-grid" id="grid"></div>
+<div class="no-results" id="no-results">No entries match your search.</div>
+
+<noscript>
+  <div style="max-width:800px;margin:2rem auto;padding:2rem 5vw;text-align:center">
+    <p style="font-family:var(--font-body);font-size:1.1rem;color:var(--stone);font-style:italic">The Nocturne Codex requires JavaScript to access the Bureau archive. Please enable JavaScript to browse the field records.</p>
+  </div>
+</noscript>
+
+<footer>
+  <a href="index.html">Back to helenaflinn.com</a>
+  <p class="footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> Michael Sokolar / Little Lights Studio GmbH</p>
+</footer>
+
+<a href="#top" class="back-top" id="back-top" aria-label="Back to top">&#8593;</a>
+
+<script>
+// CODEX DATA — extracted from index.html
+let CODEX = [];
+
+fetch('codex-data.json')
+  .then(r => r.json())
+  .then(data => { CODEX = data; init(); })
+  .catch(e => { console.error('Failed to load codex data:', e); });
+
+const CAT_META = {
+  creature:   {label:'Fauna',      color:'#86efac'},
+  flora:      {label:'Flora',      color:'#c084fc'},
+  location:   {label:'Locations',  color:'#d4a847'},
+  technology: {label:'Technology', color:'#2dd4bf'},
+  lore:       {label:'Lore',       color:'#a78bfa'},
+  shop:       {label:'Vinaborg',   color:'#fb923c'},
+  essence:    {label:'Essences',   color:'#fcd34d'},
+};
+
+let activeFilter = 'all';
+
+function init() {
+  // Stats
+  const pub = CODEX.filter(e=>!e.classified).length;
+  const cls = CODEX.filter(e=>e.classified).length;
+  document.getElementById('total-count').textContent = CODEX.length;
+  document.getElementById('classified-count').textContent = cls;
+
+  // Boot sequence
+  const lines = ['t0','t1','t2','t3','t4','t5','t6'];
+  lines.forEach((id,i)=>{
+    setTimeout(()=>{
+      const el = document.getElementById(id);
+      if(el) el.classList.add('typed');
+    }, 300 + i*500);
+  });
+
+  // Filters
+  const frow = document.getElementById('filters');
+  const allBtn = mk('button','filter-btn active');
+  allBtn.textContent = 'All';
+  allBtn.dataset.cat = 'all';
+  allBtn.onclick = ()=> setFilter('all');
+  frow.appendChild(allBtn);
+
+  const cats = {};
+  CODEX.forEach(e=>{ cats[e.cat] = (cats[e.cat]||0)+1; });
+  Object.keys(CAT_META).forEach(cat=>{
+    if(!cats[cat]) return;
+    const b = mk('button','filter-btn');
+    b.innerHTML = CAT_META[cat].label + '<span class="filter-count">'+cats[cat]+'</span>';
+    b.dataset.cat = cat;
+    b.onclick = ()=> setFilter(cat);
+    frow.appendChild(b);
+  });
+
+  renderGrid();
+}
+
+function mk(tag,cls){const e=document.createElement(tag);e.className=cls;return e;}
+
+function setFilter(cat) {
+  activeFilter = cat;
+  document.querySelectorAll('.filter-btn').forEach(b=>{
+    b.classList.toggle('active', b.dataset.cat===cat);
+  });
+  document.getElementById('search').value = '';
+  renderGrid();
+  // Terminal echo
+  const label = cat==='all' ? 'All categories' : (CAT_META[cat]||{label:cat}).label;
+  updateTerminalResult('FILTER: ' + label);
+}
+
+function updateTerminalResult(msg) {
+  const el = document.getElementById('terminal-result');
+  el.textContent = '> ' + msg;
+}
+
+function renderGrid() {
+  const q = document.getElementById('search').value.toLowerCase().trim();
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  let count = 0;
+  let classifiedCount = 0;
+
+  CODEX.forEach((e,i) => {
+    if(activeFilter!=='all' && e.cat!==activeFilter) return;
+    if(q && !(e.name.toLowerCase().includes(q) || e.desc.toLowerCase().includes(q) || e.tag.toLowerCase().includes(q) || (e.full&&e.full.toLowerCase().includes(q)) || e.cat.toLowerCase().includes(q))) return;
+
+    count++;
+    if(e.classified) classifiedCount++;
+    const meta = CAT_META[e.cat] || {label:e.cat, color:'#7c7591'};
+    const card = mk('div', 'entry reveal' + (e.classified?' classified':''));
+    card.style.setProperty('--entry-color', e.classified ? 'var(--cat-classified)' : meta.color);
+
+    if(e.classified) {
+      card.innerHTML = `
+        <span class="entry-tag" style="color:var(--cat-classified)">Classified — ${meta.label}</span>
+        <div class="entry-name" style="color:var(--cat-classified)">${e.name}</div>
+        <div class="entry-desc">${e.desc}</div>
+        <div class="entry-redacted"><span class="redact-bar" style="width:60px"></span> Clearance Required <span class="redact-bar" style="width:40px"></span></div>
+      `;
+    } else {
+      card.innerHTML = `
+        <span class="entry-tag">${e.tag}</span>
+        <div class="entry-name">${e.name}</div>
+        ${e.latin ? '<div class="entry-latin">'+e.latin+'</div>' : ''}
+        <div class="entry-desc">${e.desc}</div>
+        ${e.full ? '<div class="entry-full">'+e.full+'</div><span class="entry-toggle">Read full entry →</span>' : ''}
+      `;
+    }
+    if(e.full && !e.classified) {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', function(){
+        this.classList.toggle('expanded');
+        const tog = this.querySelector('.entry-toggle');
+        if(tog) tog.textContent = this.classList.contains('expanded') ? 'Show less ↑' : 'Read full entry →';
+      });
+    }
+    grid.appendChild(card);
+  });
+
+  document.getElementById('no-results').style.display = count===0 ? 'block' : 'none';
+
+  // Terminal result feedback
+  if(q) {
+    const res = count===0 ? 'No matches found.' : count + ' result' + (count>1?'s':'') + ' found.' + (classifiedCount ? ' '+classifiedCount+' classified.' : '');
+    updateTerminalResult('SEARCH: "' + q + '" — ' + res);
+  } else if(activeFilter!=='all') {
+    const label = (CAT_META[activeFilter]||{label:activeFilter}).label;
+    updateTerminalResult('FILTER: ' + label + ' — ' + count + ' entries.' + (classifiedCount ? ' '+classifiedCount+' classified.' : ''));
+  } else {
+    updateTerminalResult('');
+    document.getElementById('terminal-result').textContent = '';
+  }
+
+  // Trigger reveal
+  setTimeout(()=>{
+    document.querySelectorAll('.entry.reveal:not(.visible)').forEach((el,i)=>{
+      setTimeout(()=>el.classList.add('visible'), i*40);
+    });
+  },50);
+}
+
+document.getElementById('search').addEventListener('input', renderGrid);
+
+// Particles
+const pc=document.getElementById('hero-particles');
+const colors=['rgba(45,212,191,0.5)','rgba(134,239,172,0.35)','rgba(192,132,252,0.25)','rgba(94,234,212,0.4)'];
+for(let i=0;i<20;i++){
+  const p=document.createElement('div');
+  p.className='particle';
+  const s=Math.random()*2.5+0.8;
+  p.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;background:${colors[Math.floor(Math.random()*colors.length)]};animation-duration:${Math.random()*14+10}s;animation-delay:${Math.random()*2}s;`;
+  pc.appendChild(p);
+}
+
+// Back to top
+window.addEventListener('scroll',function(){
+  document.getElementById('back-top').classList.toggle('visible',window.scrollY>400);
+});
+
+// init() is called by fetch('codex-data.json') callback
+</script>
+</body>
+</html>

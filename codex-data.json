@@ -1,0 +1,551 @@
+[
+  {
+    "cat": "creature",
+    "name": "Dusk Fawn",
+    "latin": "Capreolus Umbravorus",
+    "tag": "Fauna — Kornelius Flinn's Journal",
+    "full": "A small, elusive creature with the body of a goat and the facial features of a cat, topped with tiny elk antlers. Their vanta-black coloration allows them to vanish completely in the dark, where they uniquely feed by nibbling on shadows, leaving whimsical bite marks behind. Dusk Fawns are intelligent and aware, showing a remarkable capacity to understand and react to human speech. Despite their unusual diet, they are entirely harmless — affectionate, even, with those they choose to trust.",
+    "desc": "Cat-faced, goat-bodied, vanta-black. Devours shadows and leaves whimsical bite marks in the dark.",
+    "classified": false
+  },
+  {
+    "cat": "creature",
+    "name": "Emberling & Emberwing",
+    "latin": "Igniptera Luminaris",
+    "tag": "Fauna — Kornelius Flinn's Journal",
+    "full": "The Emberling is a tiny, winged creature with soft, ember-glowing fur and oversized bioluminescent ears. It flits soundlessly through the night air. Alone, an Emberling is merely a spark. In numbers, something remarkable happens: when enough gather, their intelligence grows and they form a hive mind, capable of extraordinary coordination through synchronized pulses of light. Given enough of them, this collective transforms entirely — merging into a single creature that takes the shape of another animal entirely. In the Violet Expanse, this merged form resembles a radiant, glowing phaseling. In the Gloomshade Canopy, it becomes a luminous forest creature of considerable size. In the Prism Barrens, it shimmers deep blue with crystal scales. The larger the gathering, the more intelligent and awe-inspiring the result. Emberlings are found only in places of deep natural balance.",
+    "desc": "Tiny glowing mammals that form a hive mind in numbers — and merge into a larger, radiant life form whose shape depends on where they gather.",
+    "classified": false
+  },
+  {
+    "cat": "creature",
+    "name": "Phaseling",
+    "latin": "Lepus Spectralis",
+    "tag": "Fauna — Kornelius Flinn's Journal",
+    "full": "A creature resembling a large rabbit with curved, ram-like ears and eyes that pulsate in shifting colors, reflecting its mood and energy levels. At rest, a Phaseling hops normally. When threatened, it becomes something else entirely: it moves so fast that the human eye cannot distinguish movement from sudden appearance in a new location. It does not so much run as phase from one point to another, warping the air around it as it goes. The name is apt. Phaselings are among the most difficult creatures in the nocturnal world to track, and essentially impossible to catch without specialized equipment.",
+    "desc": "Rabbit-like, ram-eared, with colour-shifting eyes. Moves so fast it seems to phase from one location to another.",
+    "classified": false
+  },
+  {
+    "cat": "creature",
+    "name": "Goliath Pebbler / Panx",
+    "latin": "Magnus Lapidarius",
+    "tag": "Fauna — Kornelius Flinn's Journal",
+    "full": "Colossal pangolin-like beasts the size of elephants or larger, clad in rock-textured scales that allow them to hibernate or hide in plain sight as enormous boulders. Goliath Pebblers are slow-moving herbivores, entirely harmless unless provoked. Their ability to morph into rock-like forms provides effective protection from predators and the harsh elements of the nocturnal wilderness. They are known colloquially as Panx in several regions. Their presence in an area is considered a reliable sign of ecological health — they do not settle in places where the balance has been disturbed.",
+    "desc": "Elephant-sized, pangolin-like herbivores that disguise themselves as boulders when resting.",
+    "classified": false
+  },
+  {
+    "cat": "creature",
+    "name": "Nightmare Leech",
+    "latin": "Nocturnalis Hirudo",
+    "tag": "Fauna — Hostile",
+    "full": "Shifting shadow-creatures that divide into multiple forms and grow stronger as they feed. Nightmare Leeches — also called Shadow Splitters — are parasitic entities that actively induce and spread nightmares, generating Nocturnal Energy for themselves to consume. Each feeding increases their mass and their capacity for division. A single Nightmare Leech, left unchecked, can split into dozens of instances within hours. They do not experience pain, do not negotiate, and do not stop. They have been imprisoned in the past — caged through means that are not fully understood and buried in hidden locations. They are exceptionally dangerous.",
+    "desc": "Shadow-creatures that spread nightmares to feed on the Nocturnal Energy they generate, and divide as they grow. They do not stop.",
+    "classified": false
+  },
+  {
+    "cat": "creature",
+    "name": "Wordwing Simian",
+    "latin": "Simiavis Verborum Collector",
+    "tag": "Fauna — Kornelius Flinn's Journal",
+    "full": "A creature that blends the agile body of a small monkey with broad, feathered wings. Wordwing Simians travel in loose groups through the twilight forests and underground passages of the nocturnal world, collecting fragments of human speech — words heard drifting through the barrier between the waking and sleeping worlds. They do not use these words to communicate. Instead, they release them in long, rhythmic chains as they move through the dark, weaving together sounds from different languages and different centuries into something that resembles speech but follows no grammar any linguist has successfully mapped. Whether they understand what they are saying is a question that has not been answered. Whether anyone should want to know is another.",
+    "desc": "Winged, monkey-like creatures that collect fragments of human speech and release them in eerie, rhythmic chains through the dark.",
+    "classified": false
+  },
+  {
+    "cat": "creature",
+    "name": "Nightwere",
+    "latin": "Lycanthropus Nocturnalis",
+    "tag": "Classified",
+    "full": "",
+    "desc": "Not a creature by birth. A condition. The bureau has flagged it. The full file is restricted. More will be known in time.",
+    "classified": true
+  },
+  {
+    "cat": "creature",
+    "name": "Prismglider",
+    "latin": "Aërocrystallus Volucris",
+    "tag": "Classified",
+    "full": "",
+    "desc": "Field file pending classification.",
+    "classified": true
+  },
+  {
+    "cat": "creature",
+    "name": "Nightstrider Stag",
+    "latin": "Noctivagus Cornutus — \"Night-Wandering Horned One\"",
+    "tag": "Classified",
+    "full": "",
+    "desc": "Access to field notes requires senior bureau clearance.",
+    "classified": true
+  },
+  {
+    "cat": "creature",
+    "name": "Shardclaw",
+    "latin": "Crypteraptor Crystallum — \"Hidden Thief of Crystal\"",
+    "tag": "Classified",
+    "full": "",
+    "desc": "Do not approach.",
+    "classified": true
+  },
+  {
+    "cat": "flora",
+    "name": "Trispire Prismbloom",
+    "latin": "Luminodendron Triformis",
+    "tag": "Flora — Kornelius Flinn's Journal",
+    "full": "An ancient and mysterious tree that serves as the heart of the Triomes, shaping and sustaining their three vastly different biomes. Towering over the landscape, this colossal tree possesses three distinct sections, each influencing the climate, flora, and fauna of the biome it borders. Instead of leaves, crystals grow from its sprawling branches, pulsating with an ethereal glow that reflects the energy of the surrounding lands. No one has ever witnessed a sapling of the Trispire Prismbloom, leading to theories that these trees do not grow in a conventional way but instead emerge through unknown or ancient forces. What is known is that the tree's death brings catastrophe, causing the Triomes it sustains to collapse, leading to widespread ecological destruction. Legends speak of past civilizations that thrived around these trees — including an ancient Triome that existed in Egypt during the time of the pyramids, until it mysteriously vanished. To the inhabitants of the nocturnal world, the Trispire Prismbloom is more than just a tree. It is a living force, a beacon of balance, and a symbol of both life and loss.",
+    "desc": "An ancient crystalline tree that sustains three biomes at once. No one has ever seen a sapling. If it dies, civilizations fall.",
+    "classified": false
+  },
+  {
+    "cat": "flora",
+    "name": "Wandering Willow",
+    "latin": "Vagans Salix",
+    "tag": "Flora — Kornelius Flinn's Journal",
+    "full": "Wandering Willows are majestic trees capable of slow, deliberate movement across the subterranean landscape. They drift through the underground caverns and forested biomes of the nocturnal world on a shallow root system that functions more like a slow walk than anything plant-like should. They are most commonly found in the Gloomshade Canopy, where they move between the great standing trees with an almost contemplative patience. They do not move quickly. In a single night, a Wandering Willow might travel a short distance, or none at all. But over weeks and months, they cover considerable ground, and the place you last saw one is rarely where you will find it again. They are revered in the nocturnal world as ancient guardians of balance and memory. Goblins do not disturb them.",
+    "desc": "A majestic, slow-moving tree that drifts through the underground caverns and forests. Revered as an ancient guardian of balance and memory.",
+    "classified": false
+  },
+  {
+    "cat": "flora",
+    "name": "Skydrift Bloom",
+    "latin": "Aeroluma Flos",
+    "tag": "Flora — Kornelius Flinn's Journal",
+    "full": "The Skydrift Bloom is a remarkable plant of the Violet Expanse, resembling a giant dandelion carried aloft by unseen currents. Its translucent, tentacle-like petals expand and contract in slow, jellyfish-like breaths, shifting in hue from violet to rose to deep indigo. The effect is hypnotic, painting the twilight sky with living lanterns. Often seen drifting in clusters, these blooms create aerial meadows that span miles. Periodically, they descend to the ground to exchange nutrients with the soil before rising once more. Harvesters must be patient — Skydrift Blooms collapse if handled roughly, so goblins usually wait for their natural descent. The pollen, when used in dream engineering, instills sensations of weightlessness, flight, and transcendence. Commonly found in dreams of escape, soaring freedom, and journeys into the unknown.",
+    "desc": "Drifts above the Violet Expanse on slow jellyfish-like breaths, shifting from violet to rose to deep indigo. Creates aerial meadows that span miles. Its pollen is used in dreams of flight and transcendence.",
+    "classified": false
+  },
+  {
+    "cat": "flora",
+    "name": "Tapberry",
+    "latin": "Pulsum Bacca",
+    "tag": "Flora — Vinaborg Field Kitchen Notes",
+    "full": "Tapberries grow from flowers that sprout directly on tree bark, and they respond to rhythmic tapping by producing vibrant, purple, grape-like fruits. The berries are juicy, distinctly salty, and glow with a deep purple hue. Steeping them produces a tea that has become one of the most widely enjoyed hot drinks in Vinaborg — beloved by goblins across all departments, from field units to senior engineers, and adopted with equal enthusiasm by the Nightmare . Whether it is the salt, the glow, or something subtler in the nocturnal energy the berries absorb, the tea has a way of making unfamiliar places feel immediately like home.",
+    "desc": "Bark-growing berries that ripen when tapped rhythmically. Juicy, salty, glowing purple. Brewed into a tea enjoyed by goblins and the Nightmare Squad alike — one of those rare things that makes an underground city feel like home.",
+    "classified": false
+  },
+  {
+    "cat": "location",
+    "name": "Vinaborg",
+    "latin": "",
+    "tag": "Location — Goblin City",
+    "full": "The goblin city beneath Vienna — one of the oldest Dreamcraft Factories in the world. Vinaborg is a full subterranean metropolis: residential structures that grow downward rather than upward, a network of underground transit — the goblin tubes — connecting to goblin settlements worldwide, and a dreamcraft manufactory that has been running continuously since before Vienna became Vienna. Key districts include Fountainheart Plaza, the city's grand central square with its steam-and-water fountain and main event space; Shadowlight Promenade, an older district of vintage shops and leisure; Steamward Heights, the office district; Everwonder Garden, a sprawling underground park; Brasshand Bend, the handcraft and tinkerer district; and Brightspire Arcadia, the education district with its grand central library. The Dreamcraft Manufactory is the city's heart — steamy, clockwork-precise, and running continuously since before Vienna became Vienna.",
+    "desc": "The goblin city beneath Vienna. A full subterranean metropolis — residential districts, underground railways, a tavern with more regulars than it should, and a factory at its heart that has been running since before Vienna existed above ground.",
+    "classified": false
+  },
+  {
+    "cat": "shop",
+    "name": "Fountainheart Plaza",
+    "latin": "The Vinaborg Atrium",
+    "tag": "Location — Vinaborg Central District",
+    "full": "The grand central square of Vinaborg — a wide, circular plaza at the heart of the city, built around a spectacular steam-and-water fountain that operates continuously. The fountain is fed by pressurized nocturnal water channels and throws jets of mist into the air, catching the glow of the surrounding lanterns and filling the plaza with a shifting, luminous haze. The plaza, as older residents still call it, is the social and civic hub of Vinaborg: the site of public announcements, celebrations, sporting spectacles, and the kind of unplanned gatherings that happen when goblins finish their shifts and don't feel like going home yet. The city's major thoroughfares converge here, making Fountainheart Plaza the place most visitors pass through first — and the place most residents return to often. The great goblin tube station entrance is here too, its arched iron gates flanked by rotating gear mechanisms that indicate the current departure platforms. On days when the factory runs a particularly successful night — high dream output, clean statistics, no incidents — the fountain pressure is increased as a mark of collective pride, and the jets reach twice their usual height.",
+    "desc": "The grand central square of Vinaborg, built around a continuous steam-and-water fountain. The civic heart of the city — where major thoroughfares meet, the goblin tube station begins, and no one is ever quite in a hurry to leave.",
+    "classified": false
+  },
+  {
+    "cat": "shop",
+    "name": "Vinaborg Dreamcraft Manufactory",
+    "latin": "Where dreams are made",
+    "tag": "Location — Vinaborg",
+    "full": "The dream factory at the heart of Vinaborg — and the reason the city exists at all. The Manufactory is where goblin engineers design, mix, and distribute dreams to the sleeping humans of Vienna and the surrounding region every single night. It has been running continuously for longer than Vienna itself has existed above ground.\\n\\nThe factory floor is a masterwork of goblin engineering: enormous mixing stations, rows of dream decks, pneumatic delivery systems, and a constant low hiss of pressurized Nocturnal Energy moving through the pipes. It is loud, it is warm, and it smells faintly of the essences being processed. Keenaacs Bustlespirit runs the floor with a precision that other factory supervisors study and largely despair of replicating.\\n\\nBeyond the floor, the Manufactory houses the R&D and Engineering division — Drizzle's territory — where new dream formulas are developed, tested, and argued over. Field units deploy from here each night. The director's office occupies the upper tier with a full view of the floor below, behind glass.\\n\\nHelena enters the Manufactory for the first time in Book 1. She is the first human to have been invited in. She is not, it turns out, the first human to have been here.",
+    "desc": "The dream factory at the heart of Vinaborg. Loud, warm, and running continuously since before Vienna existed. Every dream delivered to the city above originates here — on the floor, at the mixing stations, and in board meetings that shape the directive.",
+    "classified": false
+  },
+  {
+    "cat": "location",
+    "name": "The Triome",
+    "latin": "",
+    "tag": "Location — Nocturnal Wilderness",
+    "full": "One of the most mysterious and biologically diverse locations in the nocturnal world: an extraordinary region where three vastly different biomes exist side by side, their borders sharply defined yet interconnected by a singular ancient force. Unlike natural ecosystem transitions, the Triomes defy conventional geography — the moment one biome ends, another begins, complete with its own distinct climate, terrain, and ecology. No one has ever seen how a Triome forms. The three biomes are the Violet Expanse, vast rolling plains of purple grasses with glowing orange rivers; the Gloomshade Canopy, a bioluminescent rainforest of towering flora and elegant predators; and the Prism Barrens, a treacherous crystal desert of razor-sharp formations and formidable creatures. At the heart of each Triome stands the Trispire Prismbloom, the ancient tree that sustains all three biomes simultaneously. The Triome is a cradle of biodiversity, home to creatures and flora found nowhere else in the nocturnal world.",
+    "desc": "Three utterly different biomes existing side by side, sustained by a single ancient tree. Geography has no explanation for them.",
+    "classified": false
+  },
+  {
+    "cat": "location",
+    "name": "Gloomshade Canopy",
+    "latin": "",
+    "tag": "Location — Triome Biome",
+    "full": "A lush nocturnal rainforest perpetually bathed in dim, atmospheric light filtered through thick, intertwining branches. Instead of sunlight, glowing flora and luminescent fungi provide a mystical glow, casting soft, shifting colors across the jungle floor. Strange waterfall plants draw moisture from the air and release shimmering cascades, creating a constant symphony of trickling water in the deep jungle. The wildlife here is as elegant as it is elusive — home to the Nightstrider Stag and other creatures that have adapted to a life of shadow and mist. The Wandering Willow is native to this biome, drifting between the great trees on slow, deliberate roots. The local Emberling glows in shades of deep green, blending perfectly with the dense foliage. Despite its beauty, the Gloomshade Canopy can be treacherous: dense fogs, hidden predators, and twisting vines make it a challenging place for travelers who do not know its secrets.",
+    "desc": "A lush nocturnal rainforest teeming with bioluminescent flora and elusive fauna. Beautiful and treacherous in equal measure.",
+    "classified": false
+  },
+  {
+    "cat": "location",
+    "name": "Violet Expanse",
+    "latin": "",
+    "tag": "Location — Triome Biome",
+    "full": "A breathtaking landscape of endless rolling plains where hundreds of species of purple-hued grasses sway in tranquil, rhythmic motion. Hills break the horizon, while creeks and rivers of glowing orange water carve peaceful paths through the landscape. The sky is filled with floating plants and nocturnal birds whose calls echo in the calm open air. Panxes are native here, moving slowly and unbothered across the plains. The local Emberling shimmers in purple. Explorers report encountering creatures in the Violet Expanse that defy easy classification — some of considerable intelligence. Despite its apparent tranquility, the biome is known for sudden storms, hidden sinkholes, and things moving beneath the surface.",
+    "desc": "Vast rolling plains of purple grasses and glowing orange rivers. Panxes roam here. The locals report unusual inhabitants. Tranquil until it isn't.",
+    "classified": false
+  },
+  {
+    "cat": "location",
+    "name": "Prism Barrens",
+    "latin": "",
+    "tag": "Location — Triome Biome",
+    "full": "A stunning yet treacherous desert of razor-sharp crystals that pulse in shades of turquoise, sapphire, and icy blues. Towering crystalline formations rise from dunes of fine crystal dust. Deep crevices and hidden sinkholes make navigation near-impossible for the unprepared. The Prism Barrens hold rare and valuable resources — high-energy crystals that goblins harvest with great care and precision. What lives here has adapted to the crystal landscape in ways that are not fully catalogued. Field units that have passed through report encounters they are reluctant to describe in detail. The local Emberling glows deep blue and is covered in tiny crystal scales, making it nearly invisible against the terrain.",
+    "desc": "A crystal desert of haunting beauty and serious danger. Razor-sharp formations, hidden crevices, and territorial predators.",
+    "classified": false
+  },
+  {
+    "cat": "location",
+    "name": "The Institute for Juvenile Sleeping Disorders",
+    "latin": "Institute for Juvenile Sleeping Disorders — Vienna",
+    "tag": "Location — Human World",
+    "full": "Founded 2008 in New York by Malcolm McHurst. Relationship to the Bureau: on file. Not disclosed in the institute's public-facing materials.\\n\\nThe Vienna chapter was established in direct coordination with the Viennese IBMDN chapter — one of the oldest bureau operations in the world. The Mastery Dream technique, central to the institute's therapeutic methodology, was developed in collaboration with the Vinaborg Dreamcraft Manufactory's field counseling division. Attribution in the clinical literature is to McHurst. This is considered satisfactory by all parties.\\n\\nThe institute operates structured group therapy programs across multiple cohorts. Current Vienna enrollment: five active groups. One cohort has been flagged for elevated monitoring. Bureau field units have adjusted dream delivery schedules for all members accordingly.\\n\\nThe flagged group refers to itself informally as the Nightmare Squad. This designation is not used in bureau communications. It is noted here because the cohort's field profile is statistically anomalous. Dream receptivity scores across all six members exceed standard deviation thresholds. One member exceeds the threshold by a margin the bureau has not previously recorded in a civilian context. The Nightmare Squad is not the only group the institute has produced. It is the only one that required its own file.",
+    "desc": "Vienna Chapter — Surface-Level Partner Institution.",
+    "classified": false
+  },
+  {
+    "cat": "location",
+    "name": "Lúmorae-Vaen'Tri'vael",
+    "latin": "\"The Sanctuary of Unified Light\"",
+    "tag": "Classified",
+    "full": "",
+    "desc": "Location restricted. The bureau is still assessing.",
+    "classified": true
+  },
+  {
+    "cat": "shop",
+    "name": "Sprocket & Spindle Emporium",
+    "latin": "Engineering Emporium",
+    "tag": "Shop — Shadowlight Promenade, Vinaborg",
+    "full": "The largest engineering and tinkering supply shop on Shadowlight Promenade, and arguably the most famous in Vinaborg. Sprocket & Spindle stocks everything a goblin engineer could need, from precision spanners and flux-stable pliers to low-grade glowflux cores, resonance coils, and snap-fuse casings. Their signature product, the Sprocket & Spindle Tinkering Chest (Glowflux Edition), is the definitive starter set for aspiring young engineers. Hand-assembled by master tinkerers, the chest includes a full brass-loop toolset, an assortment of building components, and a scroll roll of Glowflux Blueprint Sheets with step-by-step instructions for four foundational builds: the Glowgauge (a basic NE detector), the Wispwhirler (a dream-dust dispersal fan), the Buzzbug (a tiny insect automaton), and the Nodstone Pendulum (a dream residue detector). The most advanced blueprint, the Prismant Compass, is sealed by the bureau and marked for further investigation.",
+    "desc": "The definitive tinkering supply shop. If you need a part, a tool, or a blueprint, Sprocket & Spindle has it.",
+    "classified": false
+  },
+  {
+    "cat": "shop",
+    "name": "The Nixie Vault",
+    "latin": "Specialist Gadget Shop",
+    "tag": "Shop — Shadowlight Promenade, Vinaborg",
+    "full": "A fancy gadget shop with a carefully curated selection of finished devices — less parts and blueprints, more complete, polished instruments ready for use. The Nixie Vault is known among Vinaborg residents for the quality of its stock and the impeccable presentation of its shop window, which has featured at various times a particularly coveted field harness and a rotating selection of rare instruments. If Sprocket & Spindle is where engineers go to build, the Nixie Vault is where they go to acquire something they couldn't build themselves.",
+    "desc": "A curated gadget shop with a great selection. Known for its shop window, which always has something worth stopping for.",
+    "classified": false
+  },
+  {
+    "cat": "shop",
+    "name": "Twilight Threads",
+    "latin": "Clothing & Attire",
+    "tag": "Shop — Shadowlight Promenade, Vinaborg",
+    "full": "A clothing shop on Shadowlight Promenade carrying a wide range of styles from across the nocturnal world. Twilight Threads is particularly well-regarded for its field attire — the harnesses, belted coats, and layered travel gear that goblin field units wear on assignment — as well as its more formal selections for official occasions. The shop also stocks accessories and specialty fabrics not easily found elsewhere in Vinaborg.\\n\\nA few years ago, the owners opened a dedicated section for modern and juvenile clothing — a deliberate departure from the shop's long-standing tradition of catering exclusively to established goblins. The decision was not universally welcomed by older regulars. The younger clientele, however, has been notably enthusiastic.",
+    "desc": "Clothing for every occasion, from field missions to formal events. Recently expanded to include a juvenile section — a quiet but deliberate break with tradition.",
+    "classified": false
+  },
+  {
+    "cat": "shop",
+    "name": "Flickerflask Alchemy",
+    "latin": "Alchemist & Apothecary",
+    "tag": "Shop — Shadowlight Promenade, Vinaborg",
+    "full": "Vinaborg's foremost alchemist and apothecary, located on Shadowlight Promenade. Flickerflask Alchemy stocks a full range of goblin compounds, from standard dream-mixing powders and serums to rarer alchemical preparations used in specialized engineering and nocturnal field work.\\n\\nThe shop maintains a discreet selection of single-use dreams — pre-mixed, sealed, and ready for immediate deployment. These are not catalogue items. They are available on request, to the right clientele, at the proprietor's discretion.\\n\\nThe proprietor is known to be particular about who they serve and what information they share about certain preparations.",
+    "desc": "Vinaborg's foremost alchemist and apothecary. Dream compounds, rare preparations, and an exquisite selection of single-use dreams — for those who know to ask.",
+    "classified": false
+  },
+  {
+    "cat": "shop",
+    "name": "The Drowsy Fawn",
+    "latin": "Café",
+    "tag": "Shop — Shadowlight Promenade, Vinaborg",
+    "full": "A small, warm café on Shadowlight Promenade, named after the nocturnal creature. The Drowsy Fawn is the kind of place that feels exactly right the moment you sit down — dim amber lighting, the smell of nocturnal spices, and a menu that includes the Nocturnug Nog: a rich, almost chocolatey drink made from nocturnal ingredients that leaves a warm sensation in the mouth long after the last sip.\\n\\nThe café is also one of Vinaborg's foremost Oneirium venues and has hosted several official Oneirium tournaments, and its back corner is considered by regulars to be one of the finest places in the city to study an opponent's emotional arc over a Nocturnug Nog.\\n\\nImportant conversations tend to happen here without anyone planning them. Whether that is the café's atmosphere or the Oneirium is a matter of ongoing debate.",
+    "desc": "A small, warm café on Shadowlight Promenade — and the unofficial home court of Vinaborg's most dedicated Oneirium players.",
+    "classified": false
+  },
+  {
+    "cat": "technology",
+    "name": "True Night Navigator",
+    "latin": "Nocturnal Chrono-Positioner (NCP)",
+    "tag": "Technology — Shilwani Field Guide",
+    "full": "A device combining elements of a compass, planetary model, and timepiece to display the moment of True Night — the period of peak Nocturnal Energy. At its centre sits a golden sphere representing the sun. A small blue sphere on an elliptical track rotates around it, simulating Earth's position. A triangular bronze disk on top features a color gradient from light bronze to deep black, indicating the progression toward and away from True Night. The darkest point of the triangle marks the peak. The device is activated by Nocturnal Energy — and responds to it. Its capabilities are not fixed. The more refined the NE source, the more the instrument reveals. What it can do at its upper limits has not been formally documented by the bureau.\\n\\nIt can also interface with goblin machinery, including calling and directing wagons on the goblin tubes. This function is listed in the technical specification as secondary. Field reports suggest it is anything but.",
+    "desc": "A hand-held instrument for detecting and navigating Nocturnal Energy — and one of the most sophisticated pieces of goblin engineering ever produced in a form small enough to carry.",
+    "classified": false
+  },
+  {
+    "cat": "technology",
+    "name": "Goblin Specs",
+    "latin": "Multifunctional Goblin Goggles",
+    "tag": "Technology — Shilwani Field Guide",
+    "full": "Multifunctional goggles that act simultaneously as sunglasses, night-vision lenses, and zoom scopes. They can also highlight active sources of Nocturnal Energy in the field, making them essential equipment for any goblin working above ground. Standard issue for all field units. The energy-highlight function responds unusually strongly in Helena's case — more so than in any goblin who has used them. Without goblin specs, humans cannot perceive nocturnal creatures at all.",
+    "desc": "Sunglasses, night vision, zoom scope, and NE detector in one. Without them, humans see nothing. Standard field issue.",
+    "classified": false
+  },
+  {
+    "cat": "technology",
+    "name": "Dream Deck",
+    "latin": "Dream Resonance Valve Board",
+    "tag": "Technology — Shilwani Field Guide",
+    "full": "A large valve-filled board for brewing dream mixtures with powders and liquids. The Dream Deck is the central workstation of any goblin dream engineer: a chemical programming interface through which pre-built dream routines are mixed with input variables — the dreamer's favourite people, places, fears, and memories — to produce a specific, personalised dream. Standard routines include Birthday Party, Adventure, and the more technically demanding Reconciliation.",
+    "desc": "The goblin engineer's central workstation. Mixes dream routines with personal variables to produce a unique nightly dream.",
+    "classified": false
+  },
+  {
+    "cat": "technology",
+    "name": "Nightspark Gauge",
+    "latin": "Nocturnal Radiance Indicator (NRI)",
+    "tag": "Technology — Shilwani Field Guide",
+    "full": "A pocket-watch device that measures Nocturnal Energy levels, storing the last significant spike for comparison and displaying current emissions as a soft, ambient glow. Standard equipment for NE researchers and field engineers.\\n\\nAt least one modified version is known to exist. Rather than displaying readings passively, it buzzes when NE reaches a specific threshold. What threshold, and why that one in particular, its owner has kept to themselves.",
+    "desc": "A pocket-watch device that measures Nocturnal Energy levels. At least one modified version exists.",
+    "classified": false
+  },
+  {
+    "cat": "technology",
+    "name": "Nightpetal",
+    "latin": "Nocturnal Agile Biomechanical Airship",
+    "tag": "Technology — Shilwani Field Guide",
+    "full": "A silent goblin airship powered by biofuel and umbral crystals. The Nightpetal glides unseen through night skies for stealthy missions, making virtually no sound in operation. It is used for long-range field operations, extraction, supply runs, and any mission that requires aerial movement without detection. The Nightpetal is not standard equipment for most field units — it requires specialist piloting and is allocated only for operations that justify its use.",
+    "desc": "A silent goblin airship powered by biofuel and umbral crystals. Glides unseen through night skies for stealthy operations.",
+    "classified": false
+  },
+  {
+    "cat": "technology",
+    "name": "Glink",
+    "latin": "Goblin Uplink Device",
+    "tag": "Technology — Shilwani Field Guide",
+    "full": "A compact bronzed device that plugs into a standard interface and provides access to the goblin network — the openly accessible portion of it, at least. Through a Glink, operatives can send and receive information, access shared catalogues, and coordinate in real time. Simple, reliable, and widely used. Most active field goblins carry one.",
+    "desc": "A compact uplink device that connects to the goblin network. Reliable. Widely carried. Plugs in, logs on, gets to work.",
+    "classified": false
+  },
+  {
+    "cat": "technology",
+    "name": "Dreamcatcher Cube",
+    "latin": "Vaporatrix Oneirum",
+    "tag": "Technology — Shilwani Field Guide",
+    "full": "A bronzed cube that filters stray dream particles from the surrounding air. The Vaporatrix glows faintly in response to the emotions present in absorbed dreams — its light shifting in intensity and color based on what it is processing. It is primarily a research and monitoring instrument, used to track ambient dream residue in an area, detect the presence of recent dream activity, or analyse the emotional content of a space's dream history. In the hands of a sensitive operator, it can be surprisingly precise.",
+    "desc": "A bronzed cube that filters stray dream particles from the air. Glows in response to the emotions of absorbed dreams.",
+    "classified": false
+  },
+  {
+    "cat": "technology",
+    "name": "Rift Wristlet",
+    "latin": "Quantum Destabilizer Bracelet",
+    "tag": "Technology — Shilwani Field Guide",
+    "full": "A wrist-worn device that emits a quantum beam capable of destabilizing surfaces at the molecular level. Creates temporary portals for quick passage through walls, floors, or other solid surfaces. The rift created by the device is stable for approximately thirty seconds before closing. Not recommended for use by anyone unfamiliar with the physics involved — or anyone who is not entirely certain what is on the other side.",
+    "desc": "A wrist device that destabilizes surfaces and creates temporary portals. Lasts thirty seconds. Read the instructions first.",
+    "classified": false
+  },
+  {
+    "cat": "technology",
+    "name": "Prismant Compass",
+    "latin": "Directional Emotional Resonance Analyzer",
+    "tag": "Classified",
+    "full": "",
+    "desc": "Listed as a beginner construct. Field applications suggest otherwise.",
+    "classified": true
+  },
+  {
+    "cat": "lore",
+    "name": "Nocturnal Energy",
+    "latin": "Energia Nocturna (NE)",
+    "tag": "Rules & Lore",
+    "full": "Nocturnal Energy is the natural force that powers the hidden world — the medium through which dreams are created, nocturnal creatures live, and goblin technology operates. It arises from the interaction between dreaming consciousness and the biological systems of nocturnal life, and serves as the substrate of the entire hidden world. NE is not passive. It responds to intention, emotional state, and cognitive coherence. Goblins have no innate connection to it — their genius lies in engineering systems that work with NE precisely and harmoniously, treating it with the same care and respect they bring to the natural world. A very small number of humans can sense NE. Fewer still can direct it. Dreams generate NE as a byproduct. Positive dreams create good energy; nightmares generate dark energy, which is stronger and attracts shadows. The Trispire Prismbloom and the Triome are among the most significant NE sources in the world.",
+    "desc": "The force that powers the hidden world. Dreams generate it. Goblins engineer it. A rare few humans can sense and direct it.",
+    "classified": false
+  },
+  {
+    "cat": "lore",
+    "name": "True Night",
+    "latin": "",
+    "tag": "Rules & Lore",
+    "full": "True Night is the moment when the sun is positioned at the exact opposite side of the Earth from the observer — the deepest, darkest point of the night. It is not a fixed time. In winter, when nights are longer, True Night falls roughly seven and a half hours after sunset. In summer, with shorter nights, it arrives around four and a half hours after sunset. At True Night, Nocturnal Energy flows at its highest intensity. Nocturnal creatures are more active and, if they have any sensitivity to NE, markedly more powerful. Dreams generated during True Night tend to be more vivid and intense. The True Night Navigator is the standard instrument for calculating the precise moment. The window of peak intensity lasts roughly one and a half to two hours, with the sharpest peak at the exact midpoint.",
+    "desc": "The darkest moment of the night — when the sun is on the exact opposite side of the Earth. NE flows at peak intensity.",
+    "classified": false
+  },
+  {
+    "cat": "lore",
+    "name": "Dreamscrying",
+    "latin": "",
+    "tag": "Rules & Lore",
+    "full": "Dreamscrying is the ability to connect to the Nocturnal Energy signature that a human emits while dreaming — and enter that dream. The dreamscyer observes from an elevated position, hovering over the dreamer within the dream itself, watching what unfolds without controlling or altering it. It is not a window onto the waking world. It is access to another person's dream, in real time. A small number of humans have some version of this ability.",
+    "desc": "The ability to connect to another human's NE signature and enter their dream — observing from above, hovering over the dreamer. A rare gift.",
+    "classified": false
+  },
+  {
+    "cat": "lore",
+    "name": "Dreamchase",
+    "latin": "Vinaborg Dreamchase Circuit",
+    "tag": "Rules & Lore — Goblin Sport",
+    "full": "A competitive aerial sport originating in goblin societies, where participants simulate the nocturnal art of dream distribution. Equipped with steampunk-inspired wings, harnesses, and dream blasters, teams of three navigate elaborate obstacle courses designed to mimic real-life dream delivery challenges. The sport requires precision, speed, and strategy: fire dream globes into targets while evading dynamic obstacles, activating cloaking gadgets, and performing gliding parkour maneuvers. Each team has three specialized roles: the Wingflare (the main dreamcaster, responsible for shooting), the Globewright (the tinkerer, handling dream globe supply and obstacle management), and the Fogseer (the scout, equipped with enhanced Goblin Specs to evaluate terrain and manage stealth systems). Major events are held in Fountainheart Plaza. The two most famous teams in Vinaborg are the Ashbound Vanguard — experienced, established, reliable — and the Aether Sparks, who are younger, faster, and have a tendency toward spectacular risk.",
+    "desc": "Goblin aerial sport: steampunk wings, dream blasters, obstacle courses. Part sport, part spectacle. Vinaborg's favourite event.",
+    "classified": false
+  },
+  {
+    "cat": "lore",
+    "name": "Oneirium",
+    "latin": "",
+    "tag": "Rules & Lore — Goblin Card Game",
+    "full": "A goblin strategy card game developed by dream engineers in Vinaborg as a controlled simulation of dream construction under pressure. Two dreamshapers face off across a shared board, each building a dream from characters, emotions, situations, and settings — while attempting to disrupt the narrative their opponent is assembling.\\n\\nThe goal is coherence: a well-constructed dream with emotionally resonant transitions scores high. Internal contradictions and unresolved disturbances degrade the Coherence Track. Reach zero and the dream collapses — an immediate loss.\\n\\nPlayers choose a Dream Discipline before the game begins, each with its own playstyle and identity: The Evokers build emotion-rich arcs; The Traversers play across non-linear space; The Realmatics pursue structural precision; The Harmonists seek balance and coherence; The Luminoquists chase surrealist wonder; The Dissonants play chaos and collapse pressure.\\n\\nThe card artwork, produced in Vinaborg, is widely collected. There are rumors that a playable version of Oneirium exists — the bureau neither confirms nor denies its involvement.",
+    "desc": "The goblin strategy card game. Two dreamshaper players build and disrupt each other's dreams. Coherence wins. Collapse loses.",
+    "classified": false
+  },
+  {
+    "cat": "lore",
+    "name": "Kragg'thak",
+    "latin": "The Goblin Tongue",
+    "tag": "Lore — Bureau Language Reference, Vol. IV",
+    "full": "Kragg'thak is the native language of goblin civilization — harsh, guttural, and built for precision. Its sounds recall clanking metal and hissing steam: frequent consonant clusters, sharp clipped syllables, tonal shifts that carry emotional weight without extra words. The grammar follows a subject-object-verb structure, adjectives stack before nouns, and verbs carry precision markers indicating certainty or ambiguity. Rune-based writing, designed for inscription on metal and stone. Plurality and tense are usually implied through context rather than stated — reducing redundancy is a virtue. The language reflects goblin culture: technical terms vastly outnumber words for abstract ideas, yet goblins adapt it fluidly for humor, camaraderie, and feeling. Common phrases: Krzz thraball (Steamy day to you — a warm greeting), Drikk flarrik (May your gears turn true — a farewell), Gruk-skrall (Loose bolt — an apology), Grik-thakk! (Steam-sparks! — surprise). Goblins regard Kragg'thak as built to command matter. Those who have heard it tend to agree.",
+    "desc": "The native language of goblin civilization. Harsh, guttural, and built for precision — its sounds recall clanking metal and hissing steam. Rune-based, grammar-efficient, and surprisingly expressive once you know what \"Grik-thakk!\" means.",
+    "classified": false
+  },
+  {
+    "cat": "lore",
+    "name": "Nocturnal Energy — Secondary Forms",
+    "latin": "Energia Nocturna (NE) — Addendum 3",
+    "tag": "Classified",
+    "full": "",
+    "desc": "This addendum is restricted pending ongoing field incidents.",
+    "classified": true
+  },
+  {
+    "cat": "lore",
+    "name": "Persistent Oneiric Domain",
+    "latin": "POD — Bureau Classification TBD",
+    "tag": "Classified",
+    "full": "",
+    "desc": "Classification ongoing. Entry is not granted — it is permitted.",
+    "classified": true
+  },
+  {
+    "cat": "lore",
+    "name": "Oneiric Phase Synchronization",
+    "latin": "OPS — Advanced Oneiric Technique",
+    "tag": "Classified",
+    "full": "",
+    "desc": "File sealed by order of bureau senior council.",
+    "classified": true
+  },
+  {
+    "cat": "lore",
+    "name": "Lúmoraeth",
+    "latin": "\"The Shape the Soul Remembers While Dreaming\"",
+    "tag": "Classified",
+    "full": "",
+    "desc": "What uses it is not yet confirmed.",
+    "classified": true
+  },
+  {
+    "cat": "essence",
+    "name": "Moonshade Dust",
+    "latin": "Base Solution — Calm · Serenity · Peace",
+    "tag": "Essences — Vinaborg Dreamcraft Laboratory",
+    "full": "**Effect:** Calm, serenity, peace. The foundational tranquilizer in dream engineering — the baseline against which everything else is measured. Used wherever a dream needs to settle, breathe, or resolve gently.\\n\\n**Source:** Extracted from the Moonshade Fern, a bioluminescent plant that thrives in total darkness. The fronds are harvested at peak glow, dried under controlled conditions, and ground into a fine luminescent powder with a characteristic soft silver shimmer. Low shelf life once opened — store in sealed nocturnal glass.\\n\\n**Note:** *Every apprentice dreamsmith learns Moonshade Dust on their first day. Most reach for it on their last. There is no shame in simplicity when simplicity works.* — Vinaborg Academy, Introductory Dreamcraft Practicum.",
+    "desc": "The foundational tranquilizer of dream engineering. Extracted from the Moonshade Fern. Fine silver-luminescent powder. Every dreamsmith learns this one first.",
+    "classified": false
+  },
+  {
+    "cat": "essence",
+    "name": "Dreamspore Dust",
+    "latin": "Logic Function — Choice · Branch · OR",
+    "tag": "Essences — Vinaborg Dreamcraft Laboratory",
+    "full": "**Effect:** Choice. The only confirmed essence capable of introducing a conditional branch into a dream template — a logic OR. The dreamer's own Nocturnal Energy, shaped unconsciously by intention, selects the branch whose emotional signature fits closest.\\n\\n**Source:** Ground from Dreamspore fungi — small, vivid blue mushrooms found in the deeper underground groves. Timing is critical: spores must be collected within minutes of the cap opening, or their branching properties are lost entirely. The resulting dust is an extraordinarily fine blue shimmer that disperses at the slightest air movement.\\n\\n**Note:** *A template with a Dreamspore branch is not two dreams. It is one dream that knows to ask a question. Design both paths as if only one will ever be needed — because for any given dreamer, only one will be.* — Dreamcraft Manual, 4th Ed., Chapter 11.",
+    "desc": "The only essence capable of introducing a conditional branch into a dream template. The dreamer's own NE selects the path. Extraordinarily fine blue shimmer — store with care.",
+    "classified": false
+  },
+  {
+    "cat": "essence",
+    "name": "Bellshade Powder",
+    "latin": "Emotional Modifier — Unpredictability · Surprise",
+    "tag": "Essences — Vinaborg Dreamcraft Laboratory",
+    "full": "**Effect:** Unpredictability. Introduces an element of surprise that the dreamer's subconscious cannot anticipate or pre-empt. Used to ensure a dream doesn't resolve too neatly — a hint of the unexpected before the landing.\\n\\n**Source:** Derived from the Bellshade plant, a low-growing species with dark purple bell-shaped flowers. Dried and milled flowerheads produce a powder that pulsates between shades of purple with a faint visible shimmer. Highly reactive to moisture — even a damp workbench can compromise a batch.\\n\\n**Note:** *Bellshade Powder is best used sparingly, like seasoning. Too little and a dream feels scripted. Too much and you've built something no one — including the dreamer — will see coming. The second outcome is not a compliment.* — Annotated margin note, Field Unit Handbook Vol. 3.",
+    "desc": "Introduces the element of surprise into a template. Dark purple powder from the Bellshade plant, pulsating between hues. Highly moisture-reactive. Use sparingly.",
+    "classified": false
+  },
+  {
+    "cat": "essence",
+    "name": "Lumenroot Serum",
+    "latin": "Base Solution — Clarity · Insight · Familiarity",
+    "tag": "Essences — Vinaborg Dreamcraft Laboratory",
+    "full": "**Effect:** Clarity and insight, with a secondary quality of grounding a dream in the recognizable. Used to create familiar environments and everyday situations — scenes a dreamer navigates without friction. Also used to establish the baseline setting before more complex elements are layered in.\\n\\n**Source:** A bright golden liquid with a warm glow, derived from Lumenroot — underground plants with roots that emit a gentle bioluminescent light. Harvested by careful extraction of the glowing sap. Stable shelf life; one of the more forgiving essences to work with.\\n\\n**Note:** *If a dream has no Lumenroot Serum anywhere in the mix, ask yourself why. You may be designing something more interesting. More likely, you are designing something that won't work.* — Third-year dreamcraft seminar notes, Vinaborg Academy.",
+    "desc": "Warm golden serum from the Lumenroot plant. Grounds a dream in the familiar — everyday settings, recognizable environments. The baseline before complexity is added.",
+    "classified": false
+  },
+  {
+    "cat": "essence",
+    "name": "Nightbloom Serum",
+    "latin": "Base Solution — Beauty · Calm · Serenity",
+    "tag": "Essences — Vinaborg Dreamcraft Laboratory",
+    "full": "**Effect:** Beauty, elegance, and deep calm. Enhances the aesthetic quality of a dream environment — tranquil waters, soothing landscapes, the feeling of arriving somewhere safe. Often used to close a dream sequence or to give a difficult template a gentle resolution.\\n\\n**Source:** A translucent liquid with a faint blue glow, obtained from Nightbloom Lilies — aquatic plants that float on dark underground ponds and open only at night. Their nectar is carefully drawn without disturbing the bloom. Delicate process; experienced harvesters only.\\n\\n**Note:** *Nightbloom Serum is the closest thing in the laboratory to silence. It does not add — it allows. Whatever you place it next to, it makes more of what it already is.* — Field notes, Keenaacs Bustlespirit, Factory Floor Supervisor.",
+    "desc": "Translucent blue serum from Nightbloom Lilies. Adds beauty and deep calm to any template. Often used to give a difficult dream sequence a gentle, peaceful resolution.",
+    "classified": false
+  },
+  {
+    "cat": "essence",
+    "name": "Clusterleaf Extract",
+    "latin": "Emotional Modifier — Unity · Harmony · Connection",
+    "tag": "Essences — Vinaborg Dreamcraft Laboratory",
+    "full": "**Effect:** Unity, harmony, interconnectedness. Creates a sense in the dreamer that everything within the dream belongs together — people, places, situations all feel part of the same coherent whole. Essential for group dreams and for any template that relies on emotional bonding between dream characters.\\n\\n**Source:** A clear green liquid with a faint glow, sourced from Clusterleaf ferns — plants that grow in bonded colonies, their roots interlocked into a single shared organism. The extract is drawn from the junction points where roots meet. Slight bitterness when handled; wear gloves.\\n\\n**Note:** *The goblins did not invent interconnectedness. They found a plant that already understood it and made a serum from its roots.* — Popular saying, Vinaborg Tavern district.",
+    "desc": "Clear green extract from colony-bonded Clusterleaf ferns. Makes everything in a dream feel connected — people, places, situations. Essential for group templates.",
+    "classified": false
+  },
+  {
+    "cat": "essence",
+    "name": "Nightlight Dew",
+    "latin": "Base Solution — Familiarity · Safety · Grounding",
+    "tag": "Essences — Vinaborg Dreamcraft Laboratory",
+    "full": "**Effect:** Familiarity. Makes the dreamer feel safe and grounded by recreating the emotional texture of environments from daily life — not specific places, but the feeling of them. School, home, a familiar street. The dreamer navigates without resistance.\\n\\n**Source:** A clear liquid with a soft green glow, collected from Nightlight Moss — a bioluminescent moss that carpets underground forest floors, absorbing ambient darkness and emitting a gentle light. Dew is collected in the deepest pre-dawn hours when yield is highest.\\n\\n**Note:** *Familiarity is not the same as comfort. Nightlight Dew tells the dreamer they know where they are. Whether they like being there is a separate question, answered by everything else in the mix.* — Dreamcraft Manual, 4th Ed., Chapter 4.",
+    "desc": "Collected from Nightlight Moss at pre-dawn. Instills the feeling of familiar, known environments — not specific places, but the emotional texture of them.",
+    "classified": false
+  },
+  {
+    "cat": "essence",
+    "name": "Murmurcap Essence",
+    "latin": "Emotional Modifier — Revealing · Discovering",
+    "tag": "Essences — Vinaborg Dreamcraft Laboratory",
+    "full": "**Effect:** Revealing and discovering. Introduces situations of uncovering — hidden knowledge, unexpected truths, the sense of suddenly understanding something. Frequently paired with other essences to give the moment of discovery an emotional colour.\\n\\n**Source:** A faint blue swirling liquid that emits a soft hum, extracted from Murmurcap fungi — also known as Whispering Shrooms, for the humming sound they produce as spores are released. Found growing in quiet alcoves of the underground forest. Harvesting must be done in near-silence, as vibration disrupts the extraction.\\n\\n**Note:** *Every properly designed dream has at least one moment where something is revealed. Murmurcap Essence does not decide what is found. It decides that finding matters.* — Introductory Dreamcraft Practicum, Year 1, Vinaborg Academy.",
+    "desc": "Faint blue humming liquid from the Whispering Shroom fungus. Introduces moments of uncovering and discovery. Harvest in silence — vibration disrupts the process.",
+    "classified": false
+  },
+  {
+    "cat": "essence",
+    "name": "Blowpuff Powder",
+    "latin": "Emotional Modifier — Confrontation · Resolve",
+    "tag": "Essences — Vinaborg Dreamcraft Laboratory",
+    "full": "**Effect:** Confrontation, approach, standing your ground. Introduces a quality of directness into a dream — the dreamer faces rather than avoids. Often paired with an unsettling situation to create the template structure of a mastery or counseling dream: here is the difficult thing, and here is the ability to meet it.\\n\\n**Source:** Soft green powder derived from the Blowpuff Shroom — a large, umbrella-shaped fungus with a gentle green glow, found in dark and damp underground groves. The spores are collected by careful percussion on the cap, which releases a controlled puff. Mild hallucinogenic if inhaled directly; standard laboratory protocols apply.\\n\\n**Note:** *Blowpuff Powder does not make a dreamer brave. It makes a dreamer willing to look.* — Clinical notes, Vienna Institute for Juvenile Sleeping Disorders, IBMDN reference archive.",
+    "desc": "Soft green powder from the Blowpuff Shroom. Introduces confrontation and the willingness to face difficult things. A cornerstone of counseling and mastery dream templates.",
+    "classified": false
+  },
+  {
+    "cat": "essence",
+    "name": "Moonpod Serum",
+    "latin": "Compound — Friendly · Pleasant · Welcoming",
+    "tag": "Essences — Vinaborg Dreamcraft Laboratory",
+    "full": "**Effect:** Friendly and welcoming. Creates warmth in interactions with dream characters — the feeling that others are genuinely glad you are there. Used to establish cooperative group dynamics and to make unfamiliar people feel safe and pleasant to be around.\\n\\n**Mixture:** Lumipod Gel combined with Moonbloom Essence — a compound preparation requiring a precise ratio. The resulting serum is a glowing soft silver liquid that emits a warm, inviting light. One of the more technically demanding essences to produce correctly; batch quality varies with seasonal Lumipod availability.\\n\\n**Note:** *Moonpod Serum is not a shortcut to emotional depth. It sets a tone. The dreamer fills in the rest. Do not mistake warmth for meaning — but do not underestimate warmth either.* — Dreamcraft Manual, 4th Ed., Chapter 7.",
+    "desc": "Lumipod Gel with Moonbloom Essence. Glowing soft silver serum that creates warmth and friendliness in dream interactions. One of the most used compounds in standard dream templates.",
+    "classified": false
+  },
+  {
+    "cat": "essence",
+    "name": "Phantasm Fungus Extract",
+    "latin": "Compound — Haunting · Creepy · Unsettling",
+    "tag": "Essences — Vinaborg Dreamcraft Laboratory",
+    "full": "**Effect:** Haunting and unsettling. Introduces ghostly atmosphere — spectral presences, eerie sounds, the feeling that something is watching from just outside the frame. Used in nightmare templates and in mastery dreams where the adversarial element needs genuine menace rather than simple danger.\\n\\n**Mixture:** Shadowcap Powder combined with Murmurcap Essence. The resulting extract is a dark shimmering powder that emits a faint haunting glow. The Murmurcap component gives it a quality of revelation — whatever is unsettling in this dream will not stay hidden long.\\n\\n**Note:** *There is a difference between frightening a dreamer and disturbing one. Phantasm Fungus Extract aims for the second. Use it when the dream needs something that lingers.* — Advanced Nightmare Engineering, Year 3 seminar notes, Vinaborg Academy.",
+    "desc": "Shadowcap Powder with Murmurcap Essence. Dark shimmering powder with a haunting glow. Introduces spectral atmosphere — the feeling that something lingers just outside the frame.",
+    "classified": false
+  },
+  {
+    "cat": "essence",
+    "name": "Darkvine Oil",
+    "latin": "Compound — Surprise · Suspense · Tension",
+    "tag": "Essences — Vinaborg Dreamcraft Laboratory",
+    "full": "**Effect:** Surprise — specifically the darker, more unsettling kind. Creates a suspenseful and tense atmosphere, keeping a dream on edge before a turn. Distinct from Bellshade Powder's unpredictability; Darkvine Oil introduces the sense that something is coming, not that something unexpected has arrived.\\n\\n**Mixture:** Abyssal Ivy Oil combined with Nightvein Vine Essence. A dark, viscous liquid with a slow-moving, ominous shimmer. Both base components are harvested from climbing vines — Abyssal Ivy from the deepest underground passages, Nightvein from roots parasitically attached to larger trees. Combine in a sealed vessel; the reaction produces a faint heat.\\n\\n**Note:** *Suspense is not fear. It is the space before fear. Darkvine Oil designs that space.* — Field Unit Handbook Vol. 3.",
+    "desc": "Abyssal Ivy Oil with Nightvein Vine Essence. Dark viscous oil with an ominous shimmer. Introduces the sense that something is coming — suspense before the turn.",
+    "classified": false
+  },
+  {
+    "cat": "essence",
+    "name": "Shadowbind Extract",
+    "latin": "Compound — Discomfort · Unease",
+    "tag": "Essences — Vinaborg Dreamcraft Laboratory",
+    "full": "**Effect:** Discomfort and unease. Not fear — something subtler. The feeling of being in a situation you would rather not be in, of something being slightly wrong in a way you cannot immediately name. Used in counseling dream templates to recreate the emotional texture of buried anxieties.\\n\\n**Mixture:** Venomvine Extract combined with Gloomspore Dust. A dark, thick liquid that emits a faint ghostly light. Both source plants are considered hazardous; extraction is a two-person procedure by laboratory protocol. Handle with documented caution.\\n\\n**Note:** *The discomfort Shadowbind Extract introduces is the point, not a side effect. A dream that doesn't ask anything of the dreamer is entertainment. This is not entertainment.* — Clinical notes, IBMDN Vienna chapter reference archive.",
+    "desc": "Venomvine Extract with Gloomspore Dust. Introduces discomfort — not fear, but the feeling that something is slightly wrong. Key ingredient in counseling dream templates.",
+    "classified": false
+  },
+  {
+    "cat": "essence",
+    "name": "Starblossom Nectar",
+    "latin": "Base Solution — Wonder · Awe · Amazement",
+    "tag": "Essences — Vinaborg Dreamcraft Laboratory",
+    "full": "**Effect:** Wonder and awe. Adds elements of the extraordinary — starlit skies, celestial phenomena, the sense of witnessing something that should not be possible and is. One of the oldest essences in continuous production at Vinaborg.\\n\\n**Source:** A sparkling clear liquid with tiny twinkling particles, harvested from Starblossoms — flowers that bloom only during the darkest hours of the night, their translucent petals emitting a gentle starlike twinkle. Blossoms must be collected at peak luminescence. Long shelf life; stable across most mixing conditions.\\n\\n**Note:** *Starblossom Nectar does not create wonder. It creates permission for it. The dreamer provides the rest from their own capacity for amazement — which, in children especially, is considerable.* — Wizzbeek Rocketvolt, Field Unit Kids Division, internal address.",
+    "desc": "Sparkling clear liquid from night-blooming Starblossoms. The essential ingredient for wonder and awe. One of the oldest essences in Vinaborg's continuous production. Stable. Reliable. Necessary.",
+    "classified": false
+  }
+]
