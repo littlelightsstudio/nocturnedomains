@@ -94,25 +94,30 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 5vw;display:f
 .codex-grid{max-width:1100px;margin:0 auto;padding:0 5vw 4rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.25rem;position:relative;z-index:1}
 
 /* ENTRY CARD */
-.entry{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:1.5rem;position:relative;overflow:hidden;transition:border-color var(--transition),transform var(--transition),box-shadow var(--transition)}
-.entry:hover{border-color:var(--entry-color,rgba(45,212,191,0.3));transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,0.2),0 0 15px color-mix(in srgb,var(--entry-color,var(--teal)) 15%,transparent)}
-.entry::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--entry-color,var(--teal));opacity:0.6}
-.entry::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:var(--entry-color,var(--teal));filter:blur(6px);opacity:0.4;transition:opacity var(--transition)}
-.entry:hover::after{opacity:0.7}
-.entry-tag{font-family:var(--font-label);font-size:0.45rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--entry-color,var(--teal));margin-bottom:0.6rem;display:block}
+.entry{background:rgba(255,255,255,0.015);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:0;position:relative;overflow:hidden;transition:border-color var(--transition),transform var(--transition),box-shadow var(--transition),background var(--transition)}
+.entry:hover{border-color:var(--entry-color,rgba(45,212,191,0.25));transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,0.25),0 0 20px color-mix(in srgb,var(--entry-color,var(--teal)) 10%,transparent)}
+.entry::before{content:'';position:absolute;top:0;left:0;width:140px;height:140px;background:radial-gradient(circle at top left,color-mix(in srgb,var(--entry-color,var(--teal)) 5%,transparent) 0%,transparent 70%);pointer-events:none}
+.entry-bar{display:flex;align-items:center;justify-content:space-between;padding:0.5rem 1.15rem;background:rgba(255,255,255,0.015);border-bottom:1px solid rgba(255,255,255,0.04)}
+.entry-tag{font-family:var(--font-label);font-size:0.42rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--entry-color,var(--teal))}
+.entry-ref{font-family:'Courier New',monospace;font-size:0.38rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-text);opacity:0.35}
+.entry-body{padding:1.15rem 1.25rem 1.25rem;position:relative}
+.entry-color-strip{position:absolute;top:0;left:0;width:2px;height:100%;background:var(--entry-color,var(--teal));opacity:0.4;transition:opacity var(--transition)}
 .entry-name{font-family:var(--font-display);font-size:0.85rem;font-weight:600;color:var(--cream);margin-bottom:0.2rem}
 .entry-latin{font-size:0.75rem;font-style:italic;color:var(--muted-text);margin-bottom:0.75rem}
 .entry-desc{font-size:0.9rem;line-height:1.7;color:var(--stone);font-weight:300}
-.entry-full{font-size:0.88rem;line-height:1.75;color:var(--warm);padding-top:0.75rem;border-top:1px solid rgba(255,255,255,0.06);
+.entry-full{font-size:0.88rem;line-height:1.75;color:var(--warm);padding-top:0.75rem;border-top:1px solid rgba(255,255,255,0.05);
   max-height:0;overflow:hidden;opacity:0;margin-top:0;transition:max-height 0.5s cubic-bezier(0.4,0,0.2,1),opacity 0.4s ease 0.1s,margin-top 0.3s}
-.entry.expanded .entry-full{max-height:600px;opacity:1;margin-top:0.75rem}
+.entry.expanded{background:rgba(255,255,255,0.025);border-color:var(--entry-color,rgba(45,212,191,0.2))}
+.entry.expanded .entry-full{max-height:800px;opacity:1;margin-top:0.75rem}
+.entry.expanded .entry-color-strip{opacity:0.75}
 .entry-toggle{font-family:var(--font-label);font-size:0.45rem;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal);cursor:pointer;margin-top:0.75rem;display:inline-block;transition:color var(--transition)}
 .entry-toggle:hover{color:var(--teal-bright)}
 
 /* CLASSIFIED */
-.entry.classified{opacity:0.5;cursor:default}
-.entry.classified::before{background:var(--cat-classified)}
-.entry.classified::after{display:none}
+.entry.classified{opacity:0.45;cursor:default}
+.entry.classified::before{display:none}
+.entry.classified .entry-color-strip{background:var(--cat-classified)}
+.entry.classified .entry-bar{background:rgba(124,117,145,0.04)}
 .entry.classified:hover{transform:none;border-color:rgba(255,255,255,0.06);box-shadow:none}
 .entry-redacted{font-family:'Courier New',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--cat-classified);margin-top:0.5rem;padding:0.4rem 0.6rem;background:rgba(124,117,145,0.1);border:1px solid rgba(124,117,145,0.2);border-radius:4px;display:inline-block;animation:sealed-pulse 3s ease-in-out infinite}
 @keyframes sealed-pulse{0%,100%{opacity:0.5;border-color:rgba(124,117,145,0.2)}50%{opacity:0.8;border-color:rgba(124,117,145,0.4)}}
@@ -308,20 +313,34 @@ function renderGrid() {
     const card = mk('div', 'entry reveal' + (e.classified?' classified':''));
     card.style.setProperty('--entry-color', e.classified ? 'var(--cat-classified)' : meta.color);
 
+    const ref = 'VBG-' + String(1000 + count).slice(-4) + '-' + e.cat.slice(0,2).toUpperCase();
+
     if(e.classified) {
       card.innerHTML = `
-        <span class="entry-tag" style="color:var(--cat-classified)">Classified — ${meta.label}</span>
-        <div class="entry-name" style="color:var(--cat-classified)">${e.name}</div>
-        <div class="entry-desc">${e.desc}</div>
-        <div class="entry-redacted"><span class="redact-bar" style="width:60px"></span> Clearance Required <span class="redact-bar" style="width:40px"></span></div>
+        <div class="entry-bar">
+          <span class="entry-tag" style="color:var(--cat-classified)">Classified — ${meta.label}</span>
+          <span class="entry-ref">${ref}</span>
+        </div>
+        <div class="entry-body">
+          <div class="entry-color-strip"></div>
+          <div class="entry-name" style="color:var(--cat-classified)">${e.name}</div>
+          <div class="entry-desc">${e.desc}</div>
+          <div class="entry-redacted"><span class="redact-bar" style="width:60px"></span> Clearance Required <span class="redact-bar" style="width:40px"></span></div>
+        </div>
       `;
     } else {
       card.innerHTML = `
-        <span class="entry-tag">${e.tag}</span>
-        <div class="entry-name">${e.name}</div>
-        ${e.latin ? '<div class="entry-latin">'+e.latin+'</div>' : ''}
-        <div class="entry-desc">${e.desc}</div>
-        ${e.full ? '<div class="entry-full">'+e.full+'</div><span class="entry-toggle">Read full entry →</span>' : ''}
+        <div class="entry-bar">
+          <span class="entry-tag">${e.tag}</span>
+          <span class="entry-ref">${ref}</span>
+        </div>
+        <div class="entry-body">
+          <div class="entry-color-strip"></div>
+          <div class="entry-name">${e.name}</div>
+          ${e.latin ? '<div class="entry-latin">'+e.latin+'</div>' : ''}
+          <div class="entry-desc">${e.desc}</div>
+          ${e.full ? '<div class="entry-full">'+e.full+'</div><span class="entry-toggle">Read full entry →</span>' : ''}
+        </div>
       `;
     }
     if(e.full && !e.classified) {
