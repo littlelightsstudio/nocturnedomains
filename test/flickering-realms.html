@@ -120,6 +120,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 5vw;display:f
 .nav-links{display:flex;gap:2.5rem;list-style:none}
 .nav-links a{font-family:var(--font-label);font-size:0.65rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone);text-decoration:none;transition:color var(--transition)}
 .nav-links a:hover{color:var(--teal-bright)}
+.hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px;z-index:101}
+.hamburger span{display:block;width:20px;height:1.5px;background:var(--teal);transition:all var(--transition)}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
 
 .bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;
   background:radial-gradient(ellipse 70% 50% at 50% 20%,rgba(45,212,191,0.04) 0%,transparent 60%),
@@ -224,7 +229,12 @@ footer a:hover{color:var(--teal)}
   .detail-grid{grid-template-columns:1fr}
   .next-book{flex-direction:column;text-align:center}
   .reviews-readers{grid-template-columns:1fr}
-  .nav-links{gap:1.5rem}
+  .hamburger{display:flex}
+  .nav-links{position:fixed;top:0;right:0;width:260px;height:100vh;background:rgba(8,6,15,0.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    flex-direction:column;padding:5rem 2rem 2rem;gap:2rem;border-left:1px solid rgba(45,212,191,0.1);
+    transform:translateX(100%);transition:transform var(--transition)}
+  .nav-links.open{transform:translateX(0)}
+  .nav-links a{font-size:0.75rem}
 }
 @media(max-width:550px){
   .hero-grid{grid-template-columns:1fr;text-align:center}
@@ -240,7 +250,8 @@ footer a:hover{color:var(--teal)}
 
 <nav>
   <a href="index.html" class="nav-logo">Helena Flinn Chronicles</a>
-  <ul class="nav-links">
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="nav-links">
     <li><a href="index.html#books">The Books</a></li>
     <li><a href="index.html#codex">The Codex</a></li>
     <li><a href="index.html#world-intro">The World</a></li>
@@ -399,6 +410,18 @@ footer a:hover{color:var(--teal)}
 
 <a href="#top" class="back-top" id="back-top" aria-label="Back to top">&#8593;</a>
 <script>
+// HAMBURGER
+document.getElementById('hamburger').addEventListener('click',function(){
+  this.classList.toggle('open');
+  document.getElementById('nav-links').classList.toggle('open');
+});
+document.querySelectorAll('#nav-links a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('nav-links').classList.remove('open');
+  });
+});
+
 window.addEventListener('scroll',function(){
   document.getElementById('back-top').classList.toggle('visible',window.scrollY>400);
 });
