@@ -92,6 +92,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 5vw;display:f
 .pdf-desc{font-size:0.8rem;color:var(--stone);line-height:1.5;font-weight:300;margin-bottom:0.75rem}
 .pdf-badge{font-family:var(--font-label);font-size:0.42rem;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted-text);padding:0.25rem 0.6rem;border:1px solid rgba(124,117,145,0.2);border-radius:3px;display:inline-block}
 
+/* BOOK TOGGLE */
+.book-toggle{display:flex;gap:0.5rem;margin-top:1.5rem;margin-bottom:0.5rem}
+.book-toggle-btn{font-family:var(--font-label);font-size:0.52rem;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;padding:0.5rem 1.2rem;border-radius:6px;border:1px solid rgba(45,212,191,0.15);background:transparent;color:var(--stone);cursor:pointer;transition:all var(--transition)}
+.book-toggle-btn:hover{border-color:rgba(45,212,191,0.35);color:var(--cream)}
+.book-toggle-btn.active{border-color:var(--teal);background:rgba(45,212,191,0.1);color:var(--teal-bright)}
+.seq-book{display:none}
+.seq-book.active{display:block}
+
 /* SEQUENCE GUIDE */
 .seq-list{margin-top:1.5rem}
 .seq-item{padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.04)}
@@ -115,7 +123,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 5vw;display:f
 .activity-name{font-family:var(--font-display);font-size:0.78rem;font-weight:400;color:var(--cream);margin-bottom:0.4rem}
 .activity-desc{font-size:0.88rem;color:var(--stone);line-height:1.65;font-weight:300}
 .activity-tags{display:flex;gap:0.4rem;margin-top:0.75rem;flex-wrap:wrap}
-.activity-tag{font-family:var(--font-label);font-size:0.4rem;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:20px;border:1px solid rgba(45,212,191,0.15);color:var(--stone)}
+.activity-tag{font-family:var(--font-label);font-size:0.5rem;font-weight:300;letter-spacing:0.12em;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:20px;border:1px solid rgba(45,212,191,0.15);color:var(--stone)}
 
 /* BUREAU ASIDE */
 .bureau-aside{font-size:0.78rem;font-style:italic;color:var(--muted-text);line-height:1.6;margin-top:1.5rem;padding-left:0.75rem;border-left:2px solid rgba(45,212,191,0.12)}
@@ -291,9 +299,16 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
     <span class="section-label">Field Debrief Protocols</span>
     <h2 class="section-heading">Discussion Guide by Narrative Sequence</h2>
     <div class="section-body">
-      <p>The novel is structured in <strong>eight narrative sequences</strong>. Each builds on the previous one. The following questions are designed to be used after students have completed each sequence.</p>
+      <p>Each book is structured in <strong>eight narrative sequences</strong>. The following questions are designed to be used after students complete each sequence. Select a book to view its discussion guide.</p>
     </div>
 
+    <div class="book-toggle">
+      <button class="book-toggle-btn active" onclick="toggleBook('b1')">Book 1: Secrets of the Night</button>
+      <button class="book-toggle-btn" onclick="toggleBook('b2')">Book 2: The Flickering Realms</button>
+    </div>
+
+    <!-- BOOK 1 SEQUENCES -->
+    <div class="seq-book active" id="seq-b1">
     <div class="seq-list">
       <div class="seq-item">
         <span class="seq-number">Sequence 1</span>
@@ -360,6 +375,77 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
         </ul>
       </div>
     </div>
+    </div>
+
+    <!-- BOOK 2 SEQUENCES -->
+    <div class="seq-book" id="seq-b2">
+    <div class="seq-list">
+      <div class="seq-item">
+        <span class="seq-number">Sequence 1</span>
+        <div class="seq-title">Placeholder: Opening Sequence Title</div>
+        <ul class="seq-questions">
+          <li>How has Helena's life changed since the events of Book 1? What is her relationship to both worlds now?</li>
+          <li>What does it mean to belong in two places at once?</li>
+        </ul>
+      </div>
+      <div class="seq-item">
+        <span class="seq-number">Sequence 2</span>
+        <div class="seq-title">Placeholder: Second Sequence Title</div>
+        <ul class="seq-questions">
+          <li>Placeholder: sequence-specific discussion question</li>
+          <li>What are the first signs that something is wrong with the dream system?</li>
+        </ul>
+      </div>
+      <div class="seq-item">
+        <span class="seq-number">Sequence 3</span>
+        <div class="seq-title">Placeholder: Third Sequence Title</div>
+        <ul class="seq-questions">
+          <li>Placeholder: sequence-specific discussion question</li>
+          <li>What does it mean to "master intention"? How is it different from how Helena used her abilities in Book 1?</li>
+        </ul>
+      </div>
+      <div class="seq-item">
+        <span class="seq-number">Sequence 4</span>
+        <div class="seq-title">Placeholder: Fourth Sequence Title</div>
+        <ul class="seq-questions">
+          <li>Placeholder: sequence-specific discussion question</li>
+          <li>How do the stakes feel different from Book 1? What has changed about the danger?</li>
+        </ul>
+      </div>
+      <div class="seq-item">
+        <span class="seq-number">Sequence 5</span>
+        <div class="seq-title">Placeholder: Fifth Sequence Title</div>
+        <ul class="seq-questions">
+          <li>Placeholder: sequence-specific discussion question</li>
+          <li>How do the characters rely on each other differently than in Book 1?</li>
+        </ul>
+      </div>
+      <div class="seq-item">
+        <span class="seq-number">Sequence 6</span>
+        <div class="seq-title">Placeholder: Sixth Sequence Title</div>
+        <ul class="seq-questions">
+          <li>Placeholder: sequence-specific discussion question</li>
+          <li>What does this sequence reveal about the nocturnal wilderness? How is it different from Vinaborg?</li>
+        </ul>
+      </div>
+      <div class="seq-item">
+        <span class="seq-number">Sequence 7</span>
+        <div class="seq-title">Placeholder: Seventh Sequence Title</div>
+        <ul class="seq-questions">
+          <li>Placeholder: sequence-specific discussion question</li>
+          <li>What does Helena learn about herself that she didn't know before?</li>
+        </ul>
+      </div>
+      <div class="seq-item">
+        <span class="seq-number">Sequence 8</span>
+        <div class="seq-title">Placeholder: Final Sequence Title</div>
+        <ul class="seq-questions">
+          <li>Placeholder: sequence-specific discussion question</li>
+          <li>The ending changes everything. Without spoiling it: how does the ending change what you thought the series was about?</li>
+        </ul>
+      </div>
+    </div>
+    </div>
 
     <div class="bureau-aside">Starting with Sequence 8 is not recommended and has historically produced confusion and, in at least one documented case, mild distress. The Bureau advises sequential progression.</div>
   </div>
@@ -399,9 +485,9 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
         <div class="stem-desc">Dream engineers use a steampunk valve board to mix essences with precision. Connects to: systems thinking, inputs and outputs, the scientific method, iterative design.</div>
       </div>
       <div class="stem-card">
-        <div class="stem-subject">Creative Writing</div>
-        <div class="stem-topic">Worldbuilding as Discipline</div>
-        <div class="stem-desc">The Nocturne Codex models how to build a fictional world systematically: classification, naming conventions, internal logic. Connects to: creative writing, taxonomy, research skills.</div>
+        <div class="stem-subject">Computational Thinking</div>
+        <div class="stem-topic">Dream Templates as Programming</div>
+        <div class="stem-desc">Building a dream with templates is programming in logic. Templates contain variables (emotions, objects, locations, situations) that are filled and combined using conditional rules. Connects to: logic, variables, templates, computational thinking, introductory programming concepts.</div>
       </div>
     </div>
 
@@ -513,6 +599,14 @@ document.querySelectorAll('#nav-links a').forEach(a=>{
     document.getElementById('nav-links').classList.remove('open');
   });
 });
+
+// BOOK TOGGLE
+function toggleBook(id) {
+  document.querySelectorAll('.seq-book').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.book-toggle-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('seq-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
 
 // BACK TO TOP
 window.addEventListener('scroll',function(){
