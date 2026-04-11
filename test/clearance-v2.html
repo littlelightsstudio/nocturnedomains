@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Vinaborg Visitor Classification — IBMDN | The Helena Flinn Chronicles</title>
+<meta name="description" content="All visitors to Vinaborg require bureau clearance. Complete your IBMDN classification assessment to receive your division assignment and field location.">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#08060f;--deep:#110d1f;--mid:#1c1430;--surface:#251b3d;
+  --teal:#2dd4bf;--teal-bright:#5eead4;--teal-dim:#0f766e;
+  --green:#86efac;--purple-light:#c084fc;--gold:#d4a847;
+  --cream:#f5f0e8;--warm:#e8e0d0;--stone:#d4cfc4;--muted-text:#948daa;
+  --font-display:'Cinzel',serif;--font-body:'Crimson Pro',serif;--font-label:'Josefin Sans',sans-serif;
+  --transition:0.3s cubic-bezier(0.4,0,0.2,1)
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--void);color:var(--cream);min-height:100vh;overflow-x:hidden}
+
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse 60% 50% at 50% 30%,rgba(45,212,191,0.04) 0%,transparent 60%),
+  radial-gradient(ellipse 50% 60% at 20% 70%,rgba(192,132,252,0.05) 0%,transparent 50%)}
+.particle{position:fixed;border-radius:50%;pointer-events:none;animation:floatUp linear infinite}
+@keyframes floatUp{0%{transform:translateY(100vh) rotate(0deg);opacity:0}10%{opacity:1}90%{opacity:0.5}100%{transform:translateY(-10vh) rotate(720deg);opacity:0}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 5vw;display:flex;align-items:center;justify-content:space-between;background:rgba(8,6,15,0.97);border-bottom:1px solid rgba(45,212,191,0.08)}
+.nav-logo{font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.25em;color:var(--teal);text-decoration:none;text-transform:uppercase}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-family:var(--font-label);font-size:0.65rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone);text-decoration:none;transition:color var(--transition)}
+.nav-links a:hover{color:var(--teal-bright)}
+.hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px;z-index:101}
+.hamburger span{display:block;width:20px;height:1.5px;background:var(--teal);transition:all var(--transition)}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+
+/* FORM CONTAINER */
+.form-wrap{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:7rem 2rem 4rem}
+.form-box{width:100%;max-width:580px;border:1px solid rgba(45,212,191,0.25);border-radius:3px;background:rgba(8,6,15,0.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);position:relative;overflow:hidden;transition:border-color var(--transition)}
+.form-box::before{content:'';position:absolute;inset:5px;border:1px solid rgba(45,212,191,0.08);border-radius:2px;pointer-events:none}
+
+/* FORM HEADER */
+.form-header{display:flex;justify-content:space-between;align-items:flex-start;padding:1.5rem 2rem 0}
+.form-org{font-family:var(--font-label);font-size:0.58rem;font-weight:400;letter-spacing:0.35em;text-transform:uppercase;color:var(--teal);opacity:0.85}
+.form-id{font-family:'Courier New',monospace;font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal);opacity:0.5}
+
+/* FORM BODY */
+.form-body{padding:1.5rem 2rem 2rem}
+.form-title{font-family:var(--font-display);font-size:clamp(1.3rem,3.5vw,1.8rem);font-weight:400;letter-spacing:0.05em;color:var(--cream);line-height:1.25;margin-bottom:0.3rem}
+.form-title span{background:linear-gradient(135deg,var(--teal-bright),var(--green),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.form-subtitle{font-family:var(--font-label);font-size:0.6rem;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;color:var(--stone);margin-bottom:2rem}
+
+.form-stamps{display:flex;gap:1.5rem;margin-bottom:1.75rem}
+.stamp{font-family:'Courier New',monospace;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:0.4rem}
+.stamp-dot{width:6px;height:6px;border-radius:50%;border:1.5px solid var(--teal)}
+
+.form-context{font-size:0.95rem;font-style:italic;color:var(--stone);line-height:1.7;margin-bottom:0.5rem}
+.form-note{font-size:0.85rem;font-style:italic;color:var(--muted-text);line-height:1.6;margin-bottom:2rem}
+
+/* BUTTONS */
+.btn-begin{font-family:var(--font-label);font-size:0.68rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--void);background:var(--teal);border:none;padding:1rem 2.5rem;cursor:pointer;transition:all var(--transition);clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);width:100%}
+.btn-begin:hover{background:var(--teal-bright);box-shadow:0 8px 30px rgba(45,212,191,0.3)}
+
+/* PROGRESS BAR */
+.progress-bar-wrap{padding:0 2rem;margin-top:1rem}
+.progress-bar-track{display:flex;gap:4px;margin-bottom:0.25rem}
+.progress-pip{flex:1;height:3px;border-radius:2px;background:rgba(45,212,191,0.12);transition:background var(--transition)}
+.progress-pip.filled{background:var(--teal)}
+.progress-pip.current{background:var(--teal-bright);box-shadow:0 0 6px rgba(45,212,191,0.4)}
+.progress-label{font-family:'Courier New',monospace;font-size:0.6rem;letter-spacing:0.15em;color:var(--teal);margin-top:0.5rem;display:flex;justify-content:space-between;align-items:center}
+.progress-label-field{color:var(--cream);font-family:var(--font-label);font-size:0.65rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase}
+
+/* QUESTION STATE */
+.form-question{font-size:1.1rem;font-style:italic;color:var(--cream);line-height:1.7;margin-bottom:1.75rem}
+.answer-list{list-style:none;display:flex;flex-direction:column;gap:0.75rem}
+.answer-btn{width:100%;text-align:left;padding:1rem 1.25rem;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:8px;font-family:var(--font-body);font-size:0.95rem;color:var(--cream);cursor:pointer;transition:all var(--transition);line-height:1.55}
+.answer-btn:hover{border-color:var(--teal);color:var(--cream);background:rgba(45,212,191,0.04);transform:translateX(4px)}
+
+/* PROCESSING STATE */
+.processing{text-align:center;padding:3rem 0}
+.processing-text{font-family:'Courier New',monospace;font-size:0.7rem;color:var(--teal);letter-spacing:0.1em;animation:pulse-text 1.5s ease-in-out infinite}
+@keyframes pulse-text{0%,100%{opacity:0.4}50%{opacity:1}}
+
+/* RESULT STATE */
+.result-hero{width:100%;height:200px;position:relative;overflow:hidden}
+.result-hero-grad{position:absolute;inset:0}
+.result-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.result-hero-overlay{position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(to top,rgba(8,6,15,0.95),transparent)}
+.result-hero-title{position:absolute;bottom:1.25rem;left:2rem;right:2rem;z-index:1}
+.result-hero-title h2{font-family:var(--font-display);font-size:clamp(1.4rem,3.5vw,2rem);font-weight:400;letter-spacing:0.06em;color:var(--cream);margin-bottom:0.3rem}
+.result-hero-title .result-classification{font-family:var(--font-label);font-size:0.45rem;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;color:var(--teal)}
+
+.result-wrap{padding:1.75rem 2rem 2rem}
+
+.result-location{padding:1rem 1.25rem;background:rgba(45,212,191,0.03);border-left:2px solid var(--teal-dim);border-radius:0 8px 8px 0;margin-bottom:1.75rem}
+.result-loc-name{font-family:var(--font-display);font-size:0.72rem;font-weight:600;color:var(--cream);margin-bottom:0.4rem}
+.result-assignment{font-size:0.92rem;color:var(--stone);line-height:1.75;font-weight:400}
+
+.result-dossier{font-size:0.92rem;font-style:italic;color:var(--warm);line-height:1.75;margin-bottom:1.25rem}
+.result-footnote{font-size:0.82rem;font-style:italic;color:var(--muted-text);line-height:1.6;padding-left:0.75rem;border-left:2px solid rgba(45,212,191,0.12);margin-bottom:2rem}
+
+/* NEWSLETTER */
+.result-nl{padding:1.5rem;background:rgba(45,212,191,0.03);border:1px solid rgba(45,212,191,0.12);border-radius:8px;margin-bottom:1.75rem}
+.result-nl-head{font-family:var(--font-display);font-size:0.6rem;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.5rem}
+.result-nl-body{font-size:0.82rem;color:var(--stone);font-style:italic;line-height:1.6;margin-bottom:1rem}
+.nl-row{display:flex;gap:0.5rem}
+.nl-input{flex:1;background:var(--surface);border:1px solid rgba(45,212,191,0.18);border-radius:6px;padding:0.6rem 0.8rem;font-family:var(--font-body);font-size:0.85rem;color:var(--cream);outline:none}
+.nl-input::placeholder{color:var(--muted-text);font-style:italic}
+.nl-input:focus{border-color:var(--teal)}
+.nl-btn{font-family:var(--font-label);font-size:0.5rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.6rem 1.2rem;background:var(--teal);color:var(--void);border:none;border-radius:6px;cursor:pointer;transition:background var(--transition)}
+.nl-btn:hover{background:var(--teal-bright)}
+.nl-small{font-size:0.7rem;color:var(--muted-text);font-style:italic;margin-top:0.5rem}
+.nl-success{color:var(--teal);font-style:italic;font-size:0.85rem;display:none}
+
+/* SHARE BLOCK */
+.share-block{padding:1.5rem;background:rgba(45,212,191,0.02);border:1px solid rgba(45,212,191,0.1);border-radius:8px;margin-bottom:1.75rem}
+.share-nudge{font-size:0.92rem;font-style:italic;color:var(--warm);line-height:1.6;margin-bottom:0.6rem}
+.share-instructions{font-size:0.82rem;color:var(--stone);line-height:1.6;margin-bottom:1.25rem}
+
+/* ACTION BUTTONS */
+.result-actions{display:flex;gap:0.75rem;margin-bottom:0.5rem}
+.action-btn{display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.65rem 1.1rem;border-radius:6px;border:1px solid rgba(45,212,191,0.2);background:transparent;color:var(--teal);cursor:pointer;transition:all var(--transition);font-family:var(--font-label);font-size:0.52rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase}
+.action-btn:hover{border-color:var(--teal);background:rgba(45,212,191,0.06)}
+.action-btn.copied{border-color:var(--green);color:var(--green)}
+.action-btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.action-btn-primary{flex:1;padding:0.8rem 1rem;background:rgba(45,212,191,0.06);border-color:rgba(45,212,191,0.3)}
+.action-btn-primary:hover{background:rgba(45,212,191,0.12);border-color:var(--teal)}
+
+/* RESTART */
+.restart-link{display:block;text-align:center;font-family:var(--font-label);font-size:0.5rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted-text);cursor:pointer;transition:color var(--transition);border:1px solid rgba(255,255,255,0.08);background:none;padding:0.75rem 2rem;border-radius:6px;width:100%}
+.restart-link:hover{color:var(--teal);border-color:rgba(45,212,191,0.2)}
+
+/* EXPORT CARD (hidden, rendered offscreen for html2canvas) */
+.export-card{position:fixed;left:-9999px;top:0;z-index:-1;font-family:'Crimson Pro',Georgia,serif;color:#f5f0e8;overflow:hidden}
+
+/* PRINT DOSSIER */
+@media print{
+  body{font-family:'Crimson Pro',Georgia,serif;font-size:12pt;line-height:1.6;background:white !important;color:#1a1020 !important}
+  nav,.bg-glow,.particle,.form-wrap,footer,.export-card{display:none !important}
+  .print-dossier{display:block !important;max-width:650px;margin:0 auto;padding:0.5cm 1.5cm 2cm}
+  .print-hero{width:100%;height:180px;object-fit:cover;border-radius:4px;margin-bottom:1.5rem;display:block !important}
+  .print-header{text-align:center;padding-bottom:1rem;margin-bottom:1.5rem;border-bottom:2px solid #0f766e}
+  .print-org{font-family:'Josefin Sans',sans-serif;font-size:7pt;letter-spacing:0.4em;text-transform:uppercase;color:#0f766e !important}
+  .print-title{font-family:'Cinzel',serif;font-size:22pt;margin:0.5rem 0 0.25rem;color:#1a1020 !important}
+  .print-class{font-family:'Josefin Sans',sans-serif;font-size:7pt;letter-spacing:0.3em;text-transform:uppercase;color:#0f766e !important}
+  .print-ref{font-family:'Courier New',monospace;font-size:7pt;letter-spacing:0.15em;color:#948daa !important;margin-top:0.5rem}
+  .print-section{margin-bottom:1.5rem}
+  .print-section-label{font-family:'Josefin Sans',sans-serif;font-size:7pt;letter-spacing:0.3em;text-transform:uppercase;color:#0f766e !important;margin-bottom:0.5rem;border-bottom:1px solid #d4e8e4;padding-bottom:0.3rem}
+  .print-section p{font-size:11pt;line-height:1.75;color:#2e2840 !important}
+  .print-section strong{color:#1a1020 !important;font-family:'Cinzel',serif;font-size:10pt}
+  .print-footnote{font-size:9pt;font-style:italic;color:#0f766e !important;border-left:3px solid #0f766e;padding-left:0.75rem;margin-top:1.5rem}
+  .print-seal-row{display:flex !important;align-items:center;justify-content:center;gap:0.75rem;margin-top:2rem;padding-top:1rem;border-top:1px solid #d4e8e4}
+  .print-seal-row svg{width:28px;height:28px}
+  .print-seal-row svg circle,.print-seal-row svg line{stroke:#0f766e !important}
+  .print-watermark{text-align:center;margin-top:1.5rem;font-family:'Josefin Sans',sans-serif;font-size:6pt;letter-spacing:0.5em;text-transform:uppercase;color:#d4e8e4 !important}
+  .print-footer{text-align:center;margin-top:0.75rem;font-family:'Josefin Sans',sans-serif;font-size:7pt;letter-spacing:0.2em;color:#948daa !important}
+}
+.print-dossier{display:none}
+.print-hero{display:none}
+
+/* FOOTER */
+footer{text-align:center;padding:2rem 5vw;position:relative;z-index:1}
+footer a{font-family:var(--font-label);font-size:0.5rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted-text);text-decoration:none;transition:color var(--transition)}
+footer a:hover{color:var(--teal)}
+
+@media(max-width:800px){
+  .hamburger{display:flex}
+  .nav-links{position:fixed;top:0;right:0;width:260px;height:100vh;background:rgba(8,6,15,0.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    flex-direction:column;padding:5rem 2rem 2rem;gap:2rem;border-left:1px solid rgba(45,212,191,0.1);
+    transform:translateX(100%);transition:transform var(--transition)}
+  .nav-links.open{transform:translateX(0)}
+  .nav-links a{font-size:0.75rem}
+  .form-body{padding:1.25rem 1.5rem 1.75rem}
+  .form-header{padding:1.25rem 1.5rem 0}
+  .result-wrap{padding:1.25rem 1.5rem 1.75rem}
+  .form-stamps{gap:0.75rem;flex-wrap:wrap}
+  .result-actions{flex-direction:column}
+  .action-btn-primary{width:100%}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div id="particles"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo">Helena Flinn Chronicles</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="../index.html#books">The Books</a></li>
+    <li><a href="../index.html#codex">The Codex</a></li>
+    <li><a href="../index.html#world-intro">The World</a></li>
+    <li><a href="../faq.html">FAQ</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="form-wrap">
+  <div class="form-box" id="form-box">
+    <!-- INTRO STATE -->
+    <div id="state-intro">
+      <div class="form-header">
+        <span class="form-org">IBMDN</span>
+        <span class="form-id">Form VC-08</span>
+      </div>
+      <div class="form-body">
+        <h1 class="form-title">Pre-Departure<br><span>Clearance Assessment</span></h1>
+        <div class="form-subtitle">Vinaborg Visitor Classification</div>
+        <div class="form-stamps">
+          <span class="stamp"><span class="stamp-dot"></span> Mandatory</span>
+          <span class="stamp"><span class="stamp-dot"></span> 8 fields</span>
+          <span class="stamp"><span class="stamp-dot"></span> Do not skip</span>
+        </div>
+        <p class="form-context">Your request to enter Vinaborg has been received. Before the Bureau can issue a visitor pass and field assignment, you must complete this classification assessment.</p>
+        <p class="form-context">Eight questions. Your answers will determine your clearance level, division assignment, and where in the nocturnal world you will be directed.</p>
+        <p class="form-note">There are no wrong answers. There are, however, answers the Bureau finds notable.</p>
+        <button class="btn-begin" onclick="startQuiz()">Begin Assessment &rarr;</button>
+      </div>
+    </div>
+
+    <!-- QUESTION STATE -->
+    <div id="state-question" style="display:none">
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-track" id="progress-track"></div>
+        <div class="progress-label">
+          <span id="q-counter">Field 01 of 08</span>
+          <span class="progress-label-field" id="q-field-name"></span>
+        </div>
+      </div>
+      <div class="form-body">
+        <p class="form-question" id="q-text"></p>
+        <ul class="answer-list" id="q-answers"></ul>
+      </div>
+    </div>
+
+    <!-- PROCESSING STATE -->
+    <div id="state-processing" style="display:none">
+      <div class="form-header">
+        <span class="form-org">IBMDN</span>
+        <span class="form-id">Processing</span>
+      </div>
+      <div class="form-body">
+        <div class="processing">
+          <p class="processing-text">Your responses are being processed by the<br>Vinaborg Classification Bureau. Please stand by.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULT STATE -->
+    <div id="state-result" style="display:none">
+      <div class="result-hero" id="r-hero">
+        <div class="result-hero-grad" id="r-hero-grad"></div>
+        <img class="result-hero-img" id="r-hero-img" src="" onerror="this.style.display='none'" alt="">
+        <div class="result-hero-overlay"></div>
+        <div class="result-hero-title">
+          <div class="result-classification" id="r-class"></div>
+          <h2 id="r-title"></h2>
+        </div>
+      </div>
+      <div class="form-header" style="padding-top:1rem">
+        <span class="form-org">IBMDN — Classification Complete</span>
+        <span class="form-id" id="r-ref"></span>
+      </div>
+      <div class="result-wrap">
+        <div class="result-location">
+          <div class="result-loc-name" id="r-loc-name"></div>
+          <div class="result-assignment" id="r-assignment"></div>
+        </div>
+        <div class="result-dossier" id="r-dossier"></div>
+        <div class="result-footnote" id="r-footnote"></div>
+
+        <div class="result-nl" id="nl-block">
+          <div class="result-nl-head">The Nocturnal Dispatch</div>
+          <div class="result-nl-body">Bureau-classified field updates, delivered on the first of every month. Exclusive Codex entries, notes from the author's desk, and updates from Vinaborg.</div>
+          <form class="nl-row" action="https://assets.mailerlite.com/jsonp/955336/forms/182296130877392293/subscribe" method="post" target="_blank" onsubmit="document.getElementById('nl-ok').style.display='block'">
+            <input class="nl-input" type="email" name="fields[email]" placeholder="your@email.com" required>
+            <button class="nl-btn" type="submit">Join the Night Division</button>
+            <input type="hidden" name="ml-submit" value="1">
+            <input type="hidden" name="anticsrf" value="true">
+          </form>
+          <div class="nl-small">One dispatch per month. Unsubscribe at any time.</div>
+          <div class="nl-success" id="nl-ok">Transmission confirmed. Welcome to the Night Division.</div>
+        </div>
+
+        <div class="share-block">
+          <div class="share-nudge">The Bureau encourages all classified visitors to file their results publicly. It helps us identify others.</div>
+          <div class="share-instructions">Download your classification card, then copy your share text. Post both to your preferred channel.</div>
+          <div class="result-actions">
+            <button class="action-btn action-btn-primary" id="btn-download" onclick="downloadCard()">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Image
+            </button>
+            <button class="action-btn action-btn-primary" id="btn-copy" onclick="copyShareText()">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copy Share Text
+            </button>
+          </div>
+          <button class="action-btn" onclick="printDossier()" style="width:100%;margin-top:0.5rem">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            Print Full Dossier
+          </button>
+        </div>
+        <button class="restart-link" onclick="restart()">Retake Assessment</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRINT DOSSIER (hidden on screen, visible on print) -->
+<div class="print-dossier" id="print-dossier">
+  <img class="print-hero" id="print-hero" src="" alt="">
+  <div class="print-header">
+    <div class="print-org">IBMDN — International Bureau for Matters of Day & Night</div>
+    <div class="print-title" id="print-title"></div>
+    <div class="print-class" id="print-class"></div>
+    <div class="print-ref" id="print-ref"></div>
+  </div>
+  <div class="print-section">
+    <div class="print-section-label">Assignment</div>
+    <p><strong id="print-loc"></strong></p>
+    <p id="print-assignment"></p>
+  </div>
+  <div class="print-section">
+    <div class="print-section-label">Personal Dossier</div>
+    <p id="print-dossier-text"></p>
+  </div>
+  <div class="print-footnote" id="print-footnote"></div>
+  <div class="print-seal-row" style="display:none">
+    <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="28" stroke="#0f766e" stroke-width="0.8"/><circle cx="30" cy="30" r="22" stroke="#0f766e" stroke-width="0.6"/><circle cx="30" cy="30" r="8" stroke="#0f766e" stroke-width="0.8"/><line x1="30" y1="2" x2="30" y2="14" stroke="#0f766e" stroke-width="0.5"/><line x1="30" y1="46" x2="30" y2="58" stroke="#0f766e" stroke-width="0.5"/><line x1="2" y1="30" x2="14" y2="30" stroke="#0f766e" stroke-width="0.5"/><line x1="46" y1="30" x2="58" y2="30" stroke="#0f766e" stroke-width="0.5"/></svg>
+  </div>
+  <div class="print-watermark">CLASSIFIED — IBMDN Vinaborg Division</div>
+  <div class="print-footer">helenaflinn.com/clearance</div>
+</div>
+
+<!-- EXPORT CARD (offscreen, rendered by html2canvas) -->
+<div class="export-card" id="export-card"></div>
+
+<footer>
+  <a href="../index.html">helenaflinn.com</a>
+</footer>
+
+<script>
+// SVG SEAL
+const SEAL_SVG = `<svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><circle cx="30" cy="30" r="28" stroke="rgba(45,212,191,0.4)" stroke-width="0.5"/><circle cx="30" cy="30" r="22" stroke="rgba(45,212,191,0.3)" stroke-width="0.5"/><circle cx="30" cy="30" r="8" stroke="rgba(45,212,191,0.5)" stroke-width="0.5"/><line x1="30" y1="2" x2="30" y2="14" stroke="rgba(45,212,191,0.3)" stroke-width="0.5"/><line x1="30" y1="46" x2="30" y2="58" stroke="rgba(45,212,191,0.3)" stroke-width="0.5"/><line x1="2" y1="30" x2="14" y2="30" stroke="rgba(45,212,191,0.3)" stroke-width="0.5"/><line x1="46" y1="30" x2="58" y2="30" stroke="rgba(45,212,191,0.3)" stroke-width="0.5"/></svg>`;
+
+// QUESTIONS — 8 fields, weighted scoring
+const QUESTIONS = [
+  {
+    field: 'Approach Style',
+    prompt: 'You arrive somewhere you\'ve never been. What do you do first?',
+    answers: [
+      {text: 'Find the highest point and get an overview.', scores: {ddu:2, adventurer:1}},
+      {text: 'Look for a system. How does this place work?', scores: {dream_eng:2, goblin_eng:1}},
+      {text: 'Find someone who looks like they know things.', scores: {liaison:2}},
+      {text: 'Walk until something catches your attention.', scores: {field_spec:2, receptive:1}},
+    ]
+  },
+  {
+    field: 'Attention Focus',
+    prompt: 'A room full of unfamiliar things. What do you notice first?',
+    answers: [
+      {text: 'The structure. How it was built, what connects to what.', scores: {goblin_eng:2, dream_eng:1}},
+      {text: 'The feeling. The atmosphere of the place hits you before the details do.', scores: {receptive:2}},
+      {text: 'The people. Who\'s comfortable and who isn\'t.', scores: {liaison:2, ddu:1}},
+      {text: 'The thing that doesn\'t belong. The odd detail.', scores: {archivist:2, field_spec:1}},
+    ]
+  },
+  {
+    field: 'Problem Response',
+    prompt: 'Something isn\'t working the way it should. Your instinct is to:',
+    answers: [
+      {text: 'Try something. If it breaks worse, you\'ll learn faster.', scores: {adventurer:1, ddu:2}},
+      {text: 'Take it apart and figure out why.', scores: {goblin_eng:2, dream_eng:1}},
+      {text: 'Sit with it. Turn it over in your mind. The answer usually surfaces when you stop forcing it.', scores: {receptive:2, field_spec:1}},
+      {text: 'Ask who else has dealt with this before.', scores: {liaison:2, archivist:1}},
+    ]
+  },
+  {
+    field: 'Drive',
+    prompt: 'When do you feel most alive?',
+    answers: [
+      {text: 'Discovering something no one else has seen yet.', scores: {field_spec:2, adventurer:1}},
+      {text: 'Moving fast. The higher the stakes, the sharper you get.', scores: {ddu:2, adventurer:1}},
+      {text: 'A conversation that changes how you see something.', scores: {liaison:2, archivist:1}},
+      {text: 'Building something that works exactly the way you imagined.', scores: {dream_eng:2, goblin_eng:1}},
+    ]
+  },
+  {
+    field: 'The Unknown',
+    prompt: 'You find a door that shouldn\'t be there. What do you do?',
+    answers: [
+      {text: 'Examine the door itself first. The frame, the hinges, the material.', scores: {goblin_eng:2, archivist:1}},
+      {text: 'Open it. Obviously.', scores: {adventurer:2, ddu:1}},
+      {text: 'You don\'t know what\'s behind it. But something tells you to go through. You trust that.', scores: {receptive:2}},
+      {text: 'Check if anyone else knows about it. If not, document it.', scores: {field_spec:2, archivist:1}},
+    ]
+  },
+  {
+    field: 'Purpose',
+    prompt: 'What would you spend a lifetime on?',
+    answers: [
+      {text: 'Perfecting one thing until it works exactly right.', scores: {dream_eng:2, goblin_eng:1}},
+      {text: 'Mapping something no one has fully documented.', scores: {field_spec:2, archivist:1}},
+      {text: 'Understanding something you can feel but can\'t explain.', scores: {receptive:2}},
+      {text: 'Making sure the people around you are okay.', scores: {liaison:2, ddu:1}},
+    ]
+  },
+  {
+    field: 'Perception',
+    prompt: 'The people closest to you would probably say:',
+    answers: [
+      {text: '"They notice things the rest of us miss."', scores: {field_spec:2, receptive:1}},
+      {text: '"They\'re the one who holds the group together."', scores: {liaison:2}},
+      {text: '"They\'re the first one through the door."', scores: {adventurer:2, ddu:1}},
+      {text: '"They build things in their head before anyone else understands the problem."', scores: {dream_eng:2, goblin_eng:1}},
+    ]
+  },
+  {
+    field: 'Instinct',
+    prompt: 'A detail catches your eye that no one else noticed. What do you do?',
+    answers: [
+      {text: 'Follow it. See where it leads.', scores: {adventurer:2, field_spec:1}},
+      {text: 'Act on it. Now. Before the moment passes.', scores: {ddu:2}},
+      {text: 'Point it out to whoever\'s with you.', scores: {liaison:2, ddu:1}},
+      {text: 'File it away to study later.', scores: {archivist:2, dream_eng:1}},
+    ]
+  }
+];
+
+// 8 CLASSIFICATION PROFILES
+const PROFILES = {
+  ddu: {
+    slug: 'ddu',
+    title: 'DDU Field Agent',
+    classification: 'IBMDN Visitor Classification \u2014 Field Operations Division',
+    locName: 'The Rooftops of Vienna \u2014 DDU Deployment Route 7',
+    assignment: 'You\'ve been cleared for a night deployment with Dream Dispersal Unit 7. You\'ll carry dream globes across the rooftops of Vienna, following routes mapped by generations of goblin field agents. Speed matters. Precision matters more. If you perform well, you\'ve been invited to observe a Dreamchasing trial event in Fountainheart Plaza. Few visitors receive that invitation.',
+    dossier: 'Your intake profile indicates a bias toward action and a comfort with physical risk that the Bureau rarely sees in civilian visitors. You process information fastest when you\'re moving. Sitting still costs you something. The field units noticed this before we did.',
+    footnote: 'Your night deployment has been logged. DDU Route 7 covers the 7th district. Wear appropriate footwear.',
+    share: 'The Bureau classified me as DDU Field Agent. Cleared for night deployment across the rooftops of Vienna. The field units noticed something about me before the Bureau did. Take yours: helenaflinn.com/clearance'
+  },
+  dream_eng: {
+    slug: 'dream-engineer',
+    title: 'Dream Engineer',
+    classification: 'IBMDN Visitor Classification \u2014 Analytical Division',
+    locName: 'Vinaborg Dreamcraft Manufactory \u2014 R&D Wing',
+    assignment: 'You\'ve been issued a visitor pass to the Dreamcraft Manufactory. Drizzle Scrollpot and Jilx Fluxspark have agreed to supervise your first dream template. You\'ll work with real essences, real variables, and real consequences if the emotional balance is off. The factory floor is loud, warm, and has been running continuously since before Vienna existed above it.',
+    dossier: 'Your intake profile indicates a systematic mind that finds comfort in understanding how things work. You approach the unfamiliar by breaking it into components. The Bureau considers this an asset. The Dream Deck will make immediate sense to you. The emotional variables less so. That\'s where the real work begins.',
+    footnote: 'Drizzle has already reviewed your intake form. He has opinions. He usually does.',
+    share: 'The Bureau classified me as Dream Engineer. Issued a visitor pass to the Dreamcraft Manufactory. Drizzle has already reviewed my file. He has opinions. Take yours: helenaflinn.com/clearance'
+  },
+  adventurer: {
+    slug: 'adventurer',
+    title: 'Adventurer',
+    classification: 'IBMDN Visitor Classification \u2014 Expeditionary Division',
+    locName: 'The Triome \u2014 Prism Barrens',
+    assignment: 'You\'ve been assigned to an expeditionary survey of the Prism Barrens, one of three biomes sustained by the Trispire Prismbloom. The terrain is hostile and beautiful. Your guide is Twilla Sparkgleam, a veteran field adventurer with a robotic arm, a robotic foot, and a scar across her face that she considers a souvenir. She does not slow down for anyone. Keep up.',
+    dossier: 'Your intake profile suggests a fundamental inability to leave the unknown unexplored. This is not recklessness. The Bureau recognises the difference. You assess risk accurately and then choose to proceed anyway. This makes you difficult to manage and extremely useful.',
+    footnote: 'Twilla reviewed your file. She said "finally." We are not sure what she meant by that.',
+    share: 'The Bureau classified me as Adventurer. Assigned to the Prism Barrens with Twilla Sparkgleam. She reviewed my file and said "finally." Take yours: helenaflinn.com/clearance'
+  },
+  field_spec: {
+    slug: 'field-specialist',
+    title: 'Nocturnal Field Specialist',
+    classification: 'IBMDN Visitor Classification \u2014 Field Research Division',
+    locName: 'The Triome \u2014 Deep Survey Zone',
+    assignment: 'You\'ve been issued a field journal and cataloguing kit. Your assignment is to document nocturnal creatures and flora in the wild. The Triome sustains ecosystems that exist nowhere else. Some specimens have never been formally recorded. Your observations will be reviewed by the Bureau\'s Field Research Division and, if validated, added to the Nocturne Codex.',
+    dossier: 'Your intake profile indicates a rare combination of patience and curiosity. You notice what others walk past. You document before you interpret. The Bureau values this discipline. The nocturnal world is full of things that have never been formally recorded. You are the kind of person who changes that.',
+    footnote: 'Your field journal will be collected at the end of your visit. Copies are not permitted. Sketches are.',
+    share: 'The Bureau classified me as Nocturnal Field Specialist. Issued a field journal and cataloguing kit. Copies are not permitted. Sketches are. Take yours: helenaflinn.com/clearance'
+  },
+  receptive: {
+    slug: 'receptive',
+    title: 'NE Receptive',
+    classification: 'IBMDN Visitor Classification \u2014 Status Pending',
+    locName: 'The Gloomshade Canopy \u2014 [RESTRICTED]',
+    assignment: 'Your assignment has been flagged for senior review. Initial readings indicate an elevated and anomalous sensitivity to Nocturnal Energy. You have been directed to the Gloomshade Canopy, a densely forested region of the Triome that few have reason to enter. Somewhere within it there is a location that has never been visited by a human. The Bureau does not know what is there. You appear to already sense that something is. You have also been noted for an unusual connection to the Trispire Prismbloom. The significance of this is under investigation.',
+    dossier: 'Your intake responses fall outside the Bureau\'s standard classification parameters. This is not a negative outcome. It is an unusual one. You perceive things others do not register. Whether this is intuition, sensitivity, or something the Bureau does not yet have terminology for remains under review. You are the first civilian visitor to be directed to this location.',
+    footnote: 'Your file has been forwarded to senior council. This is routine. We say that about all of them.',
+    share: 'The Bureau flagged my NE signature as anomalous. I\'ve been directed to a restricted location in the Gloomshade Canopy. My file has been forwarded to senior council. They say this is routine. Take yours: helenaflinn.com/clearance'
+  },
+  liaison: {
+    slug: 'liaison',
+    title: 'Liaison',
+    classification: 'IBMDN Visitor Classification \u2014 Relational Division',
+    locName: 'Shadowlight Promenade \u2014 Unrestricted Access',
+    assignment: 'You\'ve been granted unrestricted access to Shadowlight Promenade, the social heart of Vinaborg. The shops, the cafes, The Drowsy Fawn. The Bureau has found that visitors with your profile learn more in two hours on the Promenade than most learn in a week in the library. People talk to you. They tell you things they did not intend to share. This is not a skill the Bureau teaches. You arrived with it.',
+    dossier: 'Your intake profile indicates high interpersonal sensitivity and a tendency to orient around the presence and needs of others. The Bureau notes that you are the kind of person rooms reorganise around without anyone noticing. This is considerably more useful than it sounds.',
+    footnote: 'Three goblins on the Promenade have already asked about you. You have not yet arrived.',
+    share: 'The Bureau classified me as Liaison. Unrestricted Promenade access. Three goblins have already asked about me. I haven\'t arrived yet. Take yours: helenaflinn.com/clearance'
+  },
+  goblin_eng: {
+    slug: 'goblin-engineer',
+    title: 'Goblin Engineer',
+    classification: 'IBMDN Visitor Classification \u2014 Technical Division',
+    locName: 'Sprocket & Spindle Emporium \u2014 Brasshand Bend',
+    assignment: 'You\'ve been directed to Sprocket & Spindle Emporium to assemble a field toolkit. Noggle Rumblegear has volunteered to supervise your first engineering project. Noggle is among the most respected engineers in Vinaborg and has very specific opinions about bolt calibration. You\'ll work with goblin-grade tools, NE-conductive materials, and engineering principles that human physics has not yet arrived at.',
+    dossier: 'Your intake profile indicates a mind that thinks in mechanisms. You understand systems by building them, not by reading about them. Your hands reach for things before your conscious mind has decided to investigate. The Bureau finds this trait uncommon in civilian visitors and extremely common in its best engineers.',
+    footnote: 'Noggle asked what tools you already own. We told him you\'re human. He said that wasn\'t what he asked.',
+    share: 'The Bureau classified me as Goblin Engineer. Noggle Rumblegear asked what tools I already own. They told him I\'m human. He said that wasn\'t what he asked. Take yours: helenaflinn.com/clearance'
+  },
+  archivist: {
+    slug: 'archivist',
+    title: 'Archivist',
+    classification: 'IBMDN Visitor Classification \u2014 Academic Division',
+    locName: 'Brightspire Arcadia \u2014 Thrum-Kragg Vaulta',
+    assignment: 'You\'ve been granted reading privileges at Brightspire Arcadia, the university campus at the academic heart of Vinaborg. At its centre is the Thrum-Kragg Vaulta, the grand library. The goblin name is old. What it translates to is not widely shared. The collection holds records that predate the city above it. Some shelves are not yet open to civilian visitors. You will know which ones because the air near them feels different.',
+    dossier: 'Your intake profile indicates strong observational instincts and an above-average tendency to document, retain, and cross-reference. You collect knowledge not to use it but because leaving it uncollected feels wrong. The Bureau recognises this impulse. The Nocturne Codex exists because someone felt exactly the way you do.',
+    footnote: 'The vault has a restricted wing. Your clearance does not currently extend to it. This may change.',
+    share: 'The Bureau classified me as Archivist. Granted reading privileges at the Thrum-Kragg Vaulta. The vault has a restricted wing. My clearance doesn\'t extend to it. Yet. Take yours: helenaflinn.com/clearance'
+  }
+};
+
+// GRADIENTS per profile (used until images are ready)
+const VISUALS = {
+  ddu:          {gradient:'linear-gradient(135deg, #0a1628 0%, #152240 50%, #0a0f1a 100%)', img:'../images/clearance/web/ddu-field-agent.jpg'},
+  dream_eng:    {gradient:'linear-gradient(135deg, #1a1a0a 0%, #2a2510 50%, #1a1508 100%)', img:'../images/clearance/web/dream-engineer.jpg'},
+  adventurer:   {gradient:'linear-gradient(135deg, #1a1020 0%, #2a1530 50%, #1a0a18 100%)', img:'../images/clearance/web/adventurer.jpg'},
+  field_spec:   {gradient:'linear-gradient(135deg, #0a1a10 0%, #0f2a1a 50%, #0a1a10 100%)', img:'../images/clearance/web/field-specialist.jpg'},
+  receptive:    {gradient:'linear-gradient(135deg, #0f1a2a 0%, #0a2040 50%, #0f0f1a 100%)', img:'../images/clearance/web/ne-receptive.jpg'},
+  liaison:      {gradient:'linear-gradient(135deg, #1a1a0f 0%, #2a2510 50%, #1a1508 100%)', img:'../images/clearance/web/liaison.jpg'},
+  goblin_eng:   {gradient:'linear-gradient(135deg, #1a150a 0%, #2a2010 50%, #1a1508 100%)', img:'../images/clearance/web/goblin-engineer.jpg'},
+  archivist:    {gradient:'linear-gradient(135deg, #1a0f2a 0%, #2a1540 50%, #0f0a1a 100%)', img:'../images/clearance/web/archivist.jpg'},
+};
+
+// STATE
+let currentQ = 0;
+let scores = {ddu:0, dream_eng:0, adventurer:0, field_spec:0, receptive:0, liaison:0, goblin_eng:0, archivist:0};
+
+function startQuiz() {
+  document.getElementById('state-intro').style.display = 'none';
+  document.getElementById('state-question').style.display = 'block';
+  showQuestion(0);
+}
+
+function showQuestion(idx) {
+  currentQ = idx;
+  const q = QUESTIONS[idx];
+  const num = String(idx+1).padStart(2,'0');
+  document.getElementById('q-counter').textContent = 'Field ' + num + ' of 08';
+  document.getElementById('q-field-name').textContent = q.field;
+  document.getElementById('q-text').textContent = q.prompt;
+
+  // Progress bar
+  const track = document.getElementById('progress-track');
+  track.innerHTML = '';
+  for (let i = 0; i < QUESTIONS.length; i++) {
+    const pip = document.createElement('div');
+    pip.className = 'progress-pip' + (i < idx ? ' filled' : '') + (i === idx ? ' current' : '');
+    track.appendChild(pip);
+  }
+
+  const list = document.getElementById('q-answers');
+  list.innerHTML = '';
+  // Shuffle answer order
+  const shuffled = [...q.answers].sort(() => Math.random() - 0.5);
+  shuffled.forEach(a => {
+    const btn = document.createElement('button');
+    btn.className = 'answer-btn';
+    btn.textContent = a.text;
+    btn.onclick = () => selectAnswer(a.scores);
+    list.appendChild(btn);
+  });
+}
+
+function selectAnswer(answerScores) {
+  // Add weighted scores
+  for (const [type, points] of Object.entries(answerScores)) {
+    scores[type] = (scores[type] || 0) + points;
+  }
+  if (currentQ < QUESTIONS.length - 1) {
+    showQuestion(currentQ + 1);
+  } else {
+    showProcessing();
+  }
+}
+
+function showProcessing() {
+  document.getElementById('state-question').style.display = 'none';
+  document.getElementById('state-processing').style.display = 'block';
+  setTimeout(() => showResult(), 2200);
+}
+
+function getProfile() {
+  const sorted = Object.entries(scores).sort((a,b) => b[1] - a[1]);
+  const topKey = sorted[0][0];
+  const topScore = sorted[0][1];
+
+  // Tie-breaking: if top two are tied, use Q5 (the door, index 4) answer
+  // In practice the weighted system makes ties rare
+  // If still tied, first in sorted order wins (arbitrary but consistent)
+
+  return PROFILES[topKey];
+}
+
+function showResult() {
+  document.getElementById('state-processing').style.display = 'none';
+  document.getElementById('state-result').style.display = 'block';
+
+  const p = getProfile();
+  const ref = 'VBG-' + String(Math.floor(1000 + Math.random() * 9000));
+  const v = VISUALS[Object.keys(PROFILES).find(k => PROFILES[k] === p)];
+
+  // Hero
+  document.getElementById('r-hero-grad').style.background = v.gradient;
+  const heroImg = document.getElementById('r-hero-img');
+  heroImg.src = v.img;
+  heroImg.style.display = '';
+
+  // Content
+  document.getElementById('r-ref').textContent = ref;
+  document.getElementById('r-class').textContent = p.classification;
+  document.getElementById('r-title').textContent = p.title;
+  document.getElementById('r-loc-name').textContent = p.locName;
+  document.getElementById('r-assignment').textContent = p.assignment;
+  document.getElementById('r-dossier').textContent = p.dossier;
+  document.getElementById('r-footnote').textContent = p.footnote;
+
+  // Store for share + export + print
+  window._shareText = p.share;
+  window._currentProfile = p;
+  window._currentRef = ref;
+  window._currentVisuals = v;
+
+  // Populate print dossier
+  document.getElementById('print-hero').src = v.img;
+  document.getElementById('print-title').textContent = p.title;
+  document.getElementById('print-class').textContent = p.classification;
+  document.getElementById('print-ref').textContent = 'Reference: ' + ref;
+  document.getElementById('print-loc').textContent = p.locName;
+  document.getElementById('print-assignment').textContent = p.assignment;
+  document.getElementById('print-dossier-text').textContent = p.dossier;
+  document.getElementById('print-footnote').textContent = p.footnote;
+
+  // Expand form box
+  document.querySelector('.form-box').style.borderColor = 'rgba(45,212,191,0.35)';
+}
+
+function copyShareText() {
+  navigator.clipboard.writeText(window._shareText).then(() => {
+    const btn = document.getElementById('btn-copy');
+    btn.classList.add('copied');
+    btn.innerHTML = `<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Copied!`;
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = `<svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy`;
+    }, 2000);
+  });
+}
+
+function printDossier() {
+  window.print();
+}
+
+function restart() {
+  scores = {ddu:0, dream_eng:0, adventurer:0, field_spec:0, receptive:0, liaison:0, goblin_eng:0, archivist:0};
+  currentQ = 0;
+  document.getElementById('state-result').style.display = 'none';
+  document.getElementById('state-intro').style.display = 'block';
+  document.querySelector('.form-box').style.borderColor = '';
+  document.getElementById('nl-ok').style.display = 'none';
+}
+
+// EXPORT CARD (4:5 for Instagram feed)
+// Convert relative image URL to absolute for html2canvas
+function getAbsoluteUrl(relPath) {
+  const a = document.createElement('a');
+  a.href = relPath;
+  return a.href;
+}
+
+function buildExportCard() {
+  const p = window._currentProfile;
+  const ref = window._currentRef;
+  const v = window._currentVisuals;
+  const w = 1080;
+  const h = 1350; // 4:5
+  const imgUrl = getAbsoluteUrl(v.img);
+
+  // Trim assignment to first 4 sentences
+  const assignText = p.assignment.split('. ').slice(0, 4).join('. ') + '.';
+
+  const card = document.getElementById('export-card');
+  card.style.cssText = `position:fixed;left:-9999px;top:0;z-index:-1;width:${w}px;height:${h}px;overflow:hidden;font-family:'Crimson Pro',Georgia,serif;color:#f5f0e8`;
+
+  card.innerHTML = `
+    <!-- Hero image: top 55% -->
+    <div style="width:${w}px;height:740px;position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0;background:${v.gradient}"></div>
+      <img src="${imgUrl}" crossorigin="anonymous" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%" onerror="this.style.display='none'">
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,#08060f 0%,rgba(8,6,15,0.5) 30%,transparent 55%)"></div>
+      <div style="position:absolute;top:40px;left:56px;right:56px">
+        <div style="font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:400;letter-spacing:0.4em;text-transform:uppercase;color:#2dd4bf;opacity:0.8">IBMDN \u2014 Classification Complete</div>
+      </div>
+      <div style="position:absolute;bottom:36px;left:56px;right:56px;z-index:1">
+        <div style="font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;color:#2dd4bf;margin-bottom:12px">${p.classification}</div>
+        <div style="font-family:'Cinzel',serif;font-size:58px;font-weight:400;letter-spacing:0.04em;color:#f5f0e8;line-height:1.12">${p.title}</div>
+      </div>
+    </div>
+    <!-- Content: bottom 45% -->
+    <div style="background:#08060f;padding:40px 56px 0;height:610px;display:flex;flex-direction:column">
+      <div style="font-family:'Cinzel',serif;font-size:26px;font-weight:600;color:#f5f0e8;margin-bottom:16px">${p.locName}</div>
+      <div style="font-size:23px;font-style:italic;color:#d4cfc4;line-height:1.7;margin-bottom:28px">${assignText}</div>
+      <div style="font-size:22px;font-style:italic;color:#2dd4bf;line-height:1.6;padding-left:20px;border-left:3px solid rgba(45,212,191,0.35);margin-bottom:auto">${p.footnote}</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-top:1px solid rgba(45,212,191,0.1);margin-top:20px">
+        <div style="width:36px;height:36px;opacity:0.4">${SEAL_SVG}</div>
+        <div style="text-align:right">
+          <div style="font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:#948daa;margin-bottom:4px">Take yours at</div>
+          <div style="font-family:'Cinzel',serif;font-size:18px;color:#2dd4bf;letter-spacing:0.08em">helenaflinn.com/clearance</div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  return card;
+}
+
+async function downloadCard() {
+  const btn = document.getElementById('btn-download');
+  btn.disabled = true;
+  const origHTML = btn.innerHTML;
+  btn.innerHTML = `<svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Rendering...`;
+
+  const card = buildExportCard();
+
+  // Preload the image before rendering
+  const imgEl = card.querySelector('.ec-hero-img');
+  if (imgEl && imgEl.src) {
+    await new Promise((resolve) => {
+      if (imgEl.complete) return resolve();
+      imgEl.onload = resolve;
+      imgEl.onerror = resolve;
+      setTimeout(resolve, 2000); // safety timeout
+    });
+  }
+  await new Promise(r => setTimeout(r, 200));
+
+  try {
+    const canvas = await html2canvas(card, {
+      scale: 2,
+      backgroundColor: '#08060f',
+      useCORS: true,
+      allowTaint: true,
+      logging: false,
+      width: 1080,
+      height: 1350,
+    });
+
+    const link = document.createElement('a');
+    link.download = `ibmdn-${window._currentProfile.slug}.png`;
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  } catch(e) {
+    console.error('Export failed:', e);
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = origHTML;
+}
+
+// HAMBURGER
+document.getElementById('hamburger').addEventListener('click',function(){
+  this.classList.toggle('open');
+  document.getElementById('nav-links').classList.toggle('open');
+});
+document.querySelectorAll('#nav-links a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('nav-links').classList.remove('open');
+  });
+});
+
+// PARTICLES
+const pc=document.getElementById('particles');
+const colors=['rgba(45,212,191,0.5)','rgba(134,239,172,0.35)','rgba(192,132,252,0.25)','rgba(94,234,212,0.4)'];
+for(let i=0;i<15;i++){
+  const p=document.createElement('div');
+  p.className='particle';
+  const s=Math.random()*2.5+0.8;
+  p.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;background:${colors[Math.floor(Math.random()*colors.length)]};animation-duration:${Math.random()*14+10}s;animation-delay:${Math.random()*2}s;`;
+  pc.appendChild(p);
+}
+</script>
+</body>
+</html>
