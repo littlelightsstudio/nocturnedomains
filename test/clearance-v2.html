@@ -205,9 +205,15 @@ footer a:hover{color:var(--teal)}
   <div class="form-box" id="form-box">
     <!-- INTRO STATE -->
     <div id="state-intro">
-      <div class="form-header">
-        <span class="form-org">IBMDN</span>
-        <span class="form-id">Form VC-08</span>
+      <div style="width:100%;height:160px;position:relative;overflow:hidden">
+        <img src="../images/clearance/web/ibmdn-office.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,6,15,0.95) 0%,rgba(8,6,15,0.4) 50%,rgba(8,6,15,0.2) 100%)"></div>
+        <div style="position:absolute;top:50%;left:2rem;transform:translateY(-50%)">
+          <span class="form-org" style="opacity:1">IBMDN</span>
+        </div>
+        <div style="position:absolute;top:50%;right:2rem;transform:translateY(-50%)">
+          <span class="form-id">Form VC-08</span>
+        </div>
       </div>
       <div class="form-body">
         <h1 class="form-title">Pre-Departure<br><span>Clearance Assessment</span></h1>
@@ -690,29 +696,28 @@ function buildExportCard() {
   card.style.cssText = `position:fixed;left:-9999px;top:0;z-index:-1;width:${w}px;height:${h}px;overflow:hidden;font-family:'Crimson Pro',Georgia,serif;color:#f5f0e8`;
 
   card.innerHTML = `
-    <!-- Hero image: top 55% -->
-    <div style="width:${w}px;height:740px;position:relative;overflow:hidden">
-      <div style="position:absolute;inset:0;background:${v.gradient}"></div>
-      <img src="${imgUrl}" crossorigin="anonymous" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%" onerror="this.style.display='none'">
-      <div style="position:absolute;inset:0;background:linear-gradient(to top,#08060f 0%,rgba(8,6,15,0.5) 30%,transparent 55%)"></div>
-      <div style="position:absolute;top:40px;left:56px;right:56px">
-        <div style="font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:400;letter-spacing:0.4em;text-transform:uppercase;color:#2dd4bf;opacity:0.8">IBMDN \u2014 Classification Complete</div>
+    <!-- Hero image: top 50% using background-image (html2canvas-safe) -->
+    <div style="width:${w}px;height:680px;position:relative;overflow:hidden;background-image:url('${imgUrl}');background-size:cover;background-position:center 30%">
+      <div style="position:absolute;inset:0;background:${v.gradient};opacity:0.3"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,#08060f 0%,rgba(8,6,15,0.5) 25%,transparent 50%)"></div>
+      <div style="position:absolute;top:44px;left:60px;right:60px">
+        <div style="font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:400;letter-spacing:0.4em;text-transform:uppercase;color:#2dd4bf;opacity:0.85">IBMDN \u2014 Classification Complete</div>
       </div>
-      <div style="position:absolute;bottom:36px;left:56px;right:56px;z-index:1">
-        <div style="font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;color:#2dd4bf;margin-bottom:12px">${p.classification}</div>
-        <div style="font-family:'Cinzel',serif;font-size:58px;font-weight:400;letter-spacing:0.04em;color:#f5f0e8;line-height:1.12">${p.title}</div>
+      <div style="position:absolute;bottom:40px;left:60px;right:60px;z-index:1">
+        <div style="font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#2dd4bf;margin-bottom:14px">${p.classification}</div>
+        <div style="font-family:'Cinzel',serif;font-size:64px;font-weight:400;letter-spacing:0.04em;color:#f5f0e8;line-height:1.1;text-shadow:0 2px 20px rgba(0,0,0,0.5)">${p.title}</div>
       </div>
     </div>
-    <!-- Content: bottom 45% -->
-    <div style="background:#08060f;padding:40px 56px 0;height:610px;display:flex;flex-direction:column">
-      <div style="font-family:'Cinzel',serif;font-size:26px;font-weight:600;color:#f5f0e8;margin-bottom:16px">${p.locName}</div>
-      <div style="font-size:23px;font-style:italic;color:#d4cfc4;line-height:1.7;margin-bottom:28px">${assignText}</div>
-      <div style="font-size:22px;font-style:italic;color:#2dd4bf;line-height:1.6;padding-left:20px;border-left:3px solid rgba(45,212,191,0.35);margin-bottom:auto">${p.footnote}</div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-top:1px solid rgba(45,212,191,0.1);margin-top:20px">
-        <div style="width:36px;height:36px;opacity:0.4">${SEAL_SVG}</div>
+    <!-- Content: bottom 50% -->
+    <div style="background:#08060f;padding:44px 60px 0;height:670px;display:flex;flex-direction:column">
+      <div style="font-family:'Cinzel',serif;font-size:28px;font-weight:600;color:#f5f0e8;margin-bottom:18px">${p.locName}</div>
+      <div style="font-size:24px;font-style:italic;color:#d4cfc4;line-height:1.7;margin-bottom:32px">${assignText}</div>
+      <div style="font-size:23px;font-style:italic;color:#2dd4bf;line-height:1.6;padding-left:22px;border-left:4px solid rgba(45,212,191,0.4);margin-bottom:auto">${p.footnote}</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:28px 0;border-top:1px solid rgba(45,212,191,0.12);margin-top:24px">
+        <div style="width:40px;height:40px;opacity:0.4">${SEAL_SVG}</div>
         <div style="text-align:right">
-          <div style="font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:#948daa;margin-bottom:4px">Take yours at</div>
-          <div style="font-family:'Cinzel',serif;font-size:18px;color:#2dd4bf;letter-spacing:0.08em">helenaflinn.com/clearance</div>
+          <div style="font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:#948daa;margin-bottom:6px">Take yours at</div>
+          <div style="font-family:'Cinzel',serif;font-size:20px;color:#2dd4bf;letter-spacing:0.08em">helenaflinn.com/clearance</div>
         </div>
       </div>
     </div>
