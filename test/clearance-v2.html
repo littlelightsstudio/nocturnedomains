@@ -304,9 +304,9 @@ footer a:hover{color:var(--teal)}
           <div class="share-nudge">The Bureau encourages all classified visitors to file their results publicly. It helps us identify others.</div>
           <div class="share-instructions">Download your classification card, then copy your share text. Post both to your preferred channel.</div>
           <div class="result-actions">
-            <button class="action-btn action-btn-primary" id="btn-download" onclick="downloadCard()">
-              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download Image
+            <button class="action-btn action-btn-primary" id="btn-download" onclick="shareOrDownload()">
+              <svg viewBox="0 0 24 24" id="btn-download-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span id="btn-download-label">Download Image</span>
             </button>
             <button class="action-btn action-btn-primary" id="btn-copy" onclick="copyShareText()">
               <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
@@ -732,41 +732,73 @@ function buildExportCard() {
   return card;
 }
 
-async function downloadCard() {
+// Detect if native share with files is supported (mobile)
+const canNativeShare = (() => {
+  try {
+    return navigator.share && navigator.canShare && navigator.canShare({files: [new File([''], 't.png', {type:'image/png'})]});
+  } catch(e) { return false; }
+})();
+
+// On mobile, swap button text to "Share Image"
+if (canNativeShare) {
+  document.addEventListener('DOMContentLoaded', () => {
+    const label = document.getElementById('btn-download-label');
+    const icon = document.getElementById('btn-download-icon');
+    if (label) label.textContent = 'Share Image';
+    if (icon) icon.innerHTML = '<path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/>';
+  });
+}
+
+async function renderCard() {
+  const card = buildExportCard();
+  // Allow background-image to load
+  await new Promise(r => setTimeout(r, 500));
+
+  const canvas = await html2canvas(card, {
+    scale: 2,
+    backgroundColor: '#08060f',
+    useCORS: true,
+    allowTaint: true,
+    logging: false,
+    width: 1080,
+    height: 1350,
+  });
+  return canvas;
+}
+
+async function shareOrDownload() {
   const btn = document.getElementById('btn-download');
   btn.disabled = true;
   const origHTML = btn.innerHTML;
-  btn.innerHTML = `<svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Rendering...`;
-
-  const card = buildExportCard();
-
-  // Preload the image before rendering
-  const imgEl = card.querySelector('.ec-hero-img');
-  if (imgEl && imgEl.src) {
-    await new Promise((resolve) => {
-      if (imgEl.complete) return resolve();
-      imgEl.onload = resolve;
-      imgEl.onerror = resolve;
-      setTimeout(resolve, 2000); // safety timeout
-    });
-  }
-  await new Promise(r => setTimeout(r, 200));
+  btn.querySelector('span').textContent = 'Rendering...';
 
   try {
-    const canvas = await html2canvas(card, {
-      scale: 2,
-      backgroundColor: '#08060f',
-      useCORS: true,
-      allowTaint: true,
-      logging: false,
-      width: 1080,
-      height: 1350,
-    });
+    const canvas = await renderCard();
 
-    const link = document.createElement('a');
-    link.download = `ibmdn-${window._currentProfile.slug}.png`;
-    link.href = canvas.toDataURL('image/png');
-    link.click();
+    if (canNativeShare) {
+      // Mobile: native share sheet (save to Photos, share to IG, etc.)
+      const blob = await new Promise(r => canvas.toBlob(r, 'image/png'));
+      const file = new File([blob], `ibmdn-${window._currentProfile.slug}.png`, {type: 'image/png'});
+      try {
+        await navigator.share({
+          title: 'IBMDN Classification: ' + window._currentProfile.title,
+          text: window._shareText,
+          files: [file]
+        });
+      } catch(e) {
+        // User cancelled share — fall back to download
+        const link = document.createElement('a');
+        link.download = file.name;
+        link.href = URL.createObjectURL(blob);
+        link.click();
+      }
+    } else {
+      // Desktop: direct download
+      const link = document.createElement('a');
+      link.download = `ibmdn-${window._currentProfile.slug}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
   } catch(e) {
     console.error('Export failed:', e);
   }
