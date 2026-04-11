@@ -716,8 +716,8 @@ function buildExportCard() {
     </div>
     <!-- Content: bottom ~55% -->
     <div style="background:#08060f;padding:40px 56px 0;height:750px;display:flex;flex-direction:column">
-      <div style="font-family:'Cinzel',serif;font-size:36px;font-weight:600;color:#f5f0e8;margin-bottom:16px;line-height:1.2">${p.locName}</div>
-      <div style="font-size:30px;font-style:italic;color:#d4cfc4;line-height:1.65;margin-bottom:28px">${assignText}</div>
+      <div style="font-family:'Cinzel',serif;font-size:45px;font-weight:600;color:#f5f0e8;margin-bottom:20px;line-height:1.2">${p.locName}</div>
+      <div style="font-size:38px;font-style:italic;color:#d4cfc4;line-height:1.6;margin-bottom:28px">${assignText}</div>
       <div style="font-size:28px;font-style:italic;color:#2dd4bf;line-height:1.55;padding-left:22px;border-left:4px solid rgba(45,212,191,0.4);margin-bottom:auto">${p.footnote}</div>
       <div style="display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-top:1px solid rgba(45,212,191,0.12);margin-top:20px">
         <div style="width:40px;height:40px;opacity:0.4">${SEAL_SVG}</div>
@@ -732,22 +732,23 @@ function buildExportCard() {
   return card;
 }
 
-// Detect if native share with files is supported (mobile)
-const canNativeShare = (() => {
+// Detect mobile + native share support (desktop Chrome supports share API but we want download there)
+const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && !window.matchMedia('(pointer:fine)').matches);
+const canNativeShare = isMobile && (() => {
   try {
     return navigator.share && navigator.canShare && navigator.canShare({files: [new File([''], 't.png', {type:'image/png'})]});
   } catch(e) { return false; }
 })();
 
-// On mobile, swap button text to "Share Image"
-if (canNativeShare) {
-  document.addEventListener('DOMContentLoaded', () => {
+// On mobile, swap button text to "Share Image" after DOM loads
+window.addEventListener('DOMContentLoaded', () => {
+  if (canNativeShare) {
     const label = document.getElementById('btn-download-label');
     const icon = document.getElementById('btn-download-icon');
     if (label) label.textContent = 'Share Image';
     if (icon) icon.innerHTML = '<path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/>';
-  });
-}
+  }
+});
 
 async function renderCard() {
   const card = buildExportCard();
