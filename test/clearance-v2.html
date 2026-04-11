@@ -695,8 +695,8 @@ function buildExportCard() {
   const h = 1350; // 4:5 for feed posts
   const imgUrl = getAbsoluteUrl(v.img);
 
-  // Trim assignment to first 2 sentences for share card
-  const assignText = p.assignment.split('. ').slice(0, 2).join('. ') + '.';
+  // Trim assignment to first 3 sentences for share card
+  const assignText = p.assignment.split('. ').slice(0, 3).join('. ') + '.';
 
   const card = document.getElementById('export-card');
   card.style.cssText = `position:fixed;left:-9999px;top:0;z-index:-1;width:${w}px;height:${h}px;overflow:hidden;font-family:'Crimson Pro',Georgia,serif;color:#f5f0e8`;
