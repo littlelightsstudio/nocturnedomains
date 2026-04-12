@@ -168,6 +168,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 5vw;display:f
 .share-nudge{font-size:0.92rem;font-style:italic;color:var(--warm);line-height:1.6;margin-bottom:0.6rem}
 .share-instructions{font-size:0.82rem;color:var(--stone);line-height:1.6;margin-bottom:1.25rem}
 
+/* FIELD NAME */
+.field-name-row{margin-bottom:1.25rem}
+.field-name-label{display:block;font-family:var(--font-label);font-size:0.48rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem}
+.field-name-input{width:100%;background:var(--surface);border:1px solid rgba(45,212,191,0.18);border-radius:6px;padding:0.7rem 0.9rem;font-family:var(--font-display);font-size:0.95rem;letter-spacing:0.05em;color:var(--cream);outline:none;transition:border-color var(--transition)}
+.field-name-input::placeholder{color:var(--muted-text);font-family:var(--font-body);font-style:italic;font-size:0.85rem}
+.field-name-input:focus{border-color:var(--teal)}
+
 /* ACTION BUTTONS */
 .result-actions{display:flex;gap:0.75rem;margin-bottom:0.5rem}
 .action-btn{display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.65rem 1.1rem;border-radius:6px;border:1px solid rgba(45,212,191,0.2);background:transparent;color:var(--teal);cursor:pointer;transition:all var(--transition);font-family:var(--font-label);font-size:0.52rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase}
@@ -348,6 +355,10 @@ footer a:hover{color:var(--teal)}
         <div class="share-block">
           <div class="share-nudge">The Bureau encourages all classified visitors to file their results publicly. It helps us identify others.</div>
           <div class="share-instructions">Download your classification card, then copy your share text. Post both to your preferred channel.</div>
+          <div class="field-name-row">
+            <label class="field-name-label" for="field-name">Your field name <span style="color:var(--muted-text)">(optional, appears on your card)</span></label>
+            <input class="field-name-input" id="field-name" type="text" placeholder="Agent designation..." maxlength="24" autocomplete="off">
+          </div>
           <div class="result-actions">
             <button class="action-btn action-btn-primary" id="btn-download" onclick="shareOrDownload()">
               <svg viewBox="0 0 24 24" id="btn-download-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -377,6 +388,7 @@ footer a:hover{color:var(--teal)}
     <div class="print-title" id="print-title"></div>
     <div class="print-class" id="print-class"></div>
     <div class="print-ref" id="print-ref"></div>
+    <div class="print-field-name" id="print-field-name" style="font-family:'Josefin Sans',sans-serif;font-size:9pt;letter-spacing:0.3em;text-transform:uppercase;color:#0f766e;margin-top:0.75rem;display:none"></div>
   </div>
   <div class="print-section">
     <div class="print-section-label">Assignment</div>
@@ -712,6 +724,14 @@ function copyShareText() {
 }
 
 function printDossier() {
+  const fieldName = (document.getElementById('field-name').value || '').trim();
+  const printEl = document.getElementById('print-field-name');
+  if (fieldName) {
+    printEl.textContent = 'Operative Designation: ' + fieldName.toUpperCase();
+    printEl.style.display = 'block';
+  } else {
+    printEl.style.display = 'none';
+  }
   window.print();
 }
 
@@ -742,6 +762,7 @@ function buildExportCard() {
 
   // Trim assignment to first 3 sentences for share card
   const assignText = p.assignment.split('. ').slice(0, 3).join('. ') + '.';
+  const fieldName = (document.getElementById('field-name').value || '').trim().toUpperCase();
 
   const card = document.getElementById('export-card');
   card.style.cssText = `position:fixed;left:-9999px;top:0;z-index:-1;width:${w}px;height:${h}px;overflow:hidden;font-family:'Crimson Pro',Georgia,serif;color:#f5f0e8`;
@@ -757,6 +778,7 @@ function buildExportCard() {
       <div style="position:absolute;bottom:40px;left:56px;right:56px;z-index:1">
         <div style="font-family:'Josefin Sans',sans-serif;font-size:17px;font-weight:400;letter-spacing:0.28em;text-transform:uppercase;color:#2dd4bf;margin-bottom:12px">${p.classification}</div>
         <div style="font-family:'Cinzel',serif;font-size:64px;font-weight:400;letter-spacing:0.04em;color:#f5f0e8;line-height:1.08;text-shadow:0 2px 24px rgba(0,0,0,0.5)">${p.title}</div>
+        ${fieldName ? `<div style="font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:400;letter-spacing:0.35em;text-transform:uppercase;color:#5eead4;margin-top:14px;text-shadow:0 1px 10px rgba(0,0,0,0.4)">Field Name: ${fieldName}</div>` : ''}
       </div>
     </div>
     <!-- Content: bottom ~55% -->
