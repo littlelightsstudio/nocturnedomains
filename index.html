@@ -364,6 +364,7 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
 /* DESKTOP READABILITY */
 @media(min-width:1024px){
   .world-intro-body{font-size:1.2rem}
+  .world-intro-body p+p{margin-top:1.75rem}
   .storyworld-intro p{font-size:1.15rem}
   .book-summary{font-size:1.08rem}
   .contact-block p{font-size:1rem}
@@ -402,6 +403,26 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
   gtag('js', new Date());
   gtag('config', 'G-Z90VYGK9MP', { anonymize_ip: true });
 </script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '988940230329622');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=988940230329622&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Launch Gate (controls feature reveal at unlock dates) -->
+<script src="launch-gate.js"></script>
 </head>
 <body>
 
@@ -413,6 +434,7 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
     <li><a href="#codex">The Codex</a></li>
     <li><a href="#world-intro">The World</a></li>
     <li><a href="#about">The Author</a></li>
+    <li data-launch="clearance"><a href="clearance.html">Clearance</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -522,6 +544,21 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
       <p class="book-summary">The trilogy reaches its conclusion. Helena Flinn, the Nightmare Squad, and the goblin world face their greatest test yet. The questions left unanswered in The Flickering Realms will find their answers here — and the balance between the dreaming and waking worlds will be settled once and for all.</p>
       <a href="#contact" class="book-link">Follow for updates →</a>
     </div>
+  </div>
+</section>
+
+<!-- CLEARANCE QUIZ CTA -->
+<section id="clearance" data-launch="clearance" style="position:relative;overflow:hidden;padding:6rem 5vw">
+  <img src="images/clearance/web/ibmdn-office.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%">
+  <div style="position:absolute;inset:0;background:rgba(8,6,15,0.78)"></div>
+  <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(45,212,191,0.2),transparent)"></div>
+  <div style="position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(45,212,191,0.2),transparent)"></div>
+  <div class="reveal" style="position:relative;z-index:1;text-align:center;max-width:620px;margin:0 auto">
+    <span style="font-family:var(--font-label);font-size:0.63rem;font-weight:400;letter-spacing:0.4em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;display:block">IBMDN — Vinaborg Visitor Classification</span>
+    <h2 style="font-family:var(--font-display);font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:400;color:var(--cream);line-height:1.2;margin-bottom:1.25rem">The Bureau Needs to Classify You</h2>
+    <div style="width:60px;height:2px;background:linear-gradient(90deg,var(--teal-dim),var(--teal));margin:0 auto 1.5rem"></div>
+    <p style="font-size:1rem;color:var(--stone);line-height:1.75;margin-bottom:2rem;font-weight:400">Eight questions. Your answers will determine your clearance level, division assignment, and where in the nocturnal world you will be directed.</p>
+    <a href="clearance.html" style="font-family:var(--font-label);font-size:0.68rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--void);background:var(--teal);border:none;padding:1rem 2.5rem;text-decoration:none;display:inline-block;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:all 0.3s cubic-bezier(0.4,0,0.2,1)">Begin Assessment &rarr;</a>
   </div>
 </section>
 
@@ -1207,27 +1244,20 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
   </div>
   <div style="max-width:700px;margin:3rem auto 0;display:flex;flex-direction:column;gap:1.5rem">
     <div class="reveal" style="display:flex;align-items:flex-start;gap:1.2rem;padding:1.3rem 1.5rem;border:1px solid rgba(45,212,191,0.12);border-radius:8px;background:rgba(45,212,191,0.03)">
-      <span style="font-size:1.4rem;line-height:1;flex-shrink:0;margin-top:0.1rem">⚙️</span>
-      <div>
-        <p style="font-family:var(--font-display);font-size:1rem;color:var(--cream);margin:0 0 0.3rem">IBMDN Pre-Departure Clearance Form</p>
-        <p style="font-size:0.82rem;color:var(--stone);margin:0;line-height:1.6">An interactive assessment to determine your Bureau classification and field assignment. Five questions. One result. Shareable.</p>
-      </div>
-    </div>
-    <div class="reveal reveal-delay-1" style="display:flex;align-items:flex-start;gap:1.2rem;padding:1.3rem 1.5rem;border:1px solid rgba(45,212,191,0.08);border-radius:8px">
       <span style="font-size:1.4rem;line-height:1;flex-shrink:0;margin-top:0.1rem">📋</span>
       <div>
         <p style="font-family:var(--font-display);font-size:1rem;color:var(--cream);margin:0 0 0.3rem">Young Explorers Programme</p>
         <p style="font-size:0.82rem;color:var(--stone);margin:0;line-height:1.6">Reading guides, STEM connections, and classroom activities. Bureau-approved materials for teachers and librarians.</p>
       </div>
     </div>
-    <div class="reveal reveal-delay-2" style="display:flex;align-items:flex-start;gap:1.2rem;padding:1.3rem 1.5rem;border:1px solid rgba(45,212,191,0.08);border-radius:8px">
+    <div class="reveal reveal-delay-1" style="display:flex;align-items:flex-start;gap:1.2rem;padding:1.3rem 1.5rem;border:1px solid rgba(45,212,191,0.08);border-radius:8px">
       <span style="font-size:1.4rem;line-height:1;flex-shrink:0;margin-top:0.1rem">🔬</span>
       <div>
         <p style="font-family:var(--font-display);font-size:1rem;color:var(--cream);margin:0 0 0.3rem">The Nocturne Codex — Full Archive</p>
         <p style="font-size:0.82rem;color:var(--stone);margin:0;line-height:1.6">A standalone searchable archive with Bureau terminal interface. 51 entries. Seven categories. Some files remain classified.</p>
       </div>
     </div>
-    <div class="reveal reveal-delay-3" style="display:flex;align-items:flex-start;gap:1.2rem;padding:1.3rem 1.5rem;border:1px solid rgba(45,212,191,0.08);border-radius:8px">
+    <div class="reveal reveal-delay-2" style="display:flex;align-items:flex-start;gap:1.2rem;padding:1.3rem 1.5rem;border:1px solid rgba(45,212,191,0.08);border-radius:8px">
       <span style="font-size:1.4rem;line-height:1;flex-shrink:0;margin-top:0.1rem">🌙</span>
       <div>
         <p style="font-family:var(--font-display);font-size:1rem;color:var(--cream);margin:0 0 0.3rem">Dream Design Workshop</p>

@@ -257,21 +257,38 @@ footer a:hover{color:var(--teal)}
   .progress-bar-wrap{padding:0 1.5rem}
 }
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '988940230329622');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=988940230329622&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 <div class="bg-glow"></div>
 <div id="particles"></div>
 
 <nav>
-  <a href="../index.html" class="nav-logo">Helena Flinn Chronicles</a>
+  <a href="index.html" class="nav-logo">Helena Flinn Chronicles</a>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="../index.html#books">The Books</a></li>
-    <li><a href="../index.html#codex">The Codex</a></li>
-    <li><a href="../index.html#world-intro">The World</a></li>
+    <li><a href="index.html#books">The Books</a></li>
+    <li><a href="index.html#codex">The Codex</a></li>
+    <li><a href="index.html#world-intro">The World</a></li>
     <li><a href="clearance.html" style="color:var(--teal)">Clearance</a></li>
-    <li><a href="../faq.html">FAQ</a></li>
-    <li><a href="../index.html#contact">Contact</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -280,7 +297,7 @@ footer a:hover{color:var(--teal)}
     <!-- INTRO STATE -->
     <div id="state-intro">
       <div class="intro-hero" style="width:100%;height:180px;position:relative;overflow:hidden">
-        <img src="../images/clearance/web/ibmdn-office.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%">
+        <img src="images/clearance/web/ibmdn-office.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%">
         <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,6,15,0.98) 0%,rgba(8,6,15,0.5) 40%,rgba(8,6,15,0.15) 100%)"></div>
         <div style="position:absolute;bottom:1.5rem;left:2rem;right:2rem;display:flex;justify-content:space-between;align-items:flex-end">
           <span class="form-org" style="opacity:1">IBMDN</span>
@@ -425,7 +442,7 @@ footer a:hover{color:var(--teal)}
 <div class="export-card" id="export-card"></div>
 
 <footer>
-  <a href="../index.html">helenaflinn.com</a>
+  <a href="index.html">helenaflinn.com</a>
 </footer>
 
 <script>
@@ -602,14 +619,14 @@ const PROFILES = {
 
 // GRADIENTS per profile (used until images are ready)
 const VISUALS = {
-  ddu:          {gradient:'linear-gradient(135deg, #0a1628 0%, #152240 50%, #0a0f1a 100%)', img:'../images/clearance/web/ddu-field-agent.jpg'},
-  dream_eng:    {gradient:'linear-gradient(135deg, #1a1a0a 0%, #2a2510 50%, #1a1508 100%)', img:'../images/clearance/web/dream-engineer.jpg'},
-  adventurer:   {gradient:'linear-gradient(135deg, #1a1020 0%, #2a1530 50%, #1a0a18 100%)', img:'../images/clearance/web/adventurer.jpg'},
-  field_spec:   {gradient:'linear-gradient(135deg, #0a1a10 0%, #0f2a1a 50%, #0a1a10 100%)', img:'../images/clearance/web/field-specialist.jpg'},
-  receptive:    {gradient:'linear-gradient(135deg, #0f1a2a 0%, #0a2040 50%, #0f0f1a 100%)', img:'../images/clearance/web/ne-receptive.jpg'},
-  liaison:      {gradient:'linear-gradient(135deg, #1a1a0f 0%, #2a2510 50%, #1a1508 100%)', img:'../images/clearance/web/liaison.jpg'},
-  goblin_eng:   {gradient:'linear-gradient(135deg, #1a150a 0%, #2a2010 50%, #1a1508 100%)', img:'../images/clearance/web/goblin-engineer.jpg'},
-  archivist:    {gradient:'linear-gradient(135deg, #1a0f2a 0%, #2a1540 50%, #0f0a1a 100%)', img:'../images/clearance/web/archivist.jpg'},
+  ddu:          {gradient:'linear-gradient(135deg, #0a1628 0%, #152240 50%, #0a0f1a 100%)', img:'images/clearance/web/ddu-field-agent.jpg'},
+  dream_eng:    {gradient:'linear-gradient(135deg, #1a1a0a 0%, #2a2510 50%, #1a1508 100%)', img:'images/clearance/web/dream-engineer.jpg'},
+  adventurer:   {gradient:'linear-gradient(135deg, #1a1020 0%, #2a1530 50%, #1a0a18 100%)', img:'images/clearance/web/adventurer.jpg'},
+  field_spec:   {gradient:'linear-gradient(135deg, #0a1a10 0%, #0f2a1a 50%, #0a1a10 100%)', img:'images/clearance/web/field-specialist.jpg'},
+  receptive:    {gradient:'linear-gradient(135deg, #0f1a2a 0%, #0a2040 50%, #0f0f1a 100%)', img:'images/clearance/web/ne-receptive.jpg'},
+  liaison:      {gradient:'linear-gradient(135deg, #1a1a0f 0%, #2a2510 50%, #1a1508 100%)', img:'images/clearance/web/liaison.jpg'},
+  goblin_eng:   {gradient:'linear-gradient(135deg, #1a150a 0%, #2a2010 50%, #1a1508 100%)', img:'images/clearance/web/goblin-engineer.jpg'},
+  archivist:    {gradient:'linear-gradient(135deg, #1a0f2a 0%, #2a1540 50%, #0f0a1a 100%)', img:'images/clearance/web/archivist.jpg'},
 };
 
 // STATE
