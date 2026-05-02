@@ -1,0 +1,12 @@
+.git
+.gitignore
+.DS_Store
+node_modules
+npm-debug.log
+.env
+.env.local
+*.log
+
+# Lokale Dev-Bilder (nicht im Git, aber zur Sicherheit auch hier)
+images/clearance/large
+images/young-explorers

@@ -1,1 +1,11 @@
 .DS_Store
+node_modules/
+*.log
+.env
+.env.local
+
+# Lokal: nur für Bild-Generierung, nicht live
+images/clearance/large/
+
+# Lokal: noch nicht launched
+images/young-explorers/
